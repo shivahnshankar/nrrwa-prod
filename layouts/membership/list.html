@@ -107,6 +107,32 @@
     </div>
   </section>
 
+  <!-- Testimonials Section -->
+  {{ $testimonials := index .Site.Data.testimonials .Language.Lang }}
+  {{ if $testimonials }}
+  <section style="margin: 4rem 0;">
+    <h2 class="section-title">{{ if eq .Language.Lang "en" }}What Our Members Say{{ else }}ನಮ್ಮ ಸದಸ್ಯರು ಏನು ಹೇಳುತ್ತಾರೆ{{ end }}</h2>
+    <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
+      {{ range $testimonials }}
+      <div class="testimonial-card">
+        <div class="testimonial-photo">
+          {{ if .photo }}
+          <img src="{{ .photo }}" alt="{{ .name }}">
+          {{ else }}
+          <div class="photo-placeholder">👤</div>
+          {{ end }}
+        </div>
+        <p class="testimonial-comment">{{ .message }}</p>
+        <div class="testimonial-author">
+          <strong>{{ .name }}</strong>
+          <span>{{ .membershipType }}</span>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
   <!-- Contact Section -->
   <section style="margin: 4rem 0; text-align: center; padding: 3rem; background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-blue) 100%); border-radius: 15px; color: white;">
     <h2 style="color: var(--golden); margin-bottom: 1rem;">{{ if eq .Language.Lang "en" }}Ready to Join?{{ else }}ಸೇರಲು ಸಿದ್ಧರಾಗಿದ್ದೀರಾ?{{ end }}</h2>
