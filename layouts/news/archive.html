@@ -1,0 +1,38 @@
+{{ define "main" }}
+<div class="container">
+  <h1 class="section-title">{{ if eq .Language.Lang "en" }}News Archive{{ else }}ಸುದ್ದಿ ಆರ್ಕೈವ್{{ end }}</h1>
+
+  {{ $allNews := where .Site.RegularPages "Section" "news" }}
+  {{ $langNews := where $allNews ".Language.Lang" .Language.Lang }}
+  {{ $newsPages := where $langNews "Params.layout" "!=" "archive" }}
+
+  {{ $years := slice }}
+  {{ range $newsPages }}
+    {{ $year := .Date.Format "2006" }}
+    {{ if not (in $years $year) }}
+      {{ $years = $years | append $year }}
+    {{ end }}
+  {{ end }}
+
+  {{ range sort $years "value" "desc" }}
+    {{ $year := . }}
+    <div class="archive-year" id="{{ $year }}">
+      <h2>{{ $year }}</h2>
+      <ul class="archive-list">
+        {{ range $newsPages }}
+          {{ if eq (.Date.Format "2006") $year }}
+          <li>
+            <span class="archive-date">{{ .Date.Format "02 Jan" }}</span>
+            <a href="{{ .Permalink }}" class="archive-title">{{ .Title }}</a>
+          </li>
+          {{ end }}
+        {{ end }}
+      </ul>
+    </div>
+  {{ end }}
+
+  <div class="back-link" style="margin-top: 2rem;">
+    <a href="{{ "/news/" | relLangURL }}" class="cta-button">{{ if eq .Language.Lang "en" }}← Back to News{{ else }}← ಸುದ್ದಿಗೆ ಹಿಂತಿರುಗಿ{{ end }}</a>
+  </div>
+</div>
+{{ end }}

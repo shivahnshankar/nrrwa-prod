@@ -1,0 +1,41 @@
+{{ define "main" }}
+{{ $data := index .Site.Data.executiveCommittee .Language.Lang }}
+
+<div class="container">
+  <h1 class="section-title">{{ $data.title }}</h1>
+  <p style="text-align: center; font-size: 1.2rem; color: var(--text-color); margin-bottom: 3rem;">
+    {{ $data.subtitle }}
+  </p>
+
+  <!-- Executive Committee Members Grid -->
+  <div class="committee-grid">
+    {{ range $data.members }}
+    <div class="committee-card">
+      <div class="committee-photo">
+        {{ if .photo }}
+        <img src="{{ .photo }}" alt="{{ .name }}">
+        {{ else }}
+        <div class="photo-placeholder">👤</div>
+        {{ end }}
+      </div>
+      <div class="committee-info">
+        <h3 class="committee-name">{{ .name }}</h3>
+        <p class="committee-position">{{ .position }}</p>
+        {{ if .bio }}
+        <p class="committee-bio">{{ .bio }}</p>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+
+  <!-- Call to Action -->
+  <section style="margin: 4rem 0; text-align: center; padding: 3rem; background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%); border-radius: 15px;">
+    <h2 style="color: var(--primary-green); margin-bottom: 1rem;">{{ if eq $.Language.Lang "en" }}Get in Touch{{ else }}ಸಂಪರ್ಕದಲ್ಲಿರಿ{{ end }}</h2>
+    <p style="font-size: 1.1rem; margin-bottom: 2rem; color: var(--text-color);">
+      {{ if eq $.Language.Lang "en" }}Have questions or suggestions? Feel free to reach out to any of our committee members.{{ else }}ಪ್ರಶ್ನೆಗಳು ಅಥವಾ ಸಲಹೆಗಳಿವೆಯೇ? ನಮ್ಮ ಸಮಿತಿ ಸದಸ್ಯರಿಗೆ ಮುಕ್ತವಾಗಿ ಸಂಪರ್ಕಿಸಿ.{{ end }}
+    </p>
+    <a href="/{{ $.Language.Lang }}/contact/" class="cta-button">{{ if eq $.Language.Lang "en" }}Contact Us{{ else }}ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ{{ end }}</a>
+  </section>
+</div>
+{{ end }}

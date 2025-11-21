@@ -1,0 +1,145 @@
+{{ define "main" }}
+<!-- Hero Slider -->
+<div class="hero-slider">
+  <div class="slide active">
+    <img src="https://picsum.photos/1920/1080?random=hero" alt="Community Development">
+    <div class="slide-content">
+      <h2>{{ if eq .Language.Lang "en" }}Building a Better Community Together{{ else }}ಒಟ್ಟಿಗೆ ಉತ್ತಮ ಸಮುದಾಯವನ್ನು ನಿರ್ಮಿಸುವುದು{{ end }}</h2>
+      <p>{{ if eq .Language.Lang "en" }}Join us in making Roopanagara a model residential area{{ else }}ರೂಪನಗರವನ್ನು ಮಾದರಿ ವಸತಿ ಪ್ರದೇಶವನ್ನಾಗಿ ಮಾಡಲು ನಮ್ಮೊಂದಿಗೆ ಸೇರಿ{{ end }}</p>
+      <a href="/membership/" class="cta-button">{{ if eq .Language.Lang "en" }}Join NRRWA Today{{ else }}ಇಂದೇ NRRWA ಗೆ ಸೇರಿ{{ end }}</a>
+    </div>
+  </div>
+</div>
+
+<!-- Upcoming Events -->
+<section>
+  <div class="container">
+    <h2 class="section-title">{{ if eq .Language.Lang "en" }}Upcoming Events{{ else }}ಮುಂಬರುವ ಕಾರ್ಯಕ್ರಮಗಳು{{ end }}</h2>
+    <div class="cards-grid">
+      {{ $now := now }}
+      {{ $events := where .Site.RegularPages "Section" "events" }}
+      {{ $events = where $events ".Language.Lang" .Language.Lang }}
+      {{ $futureEvents := slice }}
+      {{ range $events }}
+        {{ $eventDate := .Params.eventDate }}
+        {{ if $eventDate }}
+          {{ $eventTime := time $eventDate }}
+          {{ if gt $eventTime $now }}
+            {{ $futureEvents = $futureEvents | append . }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+      {{ range first 3 $futureEvents }}
+        <div class="card">
+          {{ with .Params.featuredImage }}
+            <img src="{{ . }}" alt="{{ $.Title }}">
+          {{ end }}
+          <div class="card-content">
+            <div class="blog-meta">
+              <span>📅 {{ time .Params.eventDate | dateFormat "02 Jan 2006" }}</span>
+            </div>
+            <h3>{{ .Title }}</h3>
+            <p>{{ .Params.summary }}</p>
+            <a href="{{ .Permalink }}" class="card-link">{{ if eq $.Language.Lang "en" }}Read More{{ else }}ಇನ್ನಷ್ಟು ಓದಿ{{ end }} →</a>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+    <div class="text-center mt-4">
+      <a href="{{ "/events/" | relLangURL }}" class="cta-button">{{ if eq .Language.Lang "en" }}View All Events{{ else }}ಎಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ವೀಕ್ಷಿಸಿ{{ end }}</a>
+    </div>
+  </div>
+</section>
+
+<!-- Recent News -->
+<section>
+  <div class="container">
+    <h2 class="section-title">{{ if eq .Language.Lang "en" }}Latest News{{ else }}ಇತ್ತೀಚಿನ ಸುದ್ದಿ{{ end }}</h2>
+    <div class="blog-grid">
+      {{ $news := where .Site.RegularPages "Section" "news" }}
+      {{ $news := where $news ".Language.Lang" .Language.Lang }}
+      {{ $news = where $news "Params.layout" "!=" "archive" }}
+      {{ $news := first 3 $news }}
+      {{ range $news }}
+        <div class="blog-card">
+          {{ with .Params.featuredImage }}
+            <img src="{{ . }}" alt="{{ $.Title }}">
+          {{ end }}
+          <div class="blog-card-content">
+            <div class="blog-meta">
+              <span>📅 {{ .Date.Format "02 Jan 2006" }}</span>
+            </div>
+            <h3>{{ .Title }}</h3>
+            <p>{{ .Params.summary }}</p>
+            <a href="{{ .Permalink }}" class="card-link">{{ if eq $.Language.Lang "en" }}Read More{{ else }}ಇನ್ನಷ್ಟು ಓದಿ{{ end }} →</a>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+    <div class="text-center mt-4">
+      <a href="{{ "/news/" | relLangURL }}" class="cta-button">{{ if eq .Language.Lang "en" }}View All News{{ else }}ಎಲ್ಲಾ ಸುದ್ದಿಗಳನ್ನು ವೀಕ್ಷಿಸಿ{{ end }}</a>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <h3 class="stat-number" data-target="{{ .Site.Params.stats_members }}">0</h3>
+        <p>{{ if eq .Language.Lang "en" }}Active Members{{ else }}ಸಕ್ರಿಯ ಸದಸ್ಯರು{{ end }}</p>
+      </div>
+      <div class="stat-item">
+        <h3 class="stat-number" data-target="{{ .Site.Params.stats_yearsOfService }}">0</h3>
+        <p>{{ if eq .Language.Lang "en" }}Years of Service{{ else }}ಸೇವೆಯ ವರ್ಷಗಳು{{ end }}</p>
+      </div>
+      <div class="stat-item">
+        <h3 class="stat-number" data-target="{{ .Site.Params.stats_eventsOrganized }}">0</h3>
+        <p>{{ if eq .Language.Lang "en" }}Events Organized{{ else }}ಆಯೋಜಿಸಿದ ಕಾರ್ಯಕ್ರಮಗಳು{{ end }}</p>
+      </div>
+      <div class="stat-item">
+        <h3 class="stat-number" data-target="{{ .Site.Params.stats_treesPlanted }}">0</h3>
+        <p>{{ if eq .Language.Lang "en" }}Trees Planted{{ else }}ನೆಟ್ಟ ಮರಗಳು{{ end }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- New Members -->
+<section>
+  <div class="container">
+    {{ $members := index .Site.Data.members .Language.Lang }}
+    <h2 class="section-title">{{ if eq .Language.Lang "en" }}Welcome New Members{{ else }}ಹೊಸ ಸದಸ್ಯರನ್ನು ಸ್ವಾಗತಿಸುತ್ತೇವೆ{{ end }}</h2>
+    <div class="cards-grid">
+      {{ range first 3 $members }}
+      <div class="card member-card">
+        <div class="member-photo">
+          {{ if .photo }}
+          <img src="{{ .photo }}" alt="{{ .name }}">
+          {{ else }}
+          <div class="photo-placeholder">👤</div>
+          {{ end }}
+        </div>
+        <div class="card-content text-center">
+          <h3>{{ .name }}</h3>
+          <p class="member-type">{{ .membershipType }} {{ if eq $.Language.Lang "en" }}Member{{ else }}ಸದಸ್ಯ{{ end }}</p>
+          <p class="member-date">{{ if eq $.Language.Lang "en" }}Joined{{ else }}ಸೇರಿದ್ದಾರೆ{{ end }}: {{ .joinedDate }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+
+    <div class="text-center mt-4">
+      <p style="font-size: 1.1rem; color: var(--text-color);">
+        {{ if eq .Language.Lang "en" }}
+          Join our growing community of {{ len $members }} members!
+        {{ else }}
+          ನಮ್ಮ {{ len $members }} ಸದಸ್ಯರ ಬೆಳೆಯುತ್ತಿರುವ ಸಮುದಾಯಕ್ಕೆ ಸೇರಿ!
+        {{ end }}
+      </p>
+      <a href="/{{ .Language.Lang }}/membership/" class="cta-button" style="margin-top: 1rem;">{{ if eq .Language.Lang "en" }}Become a Member{{ else }}ಸದಸ್ಯರಾಗಿ{{ end }}</a>
+    </div>
+  </div>
+</section>
+{{ end }}

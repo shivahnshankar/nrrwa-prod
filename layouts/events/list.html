@@ -1,0 +1,113 @@
+{{ define "main" }}
+{{ $now := now }}
+{{ $allEvents := where .Site.RegularPages "Section" "events" }}
+{{ $langPages := where $allEvents ".Language.Lang" .Language.Lang }}
+
+{{ $upcomingEvents := slice }}
+{{ $pastEvents := slice }}
+{{ range $langPages }}
+  {{ $eventDate := time .Params.eventDate }}
+  {{ if $eventDate.After $now }}
+    {{ $upcomingEvents = $upcomingEvents | append . }}
+  {{ else }}
+    {{ $pastEvents = $pastEvents | append . }}
+  {{ end }}
+{{ end }}
+
+<!-- Sort: upcoming by date ascending, past by date descending -->
+{{ $upcomingEvents = sort $upcomingEvents ".Params.eventDate" "asc" }}
+{{ $pastEvents = sort $pastEvents ".Params.eventDate" "desc" }}
+
+<!-- Combine: upcoming first, then past -->
+{{ $allSortedEvents := $upcomingEvents | append $pastEvents }}
+
+{{ $paginator := .Paginate $allSortedEvents 6 }}
+
+<div class="container">
+  <h1 class="section-title">{{ if eq .Language.Lang "en" }}Events{{ else }}ಕಾರ್ಯಕ್ರಮಗಳು{{ end }}</h1>
+
+  <!-- Upcoming Events Section -->
+  {{ $upcomingOnPage := slice }}
+  {{ $pastOnPage := slice }}
+  {{ range $paginator.Pages }}
+    {{ $eventDate := time .Params.eventDate }}
+    {{ if $eventDate.After $now }}
+      {{ $upcomingOnPage = $upcomingOnPage | append . }}
+    {{ else }}
+      {{ $pastOnPage = $pastOnPage | append . }}
+    {{ end }}
+  {{ end }}
+
+  {{ if gt (len $upcomingOnPage) 0 }}
+  <section>
+    <h2 class="section-subtitle">{{ if eq .Language.Lang "en" }}Upcoming Events{{ else }}ಮುಂಬರುವ ಕಾರ್ಯಕ್ರಮಗಳು{{ end }}</h2>
+    <div class="cards-grid">
+      {{ range $upcomingOnPage }}
+        <div class="card">
+          {{ with .Params.featuredImage }}
+            <img src="{{ . }}" alt="{{ $.Title }}">
+          {{ else }}
+            <div class="card-placeholder" style="background: linear-gradient(135deg, #4a7c59 0%, #2d5a3a 100%); height: 200px; display: flex; align-items: center; justify-content: center; font-size: 3rem;">📅</div>
+          {{ end }}
+          <div class="card-content">
+            <div class="blog-meta">
+              {{ with .Params.eventDate }}
+                <span>📅 {{ dateFormat "02 Jan 2006" . }}</span>
+              {{ end }}
+              {{ with .Params.tags }}
+                <span>🏷️ {{ delimit . ", " }}</span>
+              {{ end }}
+            </div>
+            <h3>{{ .Title }}</h3>
+            <p>{{ .Params.summary }}</p>
+            <a href="{{ .Permalink }}" class="card-link">{{ if eq $.Language.Lang "en" }}Learn More{{ else }}ಇನ್ನಷ್ಟು ತಿಳಿಯಿರಿ{{ end }} →</a>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </section>
+  {{ else if eq $paginator.PageNumber 1 }}
+  <section>
+    <h2 class="section-subtitle">{{ if eq .Language.Lang "en" }}Upcoming Events{{ else }}ಮುಂಬರುವ ಕಾರ್ಯಕ್ರಮಗಳು{{ end }}</h2>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-content">
+          <p style="text-align: center; color: #666;">{{ if eq .Language.Lang "en" }}No upcoming events at the moment. Check back soon!{{ else }}ಈ ಸಮಯದಲ್ಲಿ ಯಾವುದೇ ಮುಂಬರುವ ಕಾರ್ಯಕ್ರಮಗಳಿಲ್ಲ. ಶೀಘ್ರದಲ್ಲೇ ಮತ್ತೆ ಪರಿಶೀಲಿಸಿ!{{ end }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Past Events Section -->
+  {{ if gt (len $pastOnPage) 0 }}
+  <section style="margin-top: 4rem;">
+    <h2 class="section-subtitle">{{ if eq .Language.Lang "en" }}Past Events{{ else }}ಹಿಂದಿನ ಕಾರ್ಯಕ್ರಮಗಳು{{ end }}</h2>
+    <div class="cards-grid">
+      {{ range $pastOnPage }}
+        <div class="card">
+          {{ with .Params.featuredImage }}
+            <img src="{{ . }}" alt="{{ $.Title }}" style="opacity: 0.8;">
+          {{ else }}
+            <div class="card-placeholder" style="background: linear-gradient(135deg, #888 0%, #666 100%); height: 200px; display: flex; align-items: center; justify-content: center; font-size: 3rem;">📅</div>
+          {{ end }}
+          <div class="card-content">
+            <div class="blog-meta">
+              {{ with .Params.eventDate }}
+                <span>📅 {{ dateFormat "02 Jan 2006" . }}</span>
+              {{ end }}
+            </div>
+            <h3>{{ .Title }}</h3>
+            <p>{{ .Params.summary }}</p>
+            <a href="{{ .Permalink }}" class="card-link">{{ if eq $.Language.Lang "en" }}View Details{{ else }}ವಿವರಗಳನ್ನು ವೀಕ್ಷಿಸಿ{{ end }} →</a>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Pagination -->
+  {{ template "_internal/pagination.html" . }}
+</div>
+{{ end }}

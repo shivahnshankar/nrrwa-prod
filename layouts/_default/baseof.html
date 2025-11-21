@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="{{ .Language.Lang }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ .Title }} | {{ .Site.Title }}</title>
+  <meta name="description" content="{{ .Params.description | default .Site.Params.description }}">
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Site Header (Sticky) -->
+  <div class="site-header-wrapper">
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo-section">
+            <img src="/assets/images/logo.png" alt="NRRWA Logo">
+            <div class="site-title">
+              <h1>{{ .Site.Language.Params.siteName }}</h1>
+              <p>{{ .Site.Language.Params.siteDescription }}</p>
+            </div>
+          </div>
+          <!-- Search -->
+          <div id="search"></div>
+          <!-- Language Switcher -->
+          <div class="language-switcher">
+            {{ if .IsTranslated }}
+              {{ range .Translations }}
+                <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+              {{ end }}
+            {{ else }}
+              {{ range .Site.Home.AllTranslations }}
+                {{ if ne $.Language.Lang .Language.Lang }}
+                  <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+                {{ end }}
+              {{ end }}
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation -->
+    {{ partial "navigation.html" . }}
+  </div>
+
+  <!-- Main Content -->
+  <main data-pagefind-body>
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <!-- Footer -->
+  {{ partial "footer.html" . }}
+
+  <script src="/js/main.js"></script>
+  <script src="/pagefind/pagefind-ui.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      new PagefindUI({ element: "#search", showSubResults: true });
+    });
+  </script>
+</body>
+</html>

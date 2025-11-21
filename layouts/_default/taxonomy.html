@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="container">
+  <h1 class="section-title">{{ if eq .Language.Lang "en" }}All Tags{{ else }}ಎಲ್ಲಾ ಟ್ಯಾಗ್‌ಗಳು{{ end }}</h1>
+
+  <div class="tags-cloud">
+    {{ range .Data.Terms.Alphabetical }}
+    <a href="{{ .Page.RelPermalink }}" class="tag-pill">
+      {{ .Page.Title }}
+      <span class="tag-count">({{ .Count }})</span>
+    </a>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

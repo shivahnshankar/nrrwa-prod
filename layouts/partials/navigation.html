@@ -1,0 +1,71 @@
+<nav>
+  <button class="menu-toggle" aria-label="Toggle menu">
+    <span class="hamburger"></span>
+    <span class="hamburger"></span>
+    <span class="hamburger"></span>
+  </button>
+  <ul class="nav-menu">
+    <li><a href="/{{ .Language.Lang }}/"{{ if eq .RelPermalink (printf "/%s/" .Language.Lang) }} class="active"{{ end }}>{{ if eq .Language.Lang "en" }}Home{{ else }}ಮುಖಪುಟ{{ end }}</a></li>
+
+    <!-- About with submenu -->
+    <li class="has-submenu {{ if hasPrefix .RelPermalink (printf "/%s/about/" .Language.Lang) }}active-section{{ end }}">
+      <a href="/{{ .Language.Lang }}/about/">{{ if eq .Language.Lang "en" }}About{{ else }}ನಮ್ಮ ಬಗ್ಗೆ{{ end }}</a>
+      <ul class="submenu">
+        <li><a href="/{{ .Language.Lang }}/about/">{{ if eq .Language.Lang "en" }}Overview{{ else }}ಅವಲೋಕನ{{ end }}</a></li>
+        <li><a href="/{{ .Language.Lang }}/about/vision-mission/">{{ if eq .Language.Lang "en" }}Vision & Mission{{ else }}ದೃಷ್ಟಿ ಮತ್ತು ಉದ್ದೇಶ{{ end }}</a></li>
+        <li><a href="/{{ .Language.Lang }}/about/executive-committee/">{{ if eq .Language.Lang "en" }}Executive Committee{{ else }}ಕಾರ್ಯಕಾರಿ ಸಮಿತಿ{{ end }}</a></li>
+        <li><a href="/{{ .Language.Lang }}/about/guidelines/">{{ if eq .Language.Lang "en" }}Guidelines{{ else }}ಮಾರ್ಗಸೂಚಿಗಳು{{ end }}</a></li>
+        <li><a href="/{{ .Language.Lang }}/about/faqs/">{{ if eq .Language.Lang "en" }}FAQs{{ else }}ಪ್ರಶ್ನೆಗಳು{{ end }}</a></li>
+      </ul>
+    </li>
+
+    <!-- Focus Areas with submenu -->
+    <li class="has-submenu {{ if hasPrefix .RelPermalink (printf "/%s/focus/" .Language.Lang) }}active-section{{ end }}">
+      <a href="/{{ .Language.Lang }}/focus/">{{ if eq .Language.Lang "en" }}Focus Areas{{ else }}ಗಮನ ಕೇಂದ್ರಗಳು{{ end }}</a>
+      <ul class="submenu">
+        <li><a href="/{{ .Language.Lang }}/focus/public-amenities/">{{ if eq .Language.Lang "en" }}Public Amenities{{ else }}ಸಾರ್ವಜನಿಕ ಸೌಲಭ್ಯಗಳು{{ end }}</a></li>
+        <li><a href="/{{ .Language.Lang }}/focus/environment/">{{ if eq .Language.Lang "en" }}Environment{{ else }}ಪರಿಸರ{{ end }}</a></li>
+        <li><a href="/{{ .Language.Lang }}/focus/social-services/">{{ if eq .Language.Lang "en" }}Social Services{{ else }}ಸಾಮಾಜಿಕ ಸೇವೆಗಳು{{ end }}</a></li>
+        <li><a href="/{{ .Language.Lang }}/focus/health/">{{ if eq .Language.Lang "en" }}Health & Wellbeing{{ else }}ಆರೋಗ್ಯ ಮತ್ತು ಯೋಗಕ್ಷೇಮ{{ end }}</a></li>
+        <li><a href="/{{ .Language.Lang }}/focus/culture/">{{ if eq .Language.Lang "en" }}Culture & Heritage{{ else }}ಸಂಸ್ಕೃತಿ ಮತ್ತು ಪರಂಪರೆ{{ end }}</a></li>
+        <li><a href="/{{ .Language.Lang }}/focus/safety/">{{ if eq .Language.Lang "en" }}Safety & Security{{ else }}ಸುರಕ್ಷತೆ ಮತ್ತು ಭದ್ರತೆ{{ end }}</a></li>
+      </ul>
+    </li>
+
+    <li><a href="/{{ .Language.Lang }}/events/"{{ if hasPrefix .RelPermalink (printf "/%s/events/" .Language.Lang) }} class="active"{{ end }}>{{ if eq .Language.Lang "en" }}Events{{ else }}ಕಾರ್ಯಕ್ರಮಗಳು{{ end }}</a></li>
+    <li><a href="/{{ .Language.Lang }}/news/"{{ if hasPrefix .RelPermalink (printf "/%s/news/" .Language.Lang) }} class="active"{{ end }}>{{ if eq .Language.Lang "en" }}News{{ else }}ಸುದ್ದಿ{{ end }}</a></li>
+    <li><a href="/{{ .Language.Lang }}/membership/"{{ if hasPrefix .RelPermalink (printf "/%s/membership/" .Language.Lang) }} class="active"{{ end }}>{{ if eq .Language.Lang "en" }}Membership{{ else }}ಸದಸ್ಯತ್ವ{{ end }}</a></li>
+
+    <!-- Reports with submenu -->
+    <li class="has-submenu {{ if or (hasPrefix .RelPermalink (printf "/%s/reports/" .Language.Lang)) (hasPrefix .RelPermalink (printf "/%s/donors/" .Language.Lang)) }}active-section{{ end }}">
+      <a href="/{{ .Language.Lang }}/reports/">{{ if eq .Language.Lang "en" }}Reports{{ else }}ವರದಿಗಳು{{ end }}</a>
+      <ul class="submenu">
+        <li><a href="/{{ .Language.Lang }}/reports/">{{ if eq .Language.Lang "en" }}Documents{{ else }}ದಸ್ತಾವೇಜುಗಳು{{ end }}</a></li>
+        <li><a href="/{{ .Language.Lang }}/donors/">{{ if eq .Language.Lang "en" }}Donors{{ else }}ದಾನಿಗಳು{{ end }}</a></li>
+      </ul>
+    </li>
+
+    <!-- Partners with submenu -->
+    <li class="has-submenu {{ if hasPrefix .RelPermalink (printf "/%s/partners/" .Language.Lang) }}active-section{{ end }}">
+      <a href="/{{ .Language.Lang }}/partners/">{{ if eq .Language.Lang "en" }}Partners{{ else }}ಪಾಲುದಾರರು{{ end }}</a>
+      <ul class="submenu">
+        <li><a href="/{{ .Language.Lang }}/partners/deepa-recreation-club/">{{ if eq .Language.Lang "en" }}Deepa Recreation Club{{ else }}ದೀಪಾ ರಿಕ್ರಿಯೇಷನ್ ಕ್ಲಬ್{{ end }}</a></li>
+        <li><a href="/{{ .Language.Lang }}/partners/clean-beautiful-roopanagar/">{{ if eq .Language.Lang "en" }}Clean Beautiful Roopanagar{{ else }}ಕ್ಲೀನ್ ಬ್ಯೂಟಿಫುಲ್ ರೂಪನಗರ{{ end }}</a></li>
+      </ul>
+    </li>
+
+    <!-- Contact with submenu -->
+    <li class="has-submenu {{ if or (hasPrefix .RelPermalink (printf "/%s/contact/" .Language.Lang)) (hasPrefix .RelPermalink (printf "/%s/directory/" .Language.Lang)) }}active-section{{ end }}">
+      <a href="/{{ .Language.Lang }}/contact/">{{ if eq .Language.Lang "en" }}Contact{{ else }}ಸಂಪರ್ಕ{{ end }}</a>
+      <ul class="submenu">
+        <li><a href="/{{ .Language.Lang }}/contact/">{{ if eq .Language.Lang "en" }}Contact Us{{ else }}ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ{{ end }}</a></li>
+        <li><a href="/{{ .Language.Lang }}/directory/">{{ if eq .Language.Lang "en" }}Directory{{ else }}ಕೋಶ{{ end }}</a></li>
+      </ul>
+    </li>
+
+    <!-- Join Button - Highlighted -->
+    <li class="nav-join-button">
+      <a href="/{{ .Language.Lang }}/membership/">{{ if eq .Language.Lang "en" }}Join Us{{ else }}ನಮ್ಮೊಂದಿಗೆ ಸೇರಿ{{ end }}</a>
+    </li>
+  </ul>
+</nav>

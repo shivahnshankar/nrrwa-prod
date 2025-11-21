@@ -1,0 +1,23 @@
+{{ define "main" }}
+{{ $faqs := index .Site.Data.faqs .Language.Lang }}
+
+<div class="container">
+  <h1 class="section-title">{{ .Title }}</h1>
+
+  <div class="post-content">
+    {{ .Content }}
+
+    {{ range $faqs }}
+    <div class="faq-item">
+      <div class="faq-question">
+        {{ .question }}
+        <span>▼</span>
+      </div>
+      <div class="faq-answer">
+        {{ .answer | safeHTML }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

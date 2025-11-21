@@ -1,0 +1,151 @@
+en:
+  title: "Community Directory"
+  subtitle: "Important contacts and services for Roopanagara residents"
+
+  emergency:
+    title: "Emergency Services"
+    contacts:
+      - name: "Police"
+        icon: "🚓"
+        number: "100"
+        color: "#e74c3c"
+      - name: "Fire"
+        icon: "🚒"
+        number: "101"
+        color: "#f39c12"
+      - name: "Ambulance"
+        icon: "🚑"
+        number: "108"
+        color: "#3498db"
+
+  government:
+    title: "Local Authorities"
+    contacts:
+      - name: "BBMP Ward Office"
+        phone: "+91-821-XXXXXXX"
+        address: "Ward 65, Roopanagara"
+        hours: "Mon-Fri: 10 AM - 5 PM"
+      - name: "Electricity Board (CESC)"
+        phone: "1912"
+        address: "Roopanagara Sub-Division"
+        hours: "24x7 Emergency"
+      - name: "Water Supply (VVWW)"
+        phone: "+91-821-XXXXXXX"
+        address: "Roopanagara Water Works"
+        hours: "Mon-Sat: 9 AM - 5 PM"
+
+  healthcare:
+    title: "Healthcare Services"
+    contacts:
+      - name: "Government Hospital"
+        phone: "+91-821-XXXXXXX"
+        address: "K.R. Hospital Road"
+        hours: "24x7"
+      - name: "Primary Health Center"
+        phone: "+91-821-XXXXXXX"
+        address: "Roopanagara Main Road"
+        hours: "9 AM - 5 PM"
+      - name: "Apollo Pharmacy"
+        phone: "+91-821-XXXXXXX"
+        address: "Near Bus Stop"
+        hours: "8 AM - 10 PM"
+
+  education:
+    title: "Educational Institutions"
+    contacts:
+      - name: "Government School"
+        phone: "+91-821-XXXXXXX"
+        address: "10th Cross, Roopanagara"
+        hours: "8 AM - 4 PM"
+      - name: "Roopanagara High School"
+        phone: "+91-821-XXXXXXX"
+        address: "Main Road"
+        hours: "8 AM - 4 PM"
+
+  utilities:
+    title: "Essential Services"
+    contacts:
+      - name: "Gas Agency"
+        phone: "+91-821-XXXXXXX"
+        address: "Roopanagara"
+        hours: "9 AM - 6 PM"
+      - name: "Post Office"
+        phone: "+91-821-XXXXXXX"
+        address: "Roopanagara - 570026"
+        hours: "Mon-Sat: 10 AM - 5 PM"
+
+kn:
+  title: "ಸಮುದಾಯ ಕೋಶ"
+  subtitle: "ರೂಪನಗರ ನಿವಾಸಿಗಳಿಗೆ ಪ್ರಮುಖ ಸಂಪರ್ಕಗಳು ಮತ್ತು ಸೇವೆಗಳು"
+
+  emergency:
+    title: "ತುರ್ತು ಸೇವೆಗಳು"
+    contacts:
+      - name: "ಪೊಲೀಸ್"
+        icon: "🚓"
+        number: "100"
+        color: "#e74c3c"
+      - name: "ಅಗ್ನಿಶಾಮಕ"
+        icon: "🚒"
+        number: "101"
+        color: "#f39c12"
+      - name: "ಆಂಬುಲೆನ್ಸ್"
+        icon: "🚑"
+        number: "108"
+        color: "#3498db"
+
+  government:
+    title: "ಸ್ಥಳೀಯ ಅಧಿಕಾರಿಗಳು"
+    contacts:
+      - name: "BBMP ವಾರ್ಡ್ ಕಚೇರಿ"
+        phone: "+91-821-XXXXXXX"
+        address: "ವಾರ್ಡ್ 65, ರೂಪನಗರ"
+        hours: "ಸೋಮ-ಶುಕ್ರ: 10 AM - 5 PM"
+      - name: "ವಿದ್ಯುತ್ ಮಂಡಳಿ (CESC)"
+        phone: "1912"
+        address: "ರೂಪನಗರ ಉಪ-ವಿಭಾಗ"
+        hours: "24x7 ತುರ್ತು"
+      - name: "ನೀರು ಸರಬರಾಜು (VVWW)"
+        phone: "+91-821-XXXXXXX"
+        address: "ರೂಪನಗರ ನೀರು ಕಾಮಗಾರಿ"
+        hours: "ಸೋಮ-ಶನಿ: 9 AM - 5 PM"
+
+  healthcare:
+    title: "ಆರೋಗ್ಯ ಸೇವೆಗಳು"
+    contacts:
+      - name: "ಸರ್ಕಾರಿ ಆಸ್ಪತ್ರೆ"
+        phone: "+91-821-XXXXXXX"
+        address: "ಕೆ.ಆರ್. ಆಸ್ಪತ್ರೆ ರಸ್ತೆ"
+        hours: "24x7"
+      - name: "ಪ್ರಾಥಮಿಕ ಆರೋಗ್ಯ ಕೇಂದ್ರ"
+        phone: "+91-821-XXXXXXX"
+        address: "ರೂಪನಗರ ಮುಖ್ಯ ರಸ್ತೆ"
+        hours: "9 AM - 5 PM"
+      - name: "ಅಪೊಲೊ ಫಾರ್ಮಸಿ"
+        phone: "+91-821-XXXXXXX"
+        address: "ಬಸ್ ನಿಲ್ದಾಣದ ಹತ್ತಿರ"
+        hours: "8 AM - 10 PM"
+
+  education:
+    title: "ಶೈಕ್ಷಣಿಕ ಸಂಸ್ಥೆಗಳು"
+    contacts:
+      - name: "ಸರ್ಕಾರಿ ಶಾಲೆ"
+        phone: "+91-821-XXXXXXX"
+        address: "10ನೇ ಅಡ್ಡ, ರೂಪನಗರ"
+        hours: "8 AM - 4 PM"
+      - name: "ರೂಪನಗರ ಪ್ರೌಢಶಾಲೆ"
+        phone: "+91-821-XXXXXXX"
+        address: "ಮುಖ್ಯ ರಸ್ತೆ"
+        hours: "8 AM - 4 PM"
+
+  utilities:
+    title: "ಅತ್ಯಗತ್ಯ ಸೇವೆಗಳು"
+    contacts:
+      - name: "ಗ್ಯಾಸ್ ಏಜೆನ್ಸಿ"
+        phone: "+91-821-XXXXXXX"
+        address: "ರೂಪನಗರ"
+        hours: "9 AM - 6 PM"
+      - name: "ಅಂಚೆ ಕಛೇರಿ"
+        phone: "+91-821-XXXXXXX"
+        address: "ರೂಪನಗರ - 570026"
+        hours: "ಸೋಮ-ಶನಿ: 10 AM - 5 PM"

@@ -1,0 +1,153 @@
+baseURL = 'https://nrrwa.org/'
+languageCode = 'en-us'
+title = 'NRRWA'
+defaultContentLanguage = 'en'
+
+# Multilingual configuration
+[languages]
+  [languages.en]
+    languageName = 'English'
+    weight = 1
+    title = 'NRRWA'
+    [languages.en.params]
+      siteName = 'NRRWA'
+      siteDescription = 'Namma Roopanagara Residents Welfare Association'
+
+  [languages.kn]
+    languageName = 'ಕನ್ನಡ'
+    weight = 2
+    title = 'ಎನ್ಆರ್ಆರ್ಡಬ್ಲ್ಯೂಎ'
+    [languages.kn.params]
+      siteName = 'ಎನ್ಆರ್ಆರ್ಡಬ್ಲ್ಯೂಎ'
+      siteDescription = 'ನಮ್ಮ ರೂಪನಗರ ನಿವಾಸಿಗಳ ಕಲ್ಯಾಣ ಸಂಘ'
+
+# Taxonomies (built-in Hugo feature)
+[taxonomies]
+  tag = 'tags'
+  category = 'categories'
+
+# Pagination
+[pagination]
+  pagerSize = 10
+
+# Params
+[params]
+  description = 'Namma Roopanagara Residents Welfare Association'
+  author = 'NRRWA'
+  stats_members = 400
+  stats_yearsOfService = 25
+  stats_eventsOrganized = 100
+  stats_treesPlanted = 500
+
+# Permalinks
+[permalinks]
+  news = '/:sections/:slug/'
+  events = '/:sections/:slug/'
+
+# Menu configuration (can be overridden per language)
+[[languages.en.menu.main]]
+  name = 'Home'
+  url = '/'
+  weight = 1
+
+[[languages.en.menu.main]]
+  name = 'About'
+  url = '/about/'
+  weight = 2
+
+[[languages.en.menu.main]]
+  name = 'Focus Areas'
+  url = '/focus/'
+  weight = 3
+
+[[languages.en.menu.main]]
+  name = 'Partners'
+  url = '/partners/'
+  weight = 4
+
+[[languages.en.menu.main]]
+  name = 'Events'
+  url = '/events/'
+  weight = 5
+
+[[languages.en.menu.main]]
+  name = 'News'
+  url = '/news/'
+  weight = 6
+
+[[languages.en.menu.main]]
+  name = 'Membership'
+  url = '/membership/'
+  weight = 7
+
+[[languages.en.menu.main]]
+  name = 'Reports'
+  url = '/reports/'
+  weight = 8
+
+[[languages.en.menu.main]]
+  name = 'Contact'
+  url = '/contact/'
+  weight = 9
+
+# Kannada menu
+[[languages.kn.menu.main]]
+  name = 'ಮುಖಪುಟ'
+  url = '/'
+  weight = 1
+
+[[languages.kn.menu.main]]
+  name = 'ನಮ್ಮ ಬಗ್ಗೆ'
+  url = '/about/'
+  weight = 2
+
+[[languages.kn.menu.main]]
+  name = 'ಗಮನ ಕೇಂದ್ರಗಳು'
+  url = '/focus/'
+  weight = 3
+
+[[languages.kn.menu.main]]
+  name = 'ಪಾಲುದಾರರು'
+  url = '/partners/'
+  weight = 4
+
+[[languages.kn.menu.main]]
+  name = 'ಕಾರ್ಯಕ್ರಮಗಳು'
+  url = '/events/'
+  weight = 5
+
+[[languages.kn.menu.main]]
+  name = 'ಸುದ್ದಿ'
+  url = '/news/'
+  weight = 6
+
+[[languages.kn.menu.main]]
+  name = 'ಸದಸ್ಯತ್ವ'
+  url = '/membership/'
+  weight = 7
+
+[[languages.kn.menu.main]]
+  name = 'ವರದಿಗಳು'
+  url = '/reports/'
+  weight = 8
+
+[[languages.kn.menu.main]]
+  name = 'ಸಂಪರ್ಕ'
+  url = '/contact/'
+  weight = 9
+
+# Output formats
+[outputs]
+  home = ['HTML', 'RSS', 'JSON']
+  section = ['HTML', 'RSS']
+
+# Image processing
+[imaging]
+  quality = 85
+  resampleFilter = 'Lanczos'
+
+# Markup
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

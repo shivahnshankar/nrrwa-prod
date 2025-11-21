@@ -1,0 +1,57 @@
+{{ define "main" }}
+{{ $data := index .Site.Data.visionMission .Language.Lang }}
+
+<div class="container">
+  <h1 class="section-title">{{ $data.vision.title }}</h1>
+
+  <section class="vision-mission-section">
+    <div class="statement-card vision-card">
+      <div class="statement-icon">🎯</div>
+      <p class="statement-text">{{ $data.vision.content }}</p>
+    </div>
+  </section>
+
+  <h2 class="section-title">{{ $data.mission.title }}</h2>
+
+  <section class="vision-mission-section">
+    <div class="statement-card mission-card">
+      <div class="statement-icon">🚀</div>
+      <p class="statement-text">{{ $data.mission.content }}</p>
+    </div>
+  </section>
+
+  <h2 class="section-title">{{ $data.values.title }}</h2>
+
+  <section class="values-section">
+    <div class="values-grid">
+      {{ range $data.values.items }}
+      <div class="value-card">
+        <div class="value-icon">{{ .icon }}</div>
+        <h3 class="value-name">{{ .name }}</h3>
+        <p class="value-description">{{ .description }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </section>
+
+  <h2 class="section-title">{{ $data.objectives.title }}</h2>
+
+  <section class="objectives-section">
+    <div class="objectives-grid">
+      {{ range $data.objectives.items }}
+      <div class="objective-card">
+        <div class="objective-icon">{{ .icon }}</div>
+        <h3 class="objective-title">{{ .title }}</h3>
+        <p class="objective-description">{{ .description }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </section>
+
+  <section style="margin: 4rem 0; text-align: center; padding: 3rem; background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-blue) 100%); border-radius: 15px; color: white;">
+    <h2 style="color: var(--golden); margin-bottom: 1rem;">{{ if eq .Language.Lang "en" }}Join Us in Our Mission{{ else }}ನಮ್ಮ ಉದ್ದೇಶದಲ್ಲಿ ನಮ್ಮೊಂದಿಗೆ ಸೇರಿ{{ end }}</h2>
+    <p style="font-size: 1.2rem; margin-bottom: 2rem;">{{ if eq .Language.Lang "en" }}Help us build a better community for everyone in Roopanagara.{{ else }}ರೂಪನಗರದಲ್ಲಿ ಎಲ್ಲರಿಗೂ ಉತ್ತಮ ಸಮುದಾಯವನ್ನು ನಿರ್ಮಿಸಲು ನಮಗೆ ಸಹಾಯ ಮಾಡಿ.{{ end }}</p>
+    <a href="/{{ .Language.Lang }}/membership/" style="display: inline-block; padding: 15px 40px; background-color: var(--golden); color: var(--dark-gray); text-decoration: none; border-radius: 5px; font-weight: 600; font-size: 1.1rem;">{{ if eq .Language.Lang "en" }}Become a Member{{ else }}ಸದಸ್ಯರಾಗಿ{{ end }}</a>
+  </section>
+</div>
+{{ end }}

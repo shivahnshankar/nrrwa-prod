@@ -1,0 +1,88 @@
+{{ define "main" }}
+{{ $allNews := where .Site.RegularPages "Section" "news" }}
+{{ $langNews := where $allNews ".Language.Lang" .Language.Lang }}
+{{ $langNews = where $langNews "Params.layout" "!=" "archive" }}
+<div class="container">
+  <h1 class="section-title">{{ if eq .Language.Lang "en" }}Community News{{ else }}ಸಮುದಾಯ ಸುದ್ದಿ{{ end }}</h1>
+
+  <div class="content-with-sidebar">
+    <div>
+      <!-- News Posts -->
+      <div class="news-list-horizontal">
+        {{ $paginator := .Paginate $langNews }}
+        {{ range $index, $page := $paginator.Pages }}
+        <article class="news-card-horizontal{{ if mod $index 2 }} reverse{{ end }}">
+          <div class="news-image-horizontal">
+            {{ with $page.Params.featuredImage }}
+            <img src="{{ . }}" alt="{{ $page.Title }}">
+            {{ else }}
+            <div class="news-placeholder">📰</div>
+            {{ end }}
+          </div>
+
+          <div class="news-content-horizontal">
+            <div class="blog-meta">
+              <span>📅 {{ $page.Date.Format "02 Jan 2006" }}</span>
+              {{ with $page.Params.tags }}
+              <span>🏷️
+                {{ range . }}
+                  <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/" style="color: var(--primary-blue); text-decoration: none;">{{ . }}</a>
+                {{ end }}
+              </span>
+              {{ end }}
+            </div>
+            <h3 class="news-title">{{ $page.Title }}</h3>
+            <p class="news-summary">{{ $page.Params.summary }}</p>
+            <a href="{{ $page.Permalink }}" class="news-link">{{ if eq $.Language.Lang "en" }}Read More{{ else }}ಇನ್ನಷ್ಟು ಓದಿ{{ end }} →</a>
+          </div>
+        </article>
+        {{ end }}
+      </div>
+
+      <!-- Hugo Built-in Pagination -->
+      {{ template "_internal/pagination.html" . }}
+    </div>
+
+    <aside class="sidebar">
+      <h3>{{ if eq .Language.Lang "en" }}Tags{{ else }}ಟ್ಯಾಗ್‌ಗಳು{{ end }}</h3>
+      <ul>
+        {{ $newsTags := dict }}
+        {{ range $langNews }}
+          {{ range .Params.tags }}
+            {{ $count := index $newsTags . | default 0 }}
+            {{ $newsTags = merge $newsTags (dict . (add $count 1)) }}
+          {{ end }}
+        {{ end }}
+        {{ range $tag, $count := $newsTags }}
+        <li>
+          <a href="{{ "/tags/" | relLangURL }}{{ $tag | urlize }}/">
+            {{ $tag }}
+            <span style="color: #999; font-size: 0.9em;">({{ $count }})</span>
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+
+      <h3 style="margin-top: 2rem;">{{ if eq .Language.Lang "en" }}Archive{{ else }}ಆರ್ಕೈವ್{{ end }}</h3>
+      <ul>
+        {{ $newsPages := where $langNews "Params.layout" "!=" "archive" }}
+        {{ $years := slice }}
+        {{ range $newsPages }}
+          {{ $year := .Date.Format "2006" }}
+          {{ if not (in $years $year) }}
+            {{ $years = $years | append $year }}
+          {{ end }}
+        {{ end }}
+        {{ range sort $years "value" "desc" }}
+        <li>
+          <a href="{{ "/news/news-archive/" | relLangURL }}#{{ . }}">
+            {{ . }}
+            <span style="color: #999; font-size: 0.9em;">({{ len (where $newsPages "Date.Year" (int .)) }})</span>
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+    </aside>
+  </div>
+</div>
+{{ end }}

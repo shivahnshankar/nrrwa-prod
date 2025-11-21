@@ -1,0 +1,129 @@
+{{ define "main" }}
+{{ $data := index .Site.Data.membership .Language.Lang }}
+
+<div class="container">
+  <h1 class="section-title">{{ .Title }}</h1>
+
+  <div class="post-content" style="max-width: 900px; margin: 0 auto;">
+    {{ .Content }}
+  </div>
+
+  <!-- Membership Cards Section -->
+  <section style="margin: 4rem 0;">
+    <h2 class="section-subtitle" style="text-align: center; margin-bottom: 3rem;">
+      {{ if eq .Language.Lang "en" }}Choose Your Membership{{ else }}ನಿಮ್ಮ ಸದಸ್ಯತ್ವವನ್ನು ಆಯ್ಕೆಮಾಡಿ{{ end }}
+    </h2>
+
+    <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1100px; margin: 0 auto;">
+      {{ range $data.types }}
+      <div class="membership-card{{ if .popular }} popular{{ end }}">
+        {{ if .popular }}
+        <div class="popular-badge">{{ if eq $.Language.Lang "en" }}Most Popular{{ else }}ಅತ್ಯಂತ ಜನಪ್ರಿಯ{{ end }}</div>
+        {{ end }}
+        <div class="membership-icon">{{ .icon }}</div>
+        <h3 class="membership-name">{{ .name }}</h3>
+        <div class="membership-price">
+          <span class="price">{{ .price }}</span>
+          <span class="period">{{ .period }}</span>
+        </div>
+        <ul class="membership-features">
+          {{ range .features }}
+          <li>✓ {{ . }}</li>
+          {{ end }}
+        </ul>
+        <a href="/{{ $.Language.Lang }}/contact/" class="membership-button">{{ if eq $.Language.Lang "en" }}Join Now{{ else }}ಈಗ ಸೇರಿ{{ end }}</a>
+      </div>
+      {{ end }}
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section style="margin: 4rem 0;">
+    <h2 class="section-subtitle" style="text-align: center; margin-bottom: 3rem;">
+      {{ if eq .Language.Lang "en" }}Membership Benefits{{ else }}ಸದಸ್ಯತ್ವ ಪ್ರಯೋಜನಗಳು{{ end }}
+    </h2>
+    <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
+      {{ range $data.benefits }}
+      <div class="card" style="text-align: center; padding: 2rem;">
+        <div style="font-size: 3rem; margin-bottom: 1rem;">{{ .icon }}</div>
+        <h3 style="color: var(--primary-green); margin-bottom: 0.75rem;">{{ .title }}</h3>
+        <p style="color: #666; line-height: 1.6;">{{ .description }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </section>
+
+  <!-- Payment Methods Section -->
+  <section style="margin: 4rem 0; padding: 3rem; background: var(--light-gray); border-radius: 15px;">
+    <h2 class="section-subtitle" style="text-align: center; margin-bottom: 2rem;">
+      {{ if eq .Language.Lang "en" }}Payment Methods{{ else }}ಪಾವತಿ ವಿಧಾನಗಳು{{ end }}
+    </h2>
+
+    <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto 3rem;">
+      {{ range $data.payment.methods }}
+      <div class="card">
+        <div class="card-content">
+          <h3 style="color: var(--primary-green); margin-bottom: 1rem;">{{ .type }}</h3>
+          <table style="width: 100%; font-size: 0.95rem;">
+            {{ range .details }}
+            <tr>
+              <td style="padding: 0.5rem 0; color: #666; font-weight: 600;">{{ .label }}:</td>
+              <td style="padding: 0.5rem 0; color: var(--text-color);">{{ .value }}</td>
+            </tr>
+            {{ end }}
+          </table>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+
+    <!-- Payment Steps -->
+    <div style="max-width: 800px; margin: 0 auto;">
+      <h3 style="color: var(--primary-blue); margin-bottom: 1.5rem; text-align: center;">
+        {{ if eq .Language.Lang "en" }}How to Join{{ else }}ಹೇಗೆ ಸೇರುವುದು{{ end }}
+      </h3>
+      <ol style="list-style: none; padding: 0;">
+        {{ range $index, $step := $data.payment.steps }}
+        <li style="margin-bottom: 1rem; padding-left: 3rem; position: relative;">
+          <span style="position: absolute; left: 0; top: 0; background: var(--primary-green); color: white; width: 2rem; height: 2rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600;">
+            {{ add $index 1 }}
+          </span>
+          {{ $step }}
+        </li>
+        {{ end }}
+      </ol>
+
+      <!-- Required Info -->
+      <div style="margin-top: 2rem; padding: 1.5rem; background: white; border-radius: 10px; border-left: 4px solid var(--primary-blue);">
+        <h4 style="color: var(--primary-blue); margin-bottom: 1rem;">
+          {{ if eq .Language.Lang "en" }}Required Information{{ else }}ಅಗತ್ಯವಿರುವ ಮಾಹಿತಿ{{ end }}
+        </h4>
+        <ul style="color: #666; line-height: 1.8;">
+          {{ range $data.payment.requiredInfo }}
+          <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section style="margin: 4rem 0; text-align: center; padding: 3rem; background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-blue) 100%); border-radius: 15px; color: white;">
+    <h2 style="color: var(--golden); margin-bottom: 1rem;">{{ if eq .Language.Lang "en" }}Ready to Join?{{ else }}ಸೇರಲು ಸಿದ್ಧರಾಗಿದ್ದೀರಾ?{{ end }}</h2>
+    <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.95;">
+      {{ if eq .Language.Lang "en" }}Contact us to complete your membership registration{{ else }}ನಿಮ್ಮ ಸದಸ್ಯತ್ವ ನೋಂದಣಿಯನ್ನು ಪೂರ್ಣಗೊಳಿಸಲು ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ{{ end }}
+    </p>
+    <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem;">
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <span style="font-size: 1.5rem;">📧</span>
+        <a href="mailto:nammaroopanagara@gmail.com" style="color: white; text-decoration: none;">nammaroopanagara@gmail.com</a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <span style="font-size: 1.5rem;">📞</span>
+        <a href="tel:+919986079832" style="color: white; text-decoration: none;">+91-99860-79832</a>
+      </div>
+    </div>
+    <a href="/{{ .Language.Lang }}/contact/" style="display: inline-block; padding: 15px 40px; background-color: var(--golden); color: var(--dark-gray); text-decoration: none; border-radius: 5px; font-weight: 600; font-size: 1.1rem;">{{ if eq .Language.Lang "en" }}Contact Us{{ else }}ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ{{ end }}</a>
+  </section>
+</div>
+{{ end }}

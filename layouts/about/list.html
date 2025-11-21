@@ -1,0 +1,78 @@
+{{ define "main" }}
+<div class="container">
+  <h1 class="section-title">{{ if eq .Language.Lang "en" }}About NRRWA{{ else }}NRRWA ಬಗ್ಗೆ{{ end }}</h1>
+  
+  <div class="intro-text" style="max-width: 800px; margin: 0 auto 3rem; text-align: center; font-size: 1.1rem; color: #666;">
+    {{ if eq .Language.Lang "en" }}
+      <p>Namma Roopanagara Residents Welfare Association is dedicated to improving the quality of life for residents through community engagement and development initiatives.</p>
+    {{ else }}
+      <p>ನಮ್ಮ ರೂಪನಗರ ನಿವಾಸಿಗಳ ಕಲ್ಯಾಣ ಸಂಘವು ಸಮುದಾಯದ ತೊಡಗಿಸಿಕೊಳ್ಳುವಿಕೆ ಮತ್ತು ಅಭಿವೃದ್ಧಿ ಉಪಕ್ರಮಗಳ ಮೂಲಕ ನಿವಾಸಿಗಳ ಜೀವನ ಗುಣಮಟ್ಟವನ್ನು ಸುಧಾರಿಸಲು ಸಮರ್ಪಿತವಾಗಿದೆ.</p>
+    {{ end }}
+  </div>
+
+  <div class="cards-grid">
+    {{ range .Pages }}
+      {{ if ne .File.LogicalName "_index.en.md" }}
+      {{ if ne .File.LogicalName "_index.kn.md" }}
+      <div class="card">
+        <div class="card-icon" style="font-size: 3rem; text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);">
+          {{ if eq .File.LogicalName "vision-mission.en.md" }}🎯
+          {{ else if eq .File.LogicalName "executive-committee.en.md" }}👥
+          {{ else if eq .File.LogicalName "guidelines.en.md" }}📋
+          {{ else if eq .File.LogicalName "faqs.en.md" }}❓
+          {{ else }}📄{{ end }}
+        </div>
+        <div class="card-content">
+          <h3>{{ .Title }}</h3>
+          {{ with .Params.summary }}
+            <p>{{ . }}</p>
+          {{ else }}
+            <p>{{ .Summary | truncate 120 }}</p>
+          {{ end }}
+          <a href="{{ .Permalink }}" class="card-link">{{ if eq $.Language.Lang "en" }}Read More{{ else }}ಇನ್ನಷ್ಟು ಓದಿ{{ end }} →</a>
+        </div>
+      </div>
+      {{ end }}
+      {{ end }}
+    {{ end }}
+  </div>
+
+  <!-- Stats Section -->
+  <section class="stats-section" style="margin-top: 4rem;">
+    <div class="container">
+      <h2 class="section-subtitle" style="text-align: center; margin-bottom: 2rem;">{{ if eq .Language.Lang "en" }}Our Impact{{ else }}ನಮ್ಮ ಪ್ರಭಾವ{{ end }}</h2>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <h3 class="stat-number">{{ .Site.Params.stats_members }}+</h3>
+          <p>{{ if eq .Language.Lang "en" }}Active Members{{ else }}ಸಕ್ರಿಯ ಸದಸ್ಯರು{{ end }}</p>
+        </div>
+        <div class="stat-item">
+          <h3 class="stat-number">{{ .Site.Params.stats_yearsOfService }}+</h3>
+          <p>{{ if eq .Language.Lang "en" }}Years of Service{{ else }}ಸೇವೆಯ ವರ್ಷಗಳು{{ end }}</p>
+        </div>
+        <div class="stat-item">
+          <h3 class="stat-number">{{ .Site.Params.stats_eventsOrganized }}+</h3>
+          <p>{{ if eq .Language.Lang "en" }}Events Organized{{ else }}ಆಯೋಜಿಸಿದ ಕಾರ್ಯಕ್ರಮಗಳು{{ end }}</p>
+        </div>
+        <div class="stat-item">
+          <h3 class="stat-number">{{ .Site.Params.stats_treesPlanted }}+</h3>
+          <p>{{ if eq .Language.Lang "en" }}Trees Planted{{ else }}ನೆಟ್ಟ ಮರಗಳು{{ end }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <div style="text-align: center; margin-top: 4rem; padding: 3rem; background: var(--primary-green); color: white; border-radius: 10px;">
+    <h2 style="margin-bottom: 1rem;">{{ if eq .Language.Lang "en" }}Join Our Community{{ else }}ನಮ್ಮ ಸಮುದಾಯಕ್ಕೆ ಸೇರಿ{{ end }}</h2>
+    <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.95;">
+      {{ if eq .Language.Lang "en" }}
+        Become a member and contribute to the betterment of Roopanagara!
+      {{ else }}
+        ಸದಸ್ಯರಾಗಿ ಮತ್ತು ರೂಪನಗರದ ಸುಧಾರಣೆಗೆ ಕೊಡುಗೆ ನೀಡಿ!
+      {{ end }}
+    </p>
+    <a href="/{{ .Language.Lang }}/membership/" class="cta-button" style="background: white; color: var(--primary-green);">{{ if eq .Language.Lang "en" }}Become a Member{{ else }}ಸದಸ್ಯರಾಗಿ{{ end }}</a>
+  </div>
+</div>
+{{ end }}

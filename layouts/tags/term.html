@@ -1,0 +1,41 @@
+{{ define "main" }}
+<div class="container">
+  <h1 class="section-title">
+    {{ if eq .Language.Lang "en" }}Posts tagged "{{ .Title }}"{{ else }}"{{ .Title }}" ಟ್ಯಾಗ್ ಹೊಂದಿರುವ ಪೋಸ್ಟ್‌ಗಳು{{ end }}
+  </h1>
+
+  <div class="news-list">
+    {{ range .Pages }}
+    <article class="news-card">
+      <div class="news-image">
+        {{ with .Params.featuredImage }}
+        <img src="{{ . }}" alt="{{ $.Title }}">
+        {{ else }}
+        <div class="news-placeholder">📰</div>
+        {{ end }}
+      </div>
+
+      <div class="news-content">
+        <div class="blog-meta">
+          <span>📅 {{ .Date.Format "02 Jan 2006" }}</span>
+          {{ with .Params.tags }}
+          <span>🏷️
+            {{ range . }}
+              <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/" class="tag-link">{{ . }}</a>
+            {{ end }}
+          </span>
+          {{ end }}
+        </div>
+        <h3 class="news-title">{{ .Title }}</h3>
+        <p class="news-summary">{{ .Params.summary }}</p>
+        <a href="{{ .Permalink }}" class="news-link">{{ if eq $.Language.Lang "en" }}Read More{{ else }}ಇನ್ನಷ್ಟು ಓದಿ{{ end }} →</a>
+      </div>
+    </article>
+    {{ end }}
+  </div>
+
+  <div class="back-link" style="margin-top: 2rem;">
+    <a href="{{ "/tags/" | relLangURL }}" class="cta-button">{{ if eq .Language.Lang "en" }}← All Tags{{ else }}← ಎಲ್ಲಾ ಟ್ಯಾಗ್‌ಗಳು{{ end }}</a>
+  </div>
+</div>
+{{ end }}
