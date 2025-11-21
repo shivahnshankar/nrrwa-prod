@@ -8,6 +8,22 @@
     {{ .Content }}
   </div>
 
+  <!-- Benefits Section -->
+  <section style="margin: 4rem 0;">
+    <h2 class="section-title">
+      {{ if eq .Language.Lang "en" }}Membership Benefits{{ else }}ಸದಸ್ಯತ್ವ ಪ್ರಯೋಜನಗಳು{{ end }}
+    </h2>
+    <div class="cards-grid" style="grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1200px; margin: 0 auto;">
+      {{ range $data.benefits }}
+      <div class="card" style="text-align: center; padding: 2rem;">
+        <div class="card-icon">{{ .icon }}</div>
+        <h3 style="color: var(--primary-green); margin-bottom: 0.75rem; font-style: italic;">{{ .title }}</h3>
+        <p style="color: #666; line-height: 1.6;">{{ .description }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </section>
+
   <!-- Membership Cards Section -->
   <section style="margin: 4rem 0;">
     <h2 class="section-subtitle" style="text-align: center; margin-bottom: 3rem;">
@@ -32,22 +48,6 @@
           {{ end }}
         </ul>
         <a href="/{{ $.Language.Lang }}/contact/" class="membership-button">{{ if eq $.Language.Lang "en" }}Join Now{{ else }}ಈಗ ಸೇರಿ{{ end }}</a>
-      </div>
-      {{ end }}
-    </div>
-  </section>
-
-  <!-- Benefits Section -->
-  <section style="margin: 4rem 0;">
-    <h2 class="section-subtitle" style="text-align: center; margin-bottom: 3rem;">
-      {{ if eq .Language.Lang "en" }}Membership Benefits{{ else }}ಸದಸ್ಯತ್ವ ಪ್ರಯೋಜನಗಳು{{ end }}
-    </h2>
-    <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
-      {{ range $data.benefits }}
-      <div class="card" style="text-align: center; padding: 2rem;">
-        <div style="font-size: 3rem; margin-bottom: 1rem;">{{ .icon }}</div>
-        <h3 style="color: var(--primary-green); margin-bottom: 0.75rem;">{{ .title }}</h3>
-        <p style="color: #666; line-height: 1.6;">{{ .description }}</p>
       </div>
       {{ end }}
     </div>
@@ -113,7 +113,7 @@
   <section style="margin: 4rem 0;">
     <h2 class="section-title">{{ if eq .Language.Lang "en" }}What Our Members Say{{ else }}ನಮ್ಮ ಸದಸ್ಯರು ಏನು ಹೇಳುತ್ತಾರೆ{{ end }}</h2>
     <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
-      {{ range $testimonials }}
+      {{ range first 3 $testimonials }}
       <div class="testimonial-card">
         <div class="testimonial-photo">
           {{ if .photo }}
@@ -137,17 +137,9 @@
   <section style="margin: 4rem 0; text-align: center; padding: 3rem; background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-blue) 100%); border-radius: 15px; color: white;">
     <h2 style="color: var(--golden); margin-bottom: 1rem;">{{ if eq .Language.Lang "en" }}Ready to Join?{{ else }}ಸೇರಲು ಸಿದ್ಧರಾಗಿದ್ದೀರಾ?{{ end }}</h2>
     <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.95;">
-      {{ if eq .Language.Lang "en" }}Contact us to complete your membership registration{{ else }}ನಿಮ್ಮ ಸದಸ್ಯತ್ವ ನೋಂದಣಿಯನ್ನು ಪೂರ್ಣಗೊಳಿಸಲು ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ{{ end }}
+      {{ if eq .Language.Lang "en" }}Become part of our growing community today!{{ else }}ನಿಮ್ಮ ಸದಸ್ಯತ್ವ ನೋಂದಣಿಯನ್ನು ಪೂರ್ಣಗೊಳಿಸಲು ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ{{ end }}
     </p>
     <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem;">
-      <div style="display: flex; align-items: center; gap: 0.5rem;">
-        <span style="font-size: 1.5rem;">📧</span>
-        <a href="mailto:nammaroopanagara@gmail.com" style="color: white; text-decoration: none;">nammaroopanagara@gmail.com</a>
-      </div>
-      <div style="display: flex; align-items: center; gap: 0.5rem;">
-        <span style="font-size: 1.5rem;">📞</span>
-        <a href="tel:+919986079832" style="color: white; text-decoration: none;">+91-99860-79832</a>
-      </div>
     </div>
     <a href="/{{ .Language.Lang }}/contact/" style="display: inline-block; padding: 15px 40px; background-color: var(--golden); color: var(--dark-gray); text-decoration: none; border-radius: 5px; font-weight: 600; font-size: 1.1rem;">{{ if eq .Language.Lang "en" }}Contact Us{{ else }}ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ{{ end }}</a>
   </section>
