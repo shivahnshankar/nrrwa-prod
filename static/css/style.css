@@ -259,28 +259,18 @@ nav ul li.has-submenu .submenu li a.active {
   font-weight: 600;
 }
 
-/* Hero Section / Slider */
-.hero-slider {
-  position: relative;
+/* Hero Section / Swiper Slider */
+.hero-swiper {
+  width: 100%;
   height: 500px;
-  overflow: hidden;
   margin-bottom: 3rem;
 }
 
-.slide {
-  display: none;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+.hero-swiper .swiper-slide {
+  position: relative;
 }
 
-.slide.active {
-  display: block;
-}
-
-.slide img {
+.hero-swiper .swiper-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -291,7 +281,7 @@ nav ul li.has-submenu .submenu li a.active {
   bottom: 50px;
   left: 50px;
   right: 50px;
-  background: rgba(0,0,0,0.0);
+  background: rgba(0,0,0,0.5);
   color: var(--white);
   padding: 30px;
   border-radius: 10px;
@@ -324,27 +314,28 @@ nav ul li.has-submenu .submenu li a.active {
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* Slider Controls */
-.slider-controls {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
+/* Swiper Navigation & Pagination */
+.hero-swiper .swiper-button-prev,
+.hero-swiper .swiper-button-next {
+  color: var(--white);
+  background: rgba(0,0,0,0.3);
+  padding: 30px;
+  border-radius: 5px;
 }
 
-.slider-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: rgba(255,255,255,0.5);
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.hero-swiper .swiper-button-prev:hover,
+.hero-swiper .swiper-button-next:hover {
+  background: rgba(0,0,0,0.5);
 }
 
-.slider-dot.active {
-  background-color: var(--golden);
+.hero-swiper .swiper-pagination-bullet {
+  background: var(--white);
+  opacity: 0.6;
+}
+
+.hero-swiper .swiper-pagination-bullet-active {
+  background: var(--golden);
+  opacity: 1;
 }
 
 /* Cards Grid */
@@ -923,8 +914,13 @@ footer {
   }
 
   /* Hero slider height adjustment for mobile */
-  .hero-slider {
+  .hero-swiper {
     height: 350px;
+  }
+
+  .hero-swiper .swiper-button-prev,
+  .hero-swiper .swiper-button-next {
+    display: none;
   }
 
   /* Mobile text size adjustments */
@@ -1606,6 +1602,44 @@ nav ul li.nav-join-button a:hover {
 
   .gallery-item img {
     height: 250px;
+  }
+}
+
+/* Float-based image alignment for text wrapping */
+.float-left {
+  float: left;
+  margin: 0 1.5rem 1rem 0;
+  max-width: 400px;
+}
+
+.float-right {
+  float: right;
+  margin: 0 0 1rem 1.5rem;
+  max-width: 400px;
+}
+
+.float-left img,
+.float-right img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Mobile: Remove float on small screens */
+@media (max-width: 768px) {
+  .float-left,
+  .float-right {
+    float: none;
+    margin: 1rem auto;
+    max-width: 100%;
+    display: block;
   }
 }
 

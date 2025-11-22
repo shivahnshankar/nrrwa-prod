@@ -1,38 +1,31 @@
 // NRRWA Website JavaScript
 
-// Hero Slider
+// Hero Swiper Slider
 document.addEventListener('DOMContentLoaded', function() {
-  const slides = document.querySelectorAll('.slide');
-  const dots = document.querySelectorAll('.slider-dot');
-  let currentSlide = 0;
-  
-  function showSlide(n) {
-    slides.forEach(slide => slide.classList.remove('active'));
-    dots.forEach(dot => dot.classList.remove('active'));
-    
-    currentSlide = (n + slides.length) % slides.length;
-    
-    if (slides[currentSlide]) {
-      slides[currentSlide].classList.add('active');
-    }
-    if (dots[currentSlide]) {
-      dots[currentSlide].classList.add('active');
-    }
-  }
-  
-  // Auto-advance slider
-  if (slides.length > 0) {
-    showSlide(0);
-    setInterval(() => {
-      showSlide(currentSlide + 1);
-    }, 5000);
-    
-    // Dot click handlers
-    dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => showSlide(index));
+  // Initialize Swiper if element exists
+  const heroSwiper = document.querySelector('.hero-swiper');
+  if (heroSwiper && typeof Swiper !== 'undefined') {
+    new Swiper('.hero-swiper', {
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
     });
   }
-  
+
   // FAQ Accordion
   const faqQuestions = document.querySelectorAll('.faq-question');
   faqQuestions.forEach(question => {

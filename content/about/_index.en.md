@@ -9,9 +9,9 @@ Namma Roopanagara Residents Welfare Association (NRRWA) is a community-driven or
 
 ### Our Story
 
-Roopanagara is a beautiful residential area in Mysore, known for its peaceful environment and strong sense of community. NRRWA was formed by a group of concerned residents who wanted to address common issues and work together for the betterment of the area.
-
-Over the years, we have grown from a small group of volunteers to a well-organized association with over 150 active members. Our initiatives have made a significant impact on the community, from improving public amenities to organizing cultural events that bring neighbors together.
+NRRWA, is a movement among Roopanagara residents, started in January, 2021 and now active 5th year running.
+Association got Registered with Registrar of Co-op Societies on 09.09.2021. 
+Roopanagara has 2,500 sites and about 800 houses. Association is presently having a membership of 300+ and number is growing.
 
 ### What We Do
 

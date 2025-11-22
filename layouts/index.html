@@ -1,14 +1,22 @@
 {{ define "main" }}
 <!-- Hero Slider -->
-<div class="hero-slider">
-  <div class="slide active">
-    <img src="https://picsum.photos/1920/1080?random=hero" alt="Community Development">
-    <div class="slide-content">
-      <h2>{{ if eq .Language.Lang "en" }}Building a Better Community Together{{ else }}ಒಟ್ಟಿಗೆ ಉತ್ತಮ ಸಮುದಾಯವನ್ನು ನಿರ್ಮಿಸುವುದು{{ end }}</h2>
-      <p>{{ if eq .Language.Lang "en" }}Join us in making Roopanagara a model residential area{{ else }}ರೂಪನಗರವನ್ನು ಮಾದರಿ ವಸತಿ ಪ್ರದೇಶವನ್ನಾಗಿ ಮಾಡಲು ನಮ್ಮೊಂದಿಗೆ ಸೇರಿ{{ end }}</p>
-      <a href="/membership/" class="cta-button">{{ if eq .Language.Lang "en" }}Join NRRWA Today{{ else }}ಇಂದೇ NRRWA ಗೆ ಸೇರಿ{{ end }}</a>
+{{ $slides := index .Site.Data.heroSlides .Language.Lang }}
+<div class="swiper hero-swiper">
+  <div class="swiper-wrapper">
+    {{ range $slides }}
+    <div class="swiper-slide">
+      <img src="{{ .image }}" alt="{{ .title }}">
+      <div class="slide-content">
+        <h2>{{ .title }}</h2>
+        <p>{{ .description }}</p>
+        <a href="{{ .buttonLink }}" class="cta-button">{{ .buttonText }}</a>
+      </div>
     </div>
+    {{ end }}
   </div>
+  <div class="swiper-pagination"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
 </div>
 
 <!-- Upcoming Events -->
@@ -110,9 +118,10 @@
 <section>
   <div class="container">
     {{ $members := index .Site.Data.members .Language.Lang }}
+    {{ $sortedMembers := sort $members "joinedDate" "desc" }}
     <h2 class="section-title">{{ if eq .Language.Lang "en" }}Welcome New Members{{ else }}ಹೊಸ ಸದಸ್ಯರನ್ನು ಸ್ವಾಗತಿಸುತ್ತೇವೆ{{ end }}</h2>
     <div class="cards-grid">
-      {{ range first 3 $members }}
+      {{ range first 3 $sortedMembers }}
       <div class="card member-card">
         <div class="member-photo">
           {{ if .photo }}
