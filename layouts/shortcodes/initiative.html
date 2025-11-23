@@ -1,0 +1,17 @@
+{{ $image := .Get "image" }}
+{{ $title := .Get "title" }}
+{{ $align := .Get "align" | default "left" }}
+
+<div class="initiative-card {{ if eq $align "right" }}reverse{{ end }}">
+  <div class="initiative-image">
+    <img src="{{ $image }}" alt="{{ $title }}">
+  </div>
+  <div class="initiative-content">
+    {{ if $title }}
+    <h3>{{ $title }}</h3>
+    {{ end }}
+    <div class="initiative-text">
+      {{ .Inner | markdownify }}
+    </div>
+  </div>
+</div>

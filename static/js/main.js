@@ -160,3 +160,30 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+// Lightbox functions
+function openLightbox(imageSrc) {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+  if (lightbox && lightboxImg) {
+    lightbox.style.display = 'block';
+    lightboxImg.src = imageSrc;
+    document.body.style.overflow = 'hidden'; // Prevent scrolling
+  }
+}
+
+function closeLightbox() {
+  const lightbox = document.getElementById('lightbox');
+  if (lightbox) {
+    lightbox.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Re-enable scrolling
+  }
+}
+
+// Close lightbox on Escape key
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    closeLightbox();
+  }
+});

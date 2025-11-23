@@ -8,6 +8,18 @@ NRRWA is committed to supporting the welfare of all community members through va
 
 ## Key Initiatives
 
+{{< initiative image="/assets/images/focus/social/harghartiranga.jpg" title="Har Ghar Tiranga" align="left">}}
+“Har Ghar Tiranga “ national flag distribution for the public from NRRWA before Indepedemce day.
+{{< /initiative >}}
+
+{{< initiative image="/assets/images/focus/social/education.jpg" title="Supporting Education" align="right">}}
+Students from nearby school, who are exceling in Public Examinations are being felicitated every year.
+{{< /initiative >}}
+
+{{< initiative image="/assets/images/focus/social/voter.jpg" title="Voter Registration" align="left">}}
+We initiated distribution of voter’s list for every Lok sabha/Vidhana Sabha elections conducted. 
+{{< /initiative >}}
+ 
 ### Support for Families in Need
 We provide assistance to community members facing difficult circumstances.
 

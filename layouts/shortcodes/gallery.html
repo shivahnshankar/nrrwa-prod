@@ -1,0 +1,19 @@
+{{ $path := .Get "path" }}
+
+<div class="image-gallery">
+  {{ $files := readDir (printf "static/%s" $path) }}
+  {{ range $files }}
+    {{ $ext := path.Ext .Name }}
+    {{ if or (eq $ext ".jpg") (eq $ext ".jpeg") (eq $ext ".png") (eq $ext ".webp") (eq $ext ".JPG") (eq $ext ".JPEG") (eq $ext ".PNG") }}
+      <div class="gallery-item" onclick="openLightbox('/{{ $path }}/{{ .Name }}')">
+        <img src="/{{ $path }}/{{ .Name }}" alt="{{ replace .Name $ext "" }}" loading="lazy">
+      </div>
+    {{ end }}
+  {{ end }}
+</div>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-content" id="lightbox-img">
+</div>
