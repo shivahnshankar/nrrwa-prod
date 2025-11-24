@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>About Us on NRRWA</title>
+    <link>/en/about/</link>
+    <description>Recent content in About Us on NRRWA</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 01 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/en/about/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Construction Guidelines</title>
+      <link>/en/about/guidelines/</link>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>/en/about/guidelines/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Dear Homeowner,&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Namaste and a warm welcome to Roopa Nagar, a verdant, peace-loving haven conceived with vision and mission nurtured with care. We are delighted that you have chosen to build your dream home in this uniquely harmonious community. Founded by the late Shri Suvarna with a deep sense of vision, Roopa Nagar today stands as a testament to thoughtful living, community cooperation and timeless aesthetics.&lt;/p&gt;&#xA;&lt;p&gt;As you begin or continue your construction journey, we wish to share some community-endorsed practices to help ensure your dream home grows in harmony with its surroundings. Over the years, we have observed that even the most well-intentioned projects can inadvertently disrupt the peace and cleanliness of the neighbourhood if site protocols are not strictly upheld by the engineers/contractors.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Executive Committee</title>
+      <link>/en/about/executive-committee/</link>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>/en/about/executive-committee/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Frequently Asked Questions</title>
+      <link>/en/about/faqs/</link>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>/en/about/faqs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vision &amp; Mission</title>
+      <link>/en/about/vision-mission/</link>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>/en/about/vision-mission/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

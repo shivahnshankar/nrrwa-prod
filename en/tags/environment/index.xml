@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Environment on NRRWA</title>
+    <link>/en/tags/environment/</link>
+    <description>Recent content in Environment on NRRWA</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 15 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/en/tags/environment/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tree Planting Drive 2025</title>
+      <link>/en/events/tree-planting-drive-2025/</link>
+      <pubDate>Mon, 15 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>/en/events/tree-planting-drive-2025/</guid>
+      <description>Join us for our annual tree planting drive to make our community greener and contribute to environmental conservation!</description>
+    </item>
+  </channel>
+</rss>

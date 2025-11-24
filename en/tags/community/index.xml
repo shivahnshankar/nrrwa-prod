@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Community on NRRWA</title>
+    <link>/en/tags/community/</link>
+    <description>Recent content in Community on NRRWA</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 20 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/en/tags/community/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rajyotsava Celebrations 2025</title>
+      <link>/en/events/rajyotsava-celebrations-2025/</link>
+      <pubDate>Thu, 20 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>/en/events/rajyotsava-celebrations-2025/</guid>
+      <description>Every year, we celebrate Kannada Rajyotsava! This year, we have many cultural activities and competitions culminating with the main event on 23rd.</description>
+    </item>
+    <item>
+      <title>Family Day Celebration 2025</title>
+      <link>/en/events/family-day-celebration-2025/</link>
+      <pubDate>Sat, 15 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>/en/events/family-day-celebration-2025/</guid>
+      <description>Join us for a fun-filled Family Day with games, activities, and entertainment for all ages!</description>
+    </item>
+    <item>
+      <title>Annual Cultural Festival 2024</title>
+      <link>/en/events/annual-cultural-festival-2024/</link>
+      <pubDate>Wed, 01 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>/en/events/annual-cultural-festival-2024/</guid>
+      <description>Join us for our grand annual cultural festival featuring music, dance, and traditional performances!</description>
+    </item>
+  </channel>
+</rss>

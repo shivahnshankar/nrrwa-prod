@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on NRRWA</title>
+    <link>/en/tags/</link>
+    <description>Recent content in Tags on NRRWA</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 23 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Culture and Arts</title>
+      <link>/en/tags/culture-and-arts/</link>
+      <pubDate>Sun, 23 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>/en/tags/culture-and-arts/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Community</title>
+      <link>/en/tags/community/</link>
+      <pubDate>Thu, 20 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>/en/tags/community/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cultural Events</title>
+      <link>/en/tags/cultural-events/</link>
+      <pubDate>Thu, 20 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>/en/tags/cultural-events/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Festival</title>
+      <link>/en/tags/festival/</link>
+      <pubDate>Thu, 20 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>/en/tags/festival/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Family Events</title>
+      <link>/en/tags/family-events/</link>
+      <pubDate>Sat, 15 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>/en/tags/family-events/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Recreation</title>
+      <link>/en/tags/recreation/</link>
+      <pubDate>Sat, 15 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>/en/tags/recreation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Community Service</title>
+      <link>/en/tags/community-service/</link>
+      <pubDate>Mon, 15 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>/en/tags/community-service/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Environment</title>
+      <link>/en/tags/environment/</link>
+      <pubDate>Mon, 15 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>/en/tags/environment/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Green Initiative</title>
+      <link>/en/tags/green-initiative/</link>
+      <pubDate>Mon, 15 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>/en/tags/green-initiative/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Infrastructure</title>
+      <link>/en/tags/infrastructure/</link>
+      <pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>/en/tags/infrastructure/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>News</title>
+      <link>/en/tags/news/</link>
+      <pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>/en/tags/news/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Public Amenities</title>
+      <link>/en/tags/public-amenities/</link>
+      <pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>/en/tags/public-amenities/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
