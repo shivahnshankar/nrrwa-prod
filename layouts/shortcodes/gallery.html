@@ -5,9 +5,10 @@
   {{ range $files }}
     {{ $ext := path.Ext .Name }}
     {{ if or (eq $ext ".jpg") (eq $ext ".jpeg") (eq $ext ".png") (eq $ext ".webp") (eq $ext ".JPG") (eq $ext ".JPEG") (eq $ext ".PNG") }}
-      <div class="gallery-item" onclick="openLightbox('/{{ $path }}/{{ .Name }}')">
+      <figure class="gallery-item" onclick="openLightbox('/{{ $path }}/{{ .Name }}')">
         <img src="/{{ $path }}/{{ .Name }}" alt="{{ replace .Name $ext "" }}" loading="lazy">
-      </div>
+        <figcaption>{{ replace (replace (replace .Name $ext "") "-" " ") "_" " " | title }}</figcaption>
+      </figure>
     {{ end }}
   {{ end }}
 </div>
