@@ -341,9 +341,11 @@ nav ul li.has-submenu .submenu li a.active {
 /* Cards Grid */
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 30px;
   margin: 3rem 0;
+  max-width: 1200px;
+  justify-content: center;
 }
 
 .card {
@@ -352,6 +354,8 @@ nav ul li.has-submenu .submenu li a.active {
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 400px;
+  justify-self: center;
 }
 
 .card:hover {

@@ -16,7 +16,13 @@
       {{ if ne .File.LogicalName "_index.kn.md" }}
       <div class="card">
         {{ with .Params.featuredImage }}
-          <img src="{{ . }}" alt="{{ $.Title }}">
+          {{ $img := resources.Get . }}
+          {{ if $img }}
+            {{ $resized := $img.Fill "600x400 webp q85" }}
+            <img src="{{ $resized.RelPermalink }}" alt="{{ $.Title }}">
+          {{ else }}
+            <img src="{{ . }}" alt="{{ $.Title }}">
+          {{ end }}
         {{ else }}
           <div class="card-icon" style="font-size: 4rem; text-align: center; padding: 2rem; background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);">🎯</div>
         {{ end }}

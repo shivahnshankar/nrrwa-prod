@@ -5,7 +5,13 @@
   <div class="swiper-wrapper">
     {{ range $slides }}
     <div class="swiper-slide">
-      <img src="{{ .image }}" alt="{{ .title }}">
+      {{ $img := resources.Get .image }}
+      {{ if $img }}
+        {{ $resized := $img.Resize "1920x webp q85" }}
+        <img src="{{ $resized.RelPermalink }}" alt="{{ .title }}">
+      {{ else }}
+        <img src="{{ .image }}" alt="{{ .title }}">
+      {{ end }}
       <div class="slide-content">
         <h2>{{ .title }}</h2>
         <p>{{ .description }}</p>
@@ -40,7 +46,13 @@
       {{ range first 3 $futureEvents }}
         <div class="card">
           {{ with .Params.featuredImage }}
-            <img src="{{ . }}" alt="{{ $.Title }}">
+            {{ $img := resources.Get . }}
+            {{ if $img }}
+              {{ $resized := $img.Fill "600x400 webp q85" }}
+              <img src="{{ $resized.RelPermalink }}" alt="{{ $.Title }}">
+            {{ else }}
+              <img src="{{ . }}" alt="{{ $.Title }}">
+            {{ end }}
           {{ end }}
           <div class="card-content">
             <div class="blog-meta">
@@ -71,7 +83,13 @@
       {{ range $news }}
         <div class="blog-card">
           {{ with .Params.featuredImage }}
-            <img src="{{ . }}" alt="{{ $.Title }}">
+            {{ $img := resources.Get . }}
+            {{ if $img }}
+              {{ $resized := $img.Fill "600x400 webp q85" }}
+              <img src="{{ $resized.RelPermalink }}" alt="{{ $.Title }}">
+            {{ else }}
+              <img src="{{ . }}" alt="{{ $.Title }}">
+            {{ end }}
           {{ end }}
           <div class="blog-card-content">
             <div class="blog-meta">
@@ -125,7 +143,13 @@
       <div class="card member-card">
         <div class="member-photo">
           {{ if .photo }}
-          <img src="{{ .photo }}" alt="{{ .name }}">
+          {{ $img := resources.Get .photo }}
+          {{ if $img }}
+            {{ $resized := $img.Fill "200x200 webp q85" }}
+            <img src="{{ $resized.RelPermalink }}" alt="{{ .name }}">
+          {{ else }}
+            <img src="{{ .photo }}" alt="{{ .name }}">
+          {{ end }}
           {{ else }}
           <div class="photo-placeholder">👤</div>
           {{ end }}

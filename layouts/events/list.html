@@ -45,7 +45,13 @@
       {{ range $upcomingOnPage }}
         <div class="card">
           {{ with .Params.featuredImage }}
-            <img src="{{ . }}" alt="{{ $.Title }}">
+            {{ $img := resources.Get . }}
+            {{ if $img }}
+              {{ $resized := $img.Fill "600x400 webp q85" }}
+              <img src="{{ $resized.RelPermalink }}" alt="{{ $.Title }}">
+            {{ else }}
+              <img src="{{ . }}" alt="{{ $.Title }}">
+            {{ end }}
           {{ else }}
             <div class="card-placeholder" style="background: linear-gradient(135deg, #4a7c59 0%, #2d5a3a 100%); height: 200px; display: flex; align-items: center; justify-content: center; font-size: 3rem;">📅</div>
           {{ end }}
@@ -87,7 +93,13 @@
       {{ range $pastOnPage }}
         <div class="card">
           {{ with .Params.featuredImage }}
-            <img src="{{ . }}" alt="{{ $.Title }}" style="opacity: 0.8;">
+            {{ $img := resources.Get . }}
+            {{ if $img }}
+              {{ $resized := $img.Fill "600x400 webp q85" }}
+              <img src="{{ $resized.RelPermalink }}" alt="{{ $.Title }}" style="opacity: 0.8;">
+            {{ else }}
+              <img src="{{ . }}" alt="{{ $.Title }}" style="opacity: 0.8;">
+            {{ end }}
           {{ else }}
             <div class="card-placeholder" style="background: linear-gradient(135deg, #888 0%, #666 100%); height: 200px; display: flex; align-items: center; justify-content: center; font-size: 3rem;">📅</div>
           {{ end }}

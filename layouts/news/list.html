@@ -14,7 +14,13 @@
         <article class="news-card-horizontal{{ if mod $index 2 }} reverse{{ end }}">
           <div class="news-image-horizontal">
             {{ with $page.Params.featuredImage }}
-            <img src="{{ . }}" alt="{{ $page.Title }}">
+            {{ $img := resources.Get . }}
+            {{ if $img }}
+              {{ $resized := $img.Fill "400x300 webp q85" }}
+              <img src="{{ $resized.RelPermalink }}" alt="{{ $page.Title }}">
+            {{ else }}
+              <img src="{{ . }}" alt="{{ $page.Title }}">
+            {{ end }}
             {{ else }}
             <div class="news-placeholder">📰</div>
             {{ end }}

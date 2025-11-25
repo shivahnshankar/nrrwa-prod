@@ -12,7 +12,13 @@
 
   {{ with .Params.featuredImage }}
   <div class="featured-image">
-    <img src="{{ . }}" alt="{{ $.Title }}">
+    {{ $img := resources.Get . }}
+    {{ if $img }}
+      {{ $resized := $img.Resize "1600x webp q85" }}
+      <img src="{{ $resized.RelPermalink }}" alt="{{ $.Title }}">
+    {{ else }}
+      <img src="{{ . }}" alt="{{ $.Title }}">
+    {{ end }}
   </div>
   {{ end }}
 

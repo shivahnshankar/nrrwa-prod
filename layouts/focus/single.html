@@ -6,7 +6,13 @@
 
   {{ with .Params.featuredImage }}
   <div class="featured-image-focus">
-    <img src="{{ . }}" alt="{{ $.Title }}">
+    {{ $img := resources.Get . }}
+    {{ if $img }}
+      {{ $resized := $img.Fill "1200x300 webp q85" }}
+      <img src="{{ $resized.RelPermalink }}" alt="{{ $.Title }}">
+    {{ else }}
+      <img src="{{ . }}" alt="{{ $.Title }}">
+    {{ end }}
   </div>
   {{ end }}
 
@@ -33,7 +39,13 @@
           {{ $align := cond (modBool $index 2) "right" "left" }}
           <div class="initiative-card {{ if eq $align "right" }}reverse{{ end }}">
             <div class="initiative-image">
-              <img src="{{ $initiative.image }}" alt="{{ $initiative.title }}">
+              {{ $img := resources.Get $initiative.image }}
+              {{ if $img }}
+                {{ $resized := $img.Fill "400x300 webp q85" }}
+                <img src="{{ $resized.RelPermalink }}" alt="{{ $initiative.title }}">
+              {{ else }}
+                <img src="{{ $initiative.image }}" alt="{{ $initiative.title }}">
+              {{ end }}
             </div>
             <div class="initiative-content">
               <h3>{{ $initiative.title }}</h3>
