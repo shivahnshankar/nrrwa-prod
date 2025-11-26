@@ -16,10 +16,10 @@
       📅 {{ if eq $.Language.Lang "en" }}Year{{ else }}ವರ್ಷ{{ end }}: {{ .year }}
     </h2>
 
-    <div style="display: grid; gap: 1.5rem;">
+    <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
       {{ range .items }}
       {{ $categoryData := index (where $data.categories "id" .category) 0 }}
-      <div class="card" style="border-left: 4px solid var(--primary-green);">
+      <div class="card" style="border-left: 4px solid var(--primary-green); max-width: none;">
         <div class="card-content">
           <div style="display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; gap: 1rem;">
             <div style="flex: 1; min-width: 250px;">
