@@ -72,6 +72,17 @@
             </tr>
             {{ end }}
           </table>
+          {{ with .qrCode }}
+          <div style="margin-top: 1.5rem; text-align: center; padding: 1rem; background: white; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            {{ $img := resources.Get . }}
+            {{ if $img }}
+              {{ $resized := $img.Resize "300x webp q90" }}
+              <img src="{{ $resized.RelPermalink }}" alt="UPI QR Code" style="max-width: 250px; width: 100%; height: auto; border-radius: 8px;">
+            {{ else }}
+              <img src="{{ . }}" alt="UPI QR Code" style="max-width: 250px; width: 100%; height: auto; border-radius: 8px;">
+            {{ end }}
+          </div>
+          {{ end }}
         </div>
       </div>
       {{ end }}

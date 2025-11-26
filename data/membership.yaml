@@ -71,6 +71,7 @@ en:
             value: "nrrwa@upi"
           - label: "QR Code"
             value: "Scan QR code below"
+        qrCode: "/assets/images/membership/UPI_QRCode.jpg"
       - type: "Cash Payment"
         details:
           - label: "Visit"
@@ -163,6 +164,7 @@ kn:
             value: "nrrwa@upi"
           - label: "QR ಕೋಡ್"
             value: "ಕೆಳಗಿನ QR ಕೋಡ್ ಅನ್ನು ಸ್ಕ್ಯಾನ್ ಮಾಡಿ"
+        qrCode: "/assets/images/membership/UPI_QRCode.jpg"
       - type: "ನಗದು ಪಾವತಿ"
         details:
           - label: "ಭೇಟಿ"
