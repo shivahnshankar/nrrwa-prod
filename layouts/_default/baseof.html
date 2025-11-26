@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ .Title }} | {{ .Site.Title }}</title>
   <meta name="description" content="{{ .Params.description | default .Site.Params.description }}">
-  <link rel="stylesheet" href="/css/style.css">
+  {{ $css := resources.Get "css/style.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
 </head>
@@ -54,7 +55,8 @@
   <!-- Footer -->
   {{ partial "footer.html" . }}
 
-  <script src="/js/main.js"></script>
+  {{ $js := resources.Get "js/main.js" | minify | fingerprint }}
+  <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="/pagefind/pagefind-ui.js"></script>
   <script>
