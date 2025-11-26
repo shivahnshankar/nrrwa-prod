@@ -8,10 +8,10 @@
   <div class="featured-image-focus">
     {{ $img := resources.Get . }}
     {{ if $img }}
-      {{ $resized := $img.Fill "1200x300 webp q85" }}
-      <img src="{{ $resized.RelPermalink }}" alt="{{ $.Title }}">
+    {{ $resized := $img.Fill "1200x300 webp q85" }}
+    <img src="{{ $resized.RelPermalink }}" alt="{{ $.Title }}">
     {{ else }}
-      <img src="{{ . }}" alt="{{ $.Title }}">
+    <img src="{{ . }}" alt="{{ $.Title }}">
     {{ end }}
   </div>
   {{ end }}
@@ -21,71 +21,71 @@
     {{ $data := index .Site.Data.focus $focusArea }}
 
     {{ if $data }}
-      {{ $langData := index $data .Language.Lang }}
+    {{ $langData := index $data .Language.Lang }}
 
-      {{ if $langData }}
-        <!-- Introduction -->
-        {{ with $langData.intro }}
-        <div class="focus-intro">
-          <p>{{ . }}</p>
+    {{ if $langData }}
+    <!-- Introduction -->
+    {{ with $langData.intro }}
+    <div class="focus-intro">
+      <p>{{ . }}</p>
+    </div>
+    {{ end }}
+
+    <!-- Key Initiatives Section -->
+    {{ if $langData.initiatives }}
+    <h2>{{ if eq $.Language.Lang "en" }}Key Initiatives{{ else }}ಪ್ರಮುಖ ಉಪಕ್ರಮಗಳು{{ end }}</h2>
+
+    {{ range $index, $initiative := $langData.initiatives }}
+    {{ $align := cond (modBool $index 2) "right" "left" }}
+    <div class="initiative-card {{ if eq $align " right" }}reverse{{ end }}">
+      <div class="initiative-image">
+        {{ $img := resources.Get $initiative.image }}
+        {{ if $img }}
+        {{ $resized := $img.Fill "400x300 webp q85" }}
+        <img src="{{ $resized.RelPermalink }}" alt="{{ $initiative.title }}">
+        {{ else }}
+        <img src="{{ $initiative.image }}" alt="{{ $initiative.title }}">
+        {{ end }}
+      </div>
+      <div class="initiative-content">
+        <h3>{{ $initiative.title }}</h3>
+        <div class="initiative-text">
+          <p>{{ $initiative.description }}</p>
         </div>
-        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+    {{ end }}
 
-        <!-- Key Initiatives Section -->
-        {{ if $langData.initiatives }}
-        <h2>{{ if eq $.Language.Lang "en" }}Key Initiatives{{ else }}ಪ್ರಮುಖ ಉಪಕ್ರಮಗಳು{{ end }}</h2>
+    <!-- Impact Section -->
+    {{ with $langData.impact }}
+    <h2>{{ if eq $.Language.Lang "en" }}Our Impact{{ else }}ನಮ್ಮ ಪ್ರಭಾವ{{ end }}</h2>
+    <p>{{ . }}</p>
+    {{ end }}
 
-        {{ range $index, $initiative := $langData.initiatives }}
-          {{ $align := cond (modBool $index 2) "right" "left" }}
-          <div class="initiative-card {{ if eq $align "right" }}reverse{{ end }}">
-            <div class="initiative-image">
-              {{ $img := resources.Get $initiative.image }}
-              {{ if $img }}
-                {{ $resized := $img.Fill "400x300 webp q85" }}
-                <img src="{{ $resized.RelPermalink }}" alt="{{ $initiative.title }}">
-              {{ else }}
-                <img src="{{ $initiative.image }}" alt="{{ $initiative.title }}">
-              {{ end }}
-            </div>
-            <div class="initiative-content">
-              <h3>{{ $initiative.title }}</h3>
-              <div class="initiative-text">
-                <p>{{ $initiative.description }}</p>
-              </div>
-            </div>
-          </div>
-        {{ end }}
-        {{ end }}
-
-        <!-- Impact Section -->
-        {{ with $langData.impact }}
-        <h2>{{ if eq $.Language.Lang "en" }}Our Impact{{ else }}ನಮ್ಮ ಪ್ರಭಾವ{{ end }}</h2>
-        <p>{{ . }}</p>
-        {{ end }}
-
-        <!-- Call to Action -->
-        {{ with $langData.cta }}
-        <h2>{{ if eq $.Language.Lang "en" }}Get Involved{{ else }}ಭಾಗವಹಿಸಿ{{ end }}</h2>
-        <p>{{ . }}</p>
-        {{ end }}
-      {{ else }}
-        <!-- Fallback to regular content if no language data -->
-        {{ $.Content }}
-      {{ end }}
+    <!-- Call to Action -->
+    {{ with $langData.cta }}
+    <h2>{{ if eq $.Language.Lang "en" }}Get Involved{{ else }}ಭಾಗವಹಿಸಿ{{ end }}</h2>
+    <p>{{ . }}</p>
+    {{ end }}
     {{ else }}
-      <!-- Fallback to regular content if no data file -->
-      {{ .Content }}
+    <!-- Fallback to regular content if no language data -->
+    {{ $.Content }}
+    {{ end }}
+    {{ else }}
+    <!-- Fallback to regular content if no data file -->
+    {{ .Content }}
     {{ end }}
   </div>
 
   <!-- Language switcher for this page -->
   <div class="post-translations">
     {{ if .IsTranslated }}
-      <p>{{ if eq .Language.Lang "en" }}Read in:{{ else }}ಓದಿ:{{ end }}
+    <p>{{ T "read_in" }}
       {{ range .Translations }}
-        <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+      <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
       {{ end }}
-      </p>
+    </p>
     {{ end }}
   </div>
 </article>

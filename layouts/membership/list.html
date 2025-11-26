@@ -11,9 +11,10 @@
   <!-- Benefits Section -->
   <section style="margin: 4rem 0;">
     <h2 class="section-title">
-      {{ if eq .Language.Lang "en" }}Membership Benefits{{ else }}ಸದಸ್ಯತ್ವ ಪ್ರಯೋಜನಗಳು{{ end }}
+      {{ T "membership_benefits" }}
     </h2>
-    <div class="cards-grid" style="grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1200px; margin: 0 auto;">
+    <div class="cards-grid"
+      style="grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1200px; margin: 0 auto;">
       {{ range $data.benefits }}
       <div class="card" style="text-align: center; padding: 2rem;">
         <div class="card-icon">{{ .icon }}</div>
@@ -27,10 +28,11 @@
   <!-- Membership Cards Section -->
   <section style="margin: 4rem 0;">
     <h2 class="section-subtitle" style="text-align: center; margin-bottom: 3rem;">
-      {{ if eq .Language.Lang "en" }}Choose Your Membership{{ else }}ನಿಮ್ಮ ಸದಸ್ಯತ್ವವನ್ನು ಆಯ್ಕೆಮಾಡಿ{{ end }}
+      {{ T "choose_membership" }}
     </h2>
 
-    <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1100px; margin: 0 auto;">
+    <div class="cards-grid"
+      style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1100px; margin: 0 auto;">
       {{ range $data.types }}
       <div class="membership-card{{ if .popular }} popular{{ end }}">
         {{ if .popular }}
@@ -47,7 +49,8 @@
           <li>✓ {{ . }}</li>
           {{ end }}
         </ul>
-        <a href="/{{ $.Language.Lang }}/contact/" class="membership-button">{{ if eq $.Language.Lang "en" }}Join Now{{ else }}ಈಗ ಸೇರಿ{{ end }}</a>
+        <a href="/{{ $.Language.Lang }}/contact/" class="membership-button">{{ if eq $.Language.Lang "en" }}Join Now{{
+          else }}ಈಗ ಸೇರಿ{{ end }}</a>
       </div>
       {{ end }}
     </div>
@@ -56,10 +59,11 @@
   <!-- Payment Methods Section -->
   <section style="margin: 4rem 0; padding: 3rem; background: var(--light-gray); border-radius: 15px;">
     <h2 class="section-subtitle" style="text-align: center; margin-bottom: 2rem;">
-      {{ if eq .Language.Lang "en" }}Payment Methods{{ else }}ಪಾವತಿ ವಿಧಾನಗಳು{{ end }}
+      {{ T "payment_methods" }}
     </h2>
 
-    <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto 3rem;">
+    <div class="cards-grid"
+      style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto 3rem;">
       {{ range $data.payment.methods }}
       <div class="card">
         <div class="card-content">
@@ -73,13 +77,16 @@
             {{ end }}
           </table>
           {{ with .qrCode }}
-          <div style="margin-top: 1.5rem; text-align: center; padding: 1rem; background: white; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          <div
+            style="margin-top: 1.5rem; text-align: center; padding: 1rem; background: white; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
             {{ $img := resources.Get . }}
             {{ if $img }}
-              {{ $resized := $img.Resize "300x webp q90" }}
-              <img src="{{ $resized.RelPermalink }}" alt="UPI QR Code" style="max-width: 250px; width: 100%; height: auto; border-radius: 8px;">
+            {{ $resized := $img.Resize "300x webp q90" }}
+            <img src="{{ $resized.RelPermalink }}" alt="UPI QR Code"
+              style="max-width: 250px; width: 100%; height: auto; border-radius: 8px;">
             {{ else }}
-              <img src="{{ . }}" alt="UPI QR Code" style="max-width: 250px; width: 100%; height: auto; border-radius: 8px;">
+            <img src="{{ . }}" alt="UPI QR Code"
+              style="max-width: 250px; width: 100%; height: auto; border-radius: 8px;">
             {{ end }}
           </div>
           {{ end }}
@@ -91,12 +98,13 @@
     <!-- Payment Steps -->
     <div style="max-width: 800px; margin: 0 auto;">
       <h3 style="color: var(--primary-blue); margin-bottom: 1.5rem; text-align: center;">
-        {{ if eq .Language.Lang "en" }}How to Join{{ else }}ಹೇಗೆ ಸೇರುವುದು{{ end }}
+        {{ T "how_to_join" }}
       </h3>
       <ol style="list-style: none; padding: 0;">
         {{ range $index, $step := $data.payment.steps }}
         <li style="margin-bottom: 1rem; padding-left: 3rem; position: relative;">
-          <span style="position: absolute; left: 0; top: 0; background: var(--primary-green); color: white; width: 2rem; height: 2rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600;">
+          <span
+            style="position: absolute; left: 0; top: 0; background: var(--primary-green); color: white; width: 2rem; height: 2rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600;">
             {{ add $index 1 }}
           </span>
           {{ $step }}
@@ -105,9 +113,10 @@
       </ol>
 
       <!-- Required Info -->
-      <div style="margin-top: 2rem; padding: 1.5rem; background: white; border-radius: 10px; border-left: 4px solid var(--primary-blue);">
+      <div
+        style="margin-top: 2rem; padding: 1.5rem; background: white; border-radius: 10px; border-left: 4px solid var(--primary-blue);">
         <h4 style="color: var(--primary-blue); margin-bottom: 1rem;">
-          {{ if eq .Language.Lang "en" }}Required Information{{ else }}ಅಗತ್ಯವಿರುವ ಮಾಹಿತಿ{{ end }}
+          {{ T "required_information" }}
         </h4>
         <ul style="color: #666; line-height: 1.8;">
           {{ range $data.payment.requiredInfo }}
@@ -122,8 +131,9 @@
   {{ $testimonials := index .Site.Data.testimonials .Language.Lang }}
   {{ if $testimonials }}
   <section style="margin: 4rem 0;">
-    <h2 class="section-title">{{ if eq .Language.Lang "en" }}What Our Members Say{{ else }}ನಮ್ಮ ಸದಸ್ಯರು ಏನು ಹೇಳುತ್ತಾರೆ{{ end }}</h2>
-    <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
+    <h2 class="section-title">{{ T "what_members_say" }}</h2>
+    <div class="cards-grid"
+      style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
       {{ range first 3 $testimonials }}
       <div class="testimonial-card">
         <div class="testimonial-photo">
@@ -145,14 +155,17 @@
   {{ end }}
 
   <!-- Contact Section -->
-  <section style="margin: 4rem 0; text-align: center; padding: 3rem; background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-blue) 100%); border-radius: 15px; color: white;">
-    <h2 style="color: var(--golden); margin-bottom: 1rem;">{{ if eq .Language.Lang "en" }}Ready to Join?{{ else }}ಸೇರಲು ಸಿದ್ಧರಾಗಿದ್ದೀರಾ?{{ end }}</h2>
+  <section
+    style="margin: 4rem 0; text-align: center; padding: 3rem; background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-blue) 100%); border-radius: 15px; color: white;">
+    <h2 style="color: var(--golden); margin-bottom: 1rem;">{{ T "ready_to_join" }}</h2>
     <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.95;">
-      {{ if eq .Language.Lang "en" }}Become part of our growing community today!{{ else }}ನಿಮ್ಮ ಸದಸ್ಯತ್ವ ನೋಂದಣಿಯನ್ನು ಪೂರ್ಣಗೊಳಿಸಲು ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ{{ end }}
+      {{ T "join_community_today" }}
     </p>
     <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem;">
     </div>
-    <a href="/{{ .Language.Lang }}/contact/" style="display: inline-block; padding: 15px 40px; background-color: var(--golden); color: var(--dark-gray); text-decoration: none; border-radius: 5px; font-weight: 600; font-size: 1.1rem;">{{ if eq .Language.Lang "en" }}Contact Us{{ else }}ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ{{ end }}</a>
+    <a href="/{{ .Language.Lang }}/contact/"
+      style="display: inline-block; padding: 15px 40px; background-color: var(--golden); color: var(--dark-gray); text-decoration: none; border-radius: 5px; font-weight: 600; font-size: 1.1rem;">{{
+      T "contact_us" }}</a>
   </section>
 </div>
 {{ end }}

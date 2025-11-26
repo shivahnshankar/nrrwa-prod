@@ -28,7 +28,7 @@
 <!-- Upcoming Events -->
 <section>
   <div class="container">
-    <h2 class="section-title">{{ if eq .Language.Lang "en" }}Upcoming Events{{ else }}ಮುಂಬರುವ ಕಾರ್ಯಕ್ರಮಗಳು{{ end }}</h2>
+    <h2 class="section-title">{{ T "upcoming_events" }}</h2>
     <div class="cards-grid">
       {{ $now := now }}
       {{ $events := where .Site.RegularPages "Section" "events" }}
@@ -60,13 +60,13 @@
             </div>
             <h3>{{ .Title }}</h3>
             <p>{{ .Params.summary }}</p>
-            <a href="{{ .Permalink }}" class="card-link">{{ if eq $.Language.Lang "en" }}Read More{{ else }}ಇನ್ನಷ್ಟು ಓದಿ{{ end }} →</a>
+            <a href="{{ .Permalink }}" class="card-link">{{ T "read_more" }} →</a>
           </div>
         </div>
       {{ end }}
     </div>
     <div class="text-center mt-4">
-      <a href="{{ "/events/" | relLangURL }}" class="cta-button">{{ if eq .Language.Lang "en" }}View All Events{{ else }}ಎಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ವೀಕ್ಷಿಸಿ{{ end }}</a>
+      <a href="{{ "/events/" | relLangURL }}" class="cta-button">{{ T "view_all_events" }}</a>
     </div>
   </div>
 </section>
@@ -74,7 +74,7 @@
 <!-- Recent News -->
 <section>
   <div class="container">
-    <h2 class="section-title">{{ if eq .Language.Lang "en" }}Latest News{{ else }}ಇತ್ತೀಚಿನ ಸುದ್ದಿ{{ end }}</h2>
+    <h2 class="section-title">{{ T "latest_news" }}</h2>
     <div class="blog-grid">
       {{ $news := where .Site.RegularPages "Section" "news" }}
       {{ $news := where $news ".Language.Lang" .Language.Lang }}
@@ -97,13 +97,13 @@
             </div>
             <h3>{{ .Title }}</h3>
             <p>{{ .Params.summary }}</p>
-            <a href="{{ .Permalink }}" class="card-link">{{ if eq $.Language.Lang "en" }}Read More{{ else }}ಇನ್ನಷ್ಟು ಓದಿ{{ end }} →</a>
+            <a href="{{ .Permalink }}" class="card-link">{{ T "read_more" }} →</a>
           </div>
         </div>
       {{ end }}
     </div>
     <div class="text-center mt-4">
-      <a href="{{ "/news/" | relLangURL }}" class="cta-button">{{ if eq .Language.Lang "en" }}View All News{{ else }}ಎಲ್ಲಾ ಸುದ್ದಿಗಳನ್ನು ವೀಕ್ಷಿಸಿ{{ end }}</a>
+      <a href="{{ "/news/" | relLangURL }}" class="cta-button">{{ T "view_all_news" }}</a>
     </div>
   </div>
 </section>
@@ -114,19 +114,19 @@
     <div class="stats-grid">
       <div class="stat-item">
         <h3 class="stat-number" data-target="{{ .Site.Params.stats_members }}">0</h3>
-        <p>{{ if eq .Language.Lang "en" }}Active Members{{ else }}ಸಕ್ರಿಯ ಸದಸ್ಯರು{{ end }}</p>
+        <p>{{ T "active_members" }}</p>
       </div>
       <div class="stat-item">
         <h3 class="stat-number" data-target="{{ .Site.Params.stats_yearsOfService }}">0</h3>
-        <p>{{ if eq .Language.Lang "en" }}Years of Service{{ else }}ಸೇವೆಯ ವರ್ಷಗಳು{{ end }}</p>
+        <p>{{ T "years_of_service" }}</p>
       </div>
       <div class="stat-item">
         <h3 class="stat-number" data-target="{{ .Site.Params.stats_eventsOrganized }}">0</h3>
-        <p>{{ if eq .Language.Lang "en" }}Events Organized{{ else }}ಆಯೋಜಿಸಿದ ಕಾರ್ಯಕ್ರಮಗಳು{{ end }}</p>
+        <p>{{ T "events_organized" }}</p>
       </div>
       <div class="stat-item">
         <h3 class="stat-number" data-target="{{ .Site.Params.stats_treesPlanted }}">0</h3>
-        <p>{{ if eq .Language.Lang "en" }}Trees Planted{{ else }}ನೆಟ್ಟ ಮರಗಳು{{ end }}</p>
+        <p>{{ T "trees_planted" }}</p>
       </div>
     </div>
   </div>
@@ -137,7 +137,7 @@
   <div class="container">
     {{ $members := index .Site.Data.members .Language.Lang }}
     {{ $sortedMembers := sort $members "joinedDate" "desc" }}
-    <h2 class="section-title">{{ if eq .Language.Lang "en" }}Welcome New Members{{ else }}ಹೊಸ ಸದಸ್ಯರನ್ನು ಸ್ವಾಗತಿಸುತ್ತೇವೆ{{ end }}</h2>
+    <h2 class="section-title">{{ T "welcome_new_members" }}</h2>
     <div class="cards-grid">
       {{ range first 3 $sortedMembers }}
       <div class="card member-card">
@@ -156,8 +156,8 @@
         </div>
         <div class="card-content text-center">
           <h3>{{ .name }}</h3>
-          <p class="member-type">{{ .membershipType }} {{ if eq $.Language.Lang "en" }}Member{{ else }}ಸದಸ್ಯ{{ end }}</p>
-          <p class="member-date">{{ if eq $.Language.Lang "en" }}Joined{{ else }}ಸೇರಿದ್ದಾರೆ{{ end }}: {{ .joinedDate }}</p>
+          <p class="member-type">{{ .membershipType }} {{ T "member" }}</p>
+          <p class="member-date">{{ T "joined" }}: {{ .joinedDate }}</p>
         </div>
       </div>
       {{ end }}
@@ -165,13 +165,9 @@
 
     <div class="text-center mt-4">
       <p style="font-size: 1.1rem; color: var(--text-color);">
-        {{ if eq .Language.Lang "en" }}
-          Join our growing community of {{ len $members }} members!
-        {{ else }}
-          ನಮ್ಮ {{ len $members }} ಸದಸ್ಯರ ಬೆಳೆಯುತ್ತಿರುವ ಸಮುದಾಯಕ್ಕೆ ಸೇರಿ!
-        {{ end }}
+        {{ T "join_community" (dict "Count" (len $members)) }}
       </p>
-      <a href="/{{ .Language.Lang }}/membership/" class="cta-button" style="margin-top: 1rem;">{{ if eq .Language.Lang "en" }}Become a Member{{ else }}ಸದಸ್ಯರಾಗಿ{{ end }}</a>
+      <a href="/{{ .Language.Lang }}/membership/" class="cta-button" style="margin-top: 1rem;">{{ T "become_member" }}</a>
     </div>
   </div>
 </section>

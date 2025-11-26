@@ -1,0 +1,154 @@
+[upcoming_events]
+other = "Upcoming Events"
+
+[latest_news]
+other = "Latest News"
+
+[active_members]
+other = "Active Members"
+
+[years_of_service]
+other = "Years of Service"
+
+[events_organized]
+other = "Events Organized"
+
+[trees_planted]
+other = "Trees Planted"
+
+[welcome_new_members]
+other = "Welcome New Members"
+
+[join_community]
+other = "Join our growing community of {{ .Count }} members!"
+
+[become_member]
+other = "Become a Member"
+
+[read_more]
+other = "Read More"
+
+[view_all_events]
+other = "View All Events"
+
+[view_all_news]
+other = "View All News"
+
+[member]
+other = "Member"
+
+[joined]
+other = "Joined"
+
+# Menu
+[home]
+other = "Home"
+
+[about]
+other = "About"
+
+[overview]
+other = "Overview"
+
+[vision_mission]
+other = "Vision & Mission"
+
+[executive_committee]
+other = "Executive Committee"
+
+[guidelines]
+other = "Guidelines"
+
+[faqs]
+other = "FAQs"
+
+[focus_areas]
+other = "Focus Areas"
+
+[public_amenities]
+other = "Public Amenities"
+
+[environment]
+other = "Environment"
+
+[social_services]
+other = "Social Services"
+
+[health_wellbeing]
+other = "Health & Wellbeing"
+
+[culture_heritage]
+other = "Culture & Heritage"
+
+[safety_security]
+other = "Safety & Security"
+
+[partners]
+other = "Partners"
+
+[events]
+other = "Events"
+
+[news]
+other = "News"
+
+[membership]
+other = "Membership"
+
+[reports]
+other = "Reports"
+
+[contact]
+other = "Contact"
+
+# Events
+[past_events]
+other = "Past Events"
+
+[no_upcoming_events]
+other = "No upcoming events at the moment. Check back soon!"
+
+# Focus
+[our_focus_areas]
+other = "Our Focus Areas"
+
+[get_involved]
+other = "Get Involved"
+
+[join_nrrwa]
+other = "Join NRRWA"
+
+[read_in]
+other = "Read in:"
+
+# Membership
+[membership_benefits]
+other = "Membership Benefits"
+
+[choose_membership]
+other = "Choose Your Membership"
+
+[payment_methods]
+other = "Payment Methods"
+
+[how_to_join]
+other = "How to Join"
+
+[required_information]
+other = "Required Information"
+
+[what_members_say]
+other = "What Our Members Say"
+
+[ready_to_join]
+other = "Ready to Join?"
+
+[join_community_today]
+other = "Become part of our growing community today!"
+
+[contact_us]
+other = "Contact Us"
+
+# Reports
+[note]
+other = "Note:"

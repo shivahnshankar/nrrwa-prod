@@ -1,57 +1,62 @@
 {{ define "main" }}
 <div class="container">
-  <h1 class="section-title">{{ if eq .Language.Lang "en" }}Our Focus Areas{{ else }}ನಮ್ಮ ಗಮನ ಕೇಂದ್ರಗಳು{{ end }}</h1>
-  
-  <div class="intro-text" style="max-width: 800px; margin: 0 auto 3rem; text-align: center; font-size: 1.1rem; color: #666;">
+  <h1 class="section-title">{{ T "our_focus_areas" }}</h1>
+
+  <div class="intro-text"
+    style="max-width: 800px; margin: 0 auto 3rem; text-align: center; font-size: 1.1rem; color: #666;">
     {{ if eq .Language.Lang "en" }}
-      <p>NRRWA works across multiple focus areas to improve the quality of life for all residents of Roopanagara. Each initiative is driven by community needs and volunteer participation.</p>
+    <p>NRRWA works across multiple focus areas to improve the quality of life for all residents of Roopanagara. Each
+      initiative is driven by community needs and volunteer participation.</p>
     {{ else }}
-      <p>ರೂಪನಗರದ ಎಲ್ಲಾ ನಿವಾಸಿಗಳ ಜೀವನ ಗುಣಮಟ್ಟವನ್ನು ಸುಧಾರಿಸಲು NRRWA ಹಲವಾರು ಗಮನ ಕ್ಷೇತ್ರಗಳಲ್ಲಿ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ.</p>
+    <p>ರೂಪನಗರದ ಎಲ್ಲಾ ನಿವಾಸಿಗಳ ಜೀವನ ಗುಣಮಟ್ಟವನ್ನು ಸುಧಾರಿಸಲು NRRWA ಹಲವಾರು ಗಮನ ಕ್ಷೇತ್ರಗಳಲ್ಲಿ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ.</p>
     {{ end }}
   </div>
 
   <div class="cards-grid">
     {{ range .Pages }}
-      {{ if ne .File.LogicalName "_index.en.md" }}
-      {{ if ne .File.LogicalName "_index.kn.md" }}
-      <div class="card">
-        {{ with .Params.featuredImage }}
-          {{ $img := resources.Get . }}
-          {{ if $img }}
-            {{ $resized := $img.Fill "600x400 webp q85" }}
-            <img src="{{ $resized.RelPermalink }}" alt="{{ $.Title }}">
-          {{ else }}
-            <img src="{{ . }}" alt="{{ $.Title }}">
-          {{ end }}
+    {{ if ne .File.LogicalName "_index.en.md" }}
+    {{ if ne .File.LogicalName "_index.kn.md" }}
+    <div class="card">
+      {{ with .Params.featuredImage }}
+      {{ $img := resources.Get . }}
+      {{ if $img }}
+      {{ $resized := $img.Fill "600x400 webp q85" }}
+      <img src="{{ $resized.RelPermalink }}" alt="{{ $.Title }}">
+      {{ else }}
+      <img src="{{ . }}" alt="{{ $.Title }}">
+      {{ end }}
+      {{ else }}
+      <div class="card-icon"
+        style="font-size: 4rem; text-align: center; padding: 2rem; background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);">
+        🎯</div>
+      {{ end }}
+      <div class="card-content">
+        <h3>{{ .Title }}</h3>
+        {{ with .Params.summary }}
+        <p>{{ . }}</p>
         {{ else }}
-          <div class="card-icon" style="font-size: 4rem; text-align: center; padding: 2rem; background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);">🎯</div>
+        <p>{{ .Summary | truncate 150 }}</p>
         {{ end }}
-        <div class="card-content">
-          <h3>{{ .Title }}</h3>
-          {{ with .Params.summary }}
-            <p>{{ . }}</p>
-          {{ else }}
-            <p>{{ .Summary | truncate 150 }}</p>
-          {{ end }}
-          <a href="{{ .Permalink }}" class="card-link">{{ if eq $.Language.Lang "en" }}Learn More{{ else }}ಇನ್ನಷ್ಟು ತಿಳಿಯಿರಿ{{ end }} →</a>
-        </div>
+        <a href="{{ .Permalink }}" class="card-link">{{ if eq $.Language.Lang "en" }}Learn More{{ else }}ಇನ್ನಷ್ಟು
+          ತಿಳಿಯಿರಿ{{ end }} →</a>
       </div>
-      {{ end }}
-      {{ end }}
+    </div>
+    {{ end }}
+    {{ end }}
     {{ end }}
   </div>
 
   <!-- Call to Action -->
   <div style="text-align: center; margin-top: 4rem; padding: 3rem; background: var(--light-gray); border-radius: 10px;">
-    <h2 style="color: var(--primary-green); margin-bottom: 1rem;">{{ if eq .Language.Lang "en" }}Get Involved{{ else }}ತೊಡಗಿಸಿಕೊಳ್ಳಿ{{ end }}</h2>
+    <h2 style="color: var(--primary-green); margin-bottom: 1rem;">{{ T "get_involved" }}</h2>
     <p style="font-size: 1.1rem; margin-bottom: 2rem;">
       {{ if eq .Language.Lang "en" }}
-        Want to contribute to any of these initiatives? Join NRRWA and make a difference in our community!
+      Want to contribute to any of these initiatives? Join NRRWA and make a difference in our community!
       {{ else }}
-        ಈ ಯಾವುದೇ ಉಪಕ್ರಮಗಳಿಗೆ ಕೊಡುಗೆ ನೀಡಲು ಬಯಸುವಿರಾ? NRRWA ಗೆ ಸೇರಿ ಮತ್ತು ನಮ್ಮ ಸಮುದಾಯದಲ್ಲಿ ವ್ಯತ್ಯಾಸವನ್ನು ಮಾಡಿ!
+      ಈ ಯಾವುದೇ ಉಪಕ್ರಮಗಳಿಗೆ ಕೊಡುಗೆ ನೀಡಲು ಬಯಸುವಿರಾ? NRRWA ಗೆ ಸೇರಿ ಮತ್ತು ನಮ್ಮ ಸಮುದಾಯದಲ್ಲಿ ವ್ಯತ್ಯಾಸವನ್ನು ಮಾಡಿ!
       {{ end }}
     </p>
-    <a href="/{{ .Language.Lang }}/membership/" class="cta-button">{{ if eq .Language.Lang "en" }}Join NRRWA{{ else }}NRRWA ಗೆ ಸೇರಿ{{ end }}</a>
+    <a href="/{{ .Language.Lang }}/membership/" class="cta-button">{{ T "join_nrrwa" }}</a>
   </div>
 </div>
 {{ end }}

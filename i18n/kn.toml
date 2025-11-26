@@ -1,0 +1,154 @@
+[upcoming_events]
+other = "ಮುಂಬರುವ ಕಾರ್ಯಕ್ರಮಗಳು"
+
+[latest_news]
+other = "ಇತ್ತೀಚಿನ ಸುದ್ದಿ"
+
+[active_members]
+other = "ಸಕ್ರಿಯ ಸದಸ್ಯರು"
+
+[years_of_service]
+other = "ಸೇವೆಯ ವರ್ಷಗಳು"
+
+[events_organized]
+other = "ಆಯೋಜಿಸಿದ ಕಾರ್ಯಕ್ರಮಗಳು"
+
+[trees_planted]
+other = "ನೆಟ್ಟ ಮರಗಳು"
+
+[welcome_new_members]
+other = "ಹೊಸ ಸದಸ್ಯರನ್ನು ಸ್ವಾಗತಿಸುತ್ತೇವೆ"
+
+[join_community]
+other = "ನಮ್ಮ {{ .Count }} ಸದಸ್ಯರ ಬೆಳೆಯುತ್ತಿರುವ ಸಮುದಾಯಕ್ಕೆ ಸೇರಿ!"
+
+[become_member]
+other = "ಸದಸ್ಯರಾಗಿ"
+
+[read_more]
+other = "ಇನ್ನಷ್ಟು ಓದಿ"
+
+[view_all_events]
+other = "ಎಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ವೀಕ್ಷಿಸಿ"
+
+[view_all_news]
+other = "ಎಲ್ಲಾ ಸುದ್ದಿಗಳನ್ನು ವೀಕ್ಷಿಸಿ"
+
+[member]
+other = "ಸದಸ್ಯ"
+
+[joined]
+other = "ಸೇರಿದ್ದಾರೆ"
+
+# Menu
+[home]
+other = "ಮುಖಪುಟ"
+
+[about]
+other = "ನಮ್ಮ ಬಗ್ಗೆ"
+
+[overview]
+other = "ಅವಲೋಕನ"
+
+[vision_mission]
+other = "ದೃಷ್ಟಿ ಮತ್ತು ಉದ್ದೇಶ"
+
+[executive_committee]
+other = "ಕಾರ್ಯಕಾರಿ ಸಮಿತಿ"
+
+[guidelines]
+other = "ಮಾರ್ಗಸೂಚಿಗಳು"
+
+[faqs]
+other = "ಪ್ರಶ್ನೆಗಳು"
+
+[focus_areas]
+other = "ಗಮನ ಕೇಂದ್ರಗಳು"
+
+[public_amenities]
+other = "ಸಾರ್ವಜನಿಕ ಸೌಲಭ್ಯಗಳು"
+
+[environment]
+other = "ಪರಿಸರ"
+
+[social_services]
+other = "ಸಾಮಾಜಿಕ ಸೇವೆಗಳು"
+
+[health_wellbeing]
+other = "ಆರೋಗ್ಯ ಮತ್ತು ಯೋಗಕ್ಷೇಮ"
+
+[culture_heritage]
+other = "ಸಂಸ್ಕೃತಿ ಮತ್ತು ಪರಂಪರೆ"
+
+[safety_security]
+other = "ಸುರಕ್ಷತೆ ಮತ್ತು ಭದ್ರತೆ"
+
+[partners]
+other = "ಪಾಲುದಾರರು"
+
+[events]
+other = "ಕಾರ್ಯಕ್ರಮಗಳು"
+
+[news]
+other = "ಸುದ್ದಿ"
+
+[membership]
+other = "ಸದಸ್ಯತ್ವ"
+
+[reports]
+other = "ವರದಿಗಳು"
+
+[contact]
+other = "ಸಂಪರ್ಕ"
+
+# Events
+[past_events]
+other = "ಹಿಂದಿನ ಕಾರ್ಯಕ್ರಮಗಳು"
+
+[no_upcoming_events]
+other = "ಈ ಸಮಯದಲ್ಲಿ ಯಾವುದೇ ಮುಂಬರುವ ಕಾರ್ಯಕ್ರಮಗಳಿಲ್ಲ. ಶೀಘ್ರದಲ್ಲೇ ಮತ್ತೆ ಪರಿಶೀಲಿಸಿ!"
+
+# Focus
+[our_focus_areas]
+other = "ನಮ್ಮ ಗಮನ ಕೇಂದ್ರಗಳು"
+
+[get_involved]
+other = "ತೊಡಗಿಸಿಕೊಳ್ಳಿ"
+
+[join_nrrwa]
+other = "NRRWA ಗೆ ಸೇರಿ"
+
+[read_in]
+other = "ಓದಿ:"
+
+# Membership
+[membership_benefits]
+other = "ಸದಸ್ಯತ್ವ ಪ್ರಯೋಜನಗಳು"
+
+[choose_membership]
+other = "ನಿಮ್ಮ ಸದಸ್ಯತ್ವವನ್ನು ಆಯ್ಕೆಮಾಡಿ"
+
+[payment_methods]
+other = "ಪಾವತಿ ವಿಧಾನಗಳು"
+
+[how_to_join]
+other = "ಹೇಗೆ ಸೇರುವುದು"
+
+[required_information]
+other = "ಅಗತ್ಯವಿರುವ ಮಾಹಿತಿ"
+
+[what_members_say]
+other = "ನಮ್ಮ ಸದಸ್ಯರು ಏನು ಹೇಳುತ್ತಾರೆ"
+
+[ready_to_join]
+other = "ಸೇರಲು ಸಿದ್ಧರಾಗಿದ್ದೀರಾ?"
+
+[join_community_today]
+other = "ನಿಮ್ಮ ಸದಸ್ಯತ್ವ ನೋಂದಣಿಯನ್ನು ಪೂರ್ಣಗೊಳಿಸಲು ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ"
+
+[contact_us]
+other = "ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ"
+
+# Reports
+[note]
+other = "ಸೂಚನೆ:"

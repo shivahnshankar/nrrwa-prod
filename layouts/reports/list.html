@@ -11,7 +11,8 @@
   <!-- Documents by Year -->
   {{ range $data.documents }}
   <section style="margin: 4rem 0;">
-    <h2 style="color: var(--primary-blue); margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 3px solid var(--primary-blue);">
+    <h2
+      style="color: var(--primary-blue); margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 3px solid var(--primary-blue);">
       📅 {{ if eq $.Language.Lang "en" }}Year{{ else }}ವರ್ಷ{{ end }}: {{ .year }}
     </h2>
 
@@ -24,7 +25,9 @@
             <div style="flex: 1; min-width: 250px;">
               <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
                 <span style="font-size: 1.5rem;">{{ $categoryData.icon }}</span>
-                <span style="background: var(--light-gray); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; color: var(--text-color);">{{ $categoryData.name }}</span>
+                <span
+                  style="background: var(--light-gray); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; color: var(--text-color);">{{
+                  $categoryData.name }}</span>
               </div>
               <h3 style="color: var(--primary-green); margin-bottom: 0.5rem;">{{ .title }}</h3>
               <p style="color: #666; margin-bottom: 1rem;">{{ .description }}</p>
@@ -34,7 +37,8 @@
               </div>
             </div>
             <div style="display: flex; align-items: center;">
-              <a href="{{ .fileUrl }}" target="_blank" style="display: inline-block; padding: 10px 25px; background: var(--primary-green); color: white; text-decoration: none; border-radius: 5px; font-weight: 600; transition: all 0.3s ease;">
+              <a href="{{ .fileUrl }}" target="_blank"
+                style="display: inline-block; padding: 10px 25px; background: var(--primary-green); color: white; text-decoration: none; border-radius: 5px; font-weight: 600; transition: all 0.3s ease;">
                 {{ if eq $.Language.Lang "en" }}Download{{ else }}ಡೌನ್‌ಲೋಡ್{{ end }} ⬇️
               </a>
             </div>
@@ -47,13 +51,16 @@
   {{ end }}
 
   <!-- Notice Section -->
-  <section style="margin: 4rem 0; padding: 2.5rem; background: var(--light-gray); border-radius: 10px; border-left: 5px solid var(--primary-blue); text-align: center;">
+  <section
+    style="margin: 4rem 0; padding: 2.5rem; background: var(--light-gray); border-radius: 10px; border-left: 5px solid var(--primary-blue); text-align: center;">
     <p style="color: var(--text-color); font-size: 1rem; margin: 0;">
-      <strong>📝 {{ if eq .Language.Lang "en" }}Note:{{ else }}ಸೂಚನೆ:{{ end }}</strong>
+      <strong>📝 {{ T "note" }}</strong>
       {{ if eq .Language.Lang "en" }}
-        All documents are available for download. For any queries or if you need assistance accessing these documents, please contact us.
+      All documents are available for download. For any queries or if you need assistance accessing these documents,
+      please contact us.
       {{ else }}
-        ಎಲ್ಲಾ ದಾಖಲೆಗಳು ಡೌನ್‌ಲೋಡ್‌ಗೆ ಲಭ್ಯವಿದೆ. ಯಾವುದೇ ಪ್ರಶ್ನೆಗಳಿಗಾಗಿ ಅಥವಾ ಈ ದಾಖಲೆಗಳನ್ನು ಪ್ರವೇಶಿಸಲು ಸಹಾಯ ಬೇಕಾದರೆ, ದಯವಿಟ್ಟು ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ.
+      ಎಲ್ಲಾ ದಾಖಲೆಗಳು ಡೌನ್‌ಲೋಡ್‌ಗೆ ಲಭ್ಯವಿದೆ. ಯಾವುದೇ ಪ್ರಶ್ನೆಗಳಿಗಾಗಿ ಅಥವಾ ಈ ದಾಖಲೆಗಳನ್ನು ಪ್ರವೇಶಿಸಲು ಸಹಾಯ ಬೇಕಾದರೆ, ದಯವಿಟ್ಟು
+      ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ.
       {{ end }}
     </p>
   </section>
