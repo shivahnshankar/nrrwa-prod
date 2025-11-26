@@ -9,7 +9,7 @@
         }}>{{ T "home" }}</a></li>
 
     <!-- About with submenu -->
-    <li class="has-submenu {{ if hasPrefix .RelPermalink (printf " /%s/about/" .Language.Lang) }}active-section{{ end
+    <li class="has-submenu {{ if hasPrefix .RelPermalink (printf "/%s/about/" .Language.Lang) }}active-section{{ end
       }}">
       <a href="/{{ .Language.Lang }}/about/">{{ T "about" }}</a>
       <ul class="submenu">
@@ -22,7 +22,7 @@
     </li>
 
     <!-- Focus Areas with submenu -->
-    <li class="has-submenu {{ if hasPrefix .RelPermalink (printf " /%s/focus/" .Language.Lang) }}active-section{{ end
+    <li class="has-submenu {{ if hasPrefix .RelPermalink (printf "/%s/focus/" .Language.Lang) }}active-section{{ end
       }}">
       <a href="/{{ .Language.Lang }}/focus/">{{ T "focus_areas" }}</a>
       <ul class="submenu">
@@ -43,16 +43,17 @@
         .Language.Lang) }} class="active" {{ end }}>{{ T "membership" }}</a></li>
 
     <!-- Reports with submenu -->
-    <li class="has-submenu {{ if or (hasPrefix .RelPermalink (printf " /%s/reports/" .Language.Lang)) (hasPrefix
+    <li class="has-submenu {{ if or (hasPrefix .RelPermalink (printf "/%s/reports/" .Language.Lang)) (hasPrefix
       .RelPermalink (printf "/%s/donors/" .Language.Lang)) }}active-section{{ end }}">
-    <li><a href="/{{ .Language.Lang }}/reports/">{{ if eq .Language.Lang "en" }}Documents{{ else }}ದಸ್ತಾವೇಜುಗಳು{{ end
-        }}</a></li>
-    <li><a href="/{{ .Language.Lang }}/donors/">{{ if eq .Language.Lang "en" }}Donors{{ else }}ದಾನಿಗಳು{{ end }}</a></li>
-  </ul>
-  </li>
+      <a href="/{{ .Language.Lang }}/reports/">{{ if eq .Language.Lang "en" }}Documents{{ else }}ದಸ್ತಾವೇಜುಗಳು{{ end }}</a>
+      <ul class="submenu">
+        <li><a href="/{{ .Language.Lang }}/reports/">{{ if eq .Language.Lang "en" }}Reports{{ else }}ವರದಿಗಳು{{ end }}</a></li>
+        <li><a href="/{{ .Language.Lang }}/donors/">{{ if eq .Language.Lang "en" }}Donors{{ else }}ದಾನಿಗಳು{{ end }}</a></li>
+      </ul>
+    </li>
 
   <!-- Partners with submenu -->
-  <li class="has-submenu {{ if hasPrefix .RelPermalink (printf " /%s/partners/" .Language.Lang) }}active-section{{ end
+  <li class="has-submenu {{ if hasPrefix .RelPermalink (printf "/%s/partners/" .Language.Lang) }}active-section{{ end
     }}">
     <a href="/{{ .Language.Lang }}/partners/">{{ if eq .Language.Lang "en" }}Partners{{ else }}ಪಾಲುದಾರರು{{ end }}</a>
     <ul class="submenu">
@@ -64,7 +65,7 @@
   </li>
 
   <!-- Contact with submenu -->
-  <li class="has-submenu {{ if or (hasPrefix .RelPermalink (printf " /%s/contact/" .Language.Lang)) (hasPrefix
+  <li class="has-submenu {{ if or (hasPrefix .RelPermalink (printf "/%s/contact/" .Language.Lang)) (hasPrefix
     .RelPermalink (printf "/%s/directory/" .Language.Lang)) }}active-section{{ end }}">
     <a href="/{{ .Language.Lang }}/contact/">{{ if eq .Language.Lang "en" }}Contact{{ else }}ಸಂಪರ್ಕ{{ end }}</a>
     <ul class="submenu">
