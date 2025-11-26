@@ -18,9 +18,9 @@ relativeURLs = true
   [languages.kn]
     languageName = 'ಕನ್ನಡ'
     weight = 2
-    title = 'ಎನ್ಆರ್ಆರ್ಡಬ್ಲ್ಯೂಎ'
+    title = 'NRRWA'
     [languages.kn.params]
-      siteName = 'ಎನ್ಆರ್ಆರ್ಡಬ್ಲ್ಯೂಎ'
+      siteName = 'NRRWA'
       siteDescription = 'ನಮ್ಮ ರೂಪನಗರ ನಿವಾಸಿಗಳ ಕಲ್ಯಾಣ ಸಂಘ'
 
 # Taxonomies (built-in Hugo feature)
