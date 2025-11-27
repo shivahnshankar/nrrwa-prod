@@ -1,7 +1,42 @@
 // NRRWA Website JavaScript
 
-// Hero Swiper Slider
-document.addEventListener('DOMContentLoaded', function() {
+// ============================================
+// Theme Toggle (Dark/Light Mode)
+// ============================================
+
+// Initialize theme from localStorage or system preference
+function initializeTheme() {
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  if (savedTheme) {
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  } else if (prefersDark) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+}
+
+// Toggle theme
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+}
+
+// Initialize theme immediately (before DOMContentLoaded for no flash)
+initializeTheme();
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Theme Toggle Button
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', toggleTheme);
+  }
+
   // Initialize Swiper if element exists
   const heroSwiper = document.querySelector('.hero-swiper');
   if (heroSwiper && typeof Swiper !== 'undefined') {
@@ -29,22 +64,22 @@ document.addEventListener('DOMContentLoaded', function() {
   // FAQ Accordion
   const faqQuestions = document.querySelectorAll('.faq-question');
   faqQuestions.forEach(question => {
-    question.addEventListener('click', function() {
+    question.addEventListener('click', function () {
       const faqItem = this.parentElement;
       const isActive = faqItem.classList.contains('active');
-      
+
       // Close all FAQ items
       document.querySelectorAll('.faq-item').forEach(item => {
         item.classList.remove('active');
       });
-      
+
       // Open clicked item if it wasn't active
       if (!isActive) {
         faqItem.classList.add('active');
       }
     });
   });
-  
+
   // Stats Counter Animation
   const statsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -54,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const duration = 2000;
         const increment = target / (duration / 16);
         let current = 0;
-        
+
         const updateCounter = () => {
           current += increment;
           if (current < target) {
@@ -64,24 +99,24 @@ document.addEventListener('DOMContentLoaded', function() {
             statNumber.textContent = target;
           }
         };
-        
+
         updateCounter();
         statsObserver.unobserve(statNumber);
       }
     });
   }, { threshold: 0.5 });
-  
+
   document.querySelectorAll('.stat-number').forEach(stat => {
     statsObserver.observe(stat);
   });
-  
+
   // Mobile Menu Toggle
   const menuToggle = document.querySelector('.menu-toggle');
   const navMenu = document.querySelector('.nav-menu');
   const hasSubmenuItems = document.querySelectorAll('nav .has-submenu');
 
   if (menuToggle && navMenu) {
-    menuToggle.addEventListener('click', function(e) {
+    menuToggle.addEventListener('click', function (e) {
       e.stopPropagation();
       menuToggle.classList.toggle('active');
       navMenu.classList.toggle('active');
@@ -91,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
     hasSubmenuItems.forEach(item => {
       const link = item.querySelector('a');
       if (link) {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
           // Only prevent default and toggle submenu on mobile when menu is visible
           const isMobile = window.innerWidth <= 768;
           const menuIsOpen = navMenu.classList.contains('active');
@@ -122,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Close menu when clicking outside (only on mobile)
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', function (e) {
       const isMobile = window.innerWidth <= 768;
       if (isMobile && !navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
         navMenu.classList.remove('active');
@@ -135,17 +170,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Prevent clicks inside nav menu from closing it (only on mobile)
-    navMenu.addEventListener('click', function(e) {
+    navMenu.addEventListener('click', function (e) {
       const isMobile = window.innerWidth <= 768;
       if (isMobile) {
         e.stopPropagation();
       }
     });
   }
-  
+
   // Smooth Scrolling
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
       if (href !== '#') {
         e.preventDefault();
@@ -182,7 +217,7 @@ function closeLightbox() {
 }
 
 // Close lightbox on Escape key
-document.addEventListener('keydown', function(event) {
+document.addEventListener('keydown', function (event) {
   if (event.key === 'Escape') {
     closeLightbox();
   }
