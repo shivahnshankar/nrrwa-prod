@@ -66,11 +66,16 @@ This is a Hugo implementation of the NRRWA website, showcasing Hugo's built-in f
 ## Running the Site
 
 ```bash
+# Quick start with automated Pagefind indexing
+./dev-server.sh
+
+# Or manually:
 # Development server with live reload
 hugo server -D
 
-# Build for production
-hugo
+# Build for production (with Pagefind)
+hugo --minify
+npx pagefind --site public
 
 # Build with drafts
 hugo --buildDrafts
