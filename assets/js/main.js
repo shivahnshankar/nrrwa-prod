@@ -194,6 +194,43 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
+
+  // ============================================
+  // Scroll-Triggered Animations (Intersection Observer)
+  // ============================================
+
+  // Create intersection observer for scroll animations
+  const animationObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animated');
+        // Optionally unobserve after animation (for performance)
+        // animationObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1, // Trigger when 10% of element is visible
+    rootMargin: '0px 0px -50px 0px' // Trigger slightly before element comes into view
+  });
+
+  // Observe all elements with animation classes
+  const animatedElements = document.querySelectorAll(
+    '.animate-on-scroll, .section-title, .stagger-animation, .cards-grid, .blog-grid'
+  );
+
+  animatedElements.forEach(el => {
+    // Add animate-on-scroll class if not already present
+    if (!el.classList.contains('animate-on-scroll') &&
+      !el.classList.contains('stagger-animation')) {
+      el.classList.add('animate-on-scroll', 'fade-in-up');
+    }
+    animationObserver.observe(el);
+  });
+
+  // Special handling for card grids - add stagger effect
+  document.querySelectorAll('.cards-grid, .blog-grid').forEach(grid => {
+    grid.classList.add('stagger-animation');
+  });
 });
 
 // Lightbox functions
