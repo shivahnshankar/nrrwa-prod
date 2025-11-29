@@ -1,0 +1,42 @@
+{{- /* donor-accordion shortcode - Creates collapsible section with CSV table */ -}}
+{{- $file := .Get "file" -}}
+{{- $title := .Get "title" -}}
+{{- $description := .Get "description" -}}
+
+<div class="donor-accordion-item">
+    <div class="donor-accordion-header">
+        <h3>{{ $title }}</h3>
+        {{- if $description -}}
+        <p class="donor-description">{{ $description }}</p>
+        {{- end -}}
+        <span class="donor-toggle">▼</span>
+    </div>
+    <div class="donor-accordion-content">
+        {{- with resources.Get $file -}}
+        {{- with . | transform.Unmarshal -}}
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        {{- range index . 0 -}}
+                        <th>{{ . }}</th>
+                        {{- end -}}
+                    </tr>
+                </thead>
+                <tbody>
+                    {{- range after 1 . -}}
+                    <tr>
+                        {{- range . -}}
+                        <td>{{ . }}</td>
+                        {{- end -}}
+                    </tr>
+                    {{- end -}}
+                </tbody>
+            </table>
+        </div>
+        {{- end -}}
+        {{- else -}}
+        <p class="error">CSV file not found: {{ $file }}</p>
+        {{- end -}}
+    </div>
+</div>

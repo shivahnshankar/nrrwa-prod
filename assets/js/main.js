@@ -80,6 +80,22 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  // Donor Accordion
+  const donorHeaders = document.querySelectorAll('.donor-accordion-header');
+  donorHeaders.forEach(header => {
+    header.addEventListener('click', function () {
+      const donorItem = this.parentElement;
+      const isActive = donorItem.classList.contains('active');
+
+      // Toggle clicked item
+      if (isActive) {
+        donorItem.classList.remove('active');
+      } else {
+        donorItem.classList.add('active');
+      }
+    });
+  });
+
   // Stats Counter Animation
   const statsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {

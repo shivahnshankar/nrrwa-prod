@@ -1,73 +1,47 @@
 {{ define "main" }}
-{{ $data := index .Site.Data.donors .Language.Lang }}
-
 <div class="container">
-  <h1 class="section-title">{{ $data.title }}</h1>
-  <p style="text-align: center; font-size: 1.2rem; color: var(--text-color); margin-bottom: 3rem;">
-    {{ $data.subtitle }}
-  </p>
+    <h1 class="section-title">{{ .Title }}</h1>
 
-  <div class="post-content" style="max-width: 900px; margin: 0 auto 3rem;">
-    {{ .Content }}
-  </div>
-
-  <!-- Donors by Cause -->
-  {{ range $data.causes }}
-  {{ $causeColor := .color }}
-  <section style="margin: 3rem 0;">
-    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 3px solid {{ .color }};">
-      <div style="font-size: 3rem;">{{ .icon }}</div>
-      <div>
-        <h2 style="color: {{ .color }}; margin: 0; font-size: 1.8rem;">{{ .name }}</h2>
-        <p style="color: #666; margin: 0.5rem 0 0 0; font-size: 1rem;">{{ .description }}</p>
-      </div>
+    <div class="content">
+        {{ .Content }}
     </div>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;">
-      {{ range .donors }}
-      <div class="card" style="background: white; border-left: 4px solid {{ $causeColor }}; transition: all 0.3s ease;">
-        <div class="card-content">
-          <h3 style="color: var(--primary-green); font-size: 1.1rem; margin-bottom: 0.5rem;">{{ .name }}</h3>
-          {{ if .amount }}
-          <p style="color: var(--primary-blue); font-weight: 600; font-size: 1.2rem; margin: 0.5rem 0;">{{ .amount }}</p>
-          {{ end }}
-          {{ if .year }}
-          <p style="color: #999; font-size: 0.9rem; margin: 0;">Year: {{ .year }}</p>
-          {{ end }}
+    <!-- Donation Call to Action -->
+    <section
+        style="margin: 4rem 0; text-align: center; padding: 3rem; background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-blue) 100%); border-radius: 15px; color: white;">
+        <h2 style="color: var(--golden); margin-bottom: 1rem; font-size: 2rem;">{{ if eq .Language.Lang "en" }}Support
+            Our Causes{{ else }}ನಮ್ಮ ಉದ್ದೇಶಗಳನ್ನು ಬೆಂಬಲಿಸಿ{{ end }}</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.95;">
+            {{ if eq .Language.Lang "en" }}
+            Your generous donation helps us continue serving the Roopanagara community. Every contribution makes a
+            difference!
+            {{ else }}
+            ನಿಮ್ಮ ಉದಾರ ದಾನವು ರೂಪನಗರ ಸಮುದಾಯವನ್ನು ಸೇವೆ ಮಾಡುವುದನ್ನು ಮುಂದುವರಿಸಲು ನಮಗೆ ಸಹಾಯ ಮಾಡುತ್ತದೆ. ಪ್ರತಿಯೊಂದು ಕೊಡುಗೆಯೂ
+            ವ್ಯತ್ಯಾಸವನ್ನು ಮಾಡುತ್ತದೆ!
+            {{ end }}
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+            <a href="/{{ .Language.Lang }}/contact/"
+                style="display: inline-block; padding: 15px 40px; background-color: var(--golden); color: var(--dark-gray); text-decoration: none; border-radius: 5px; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease;">
+                {{ if eq .Language.Lang "en" }}Donate Now{{ else }}ಈಗ ದಾನ ಮಾಡಿ{{ end }}
+            </a>
         </div>
-      </div>
-      {{ end }}
-    </div>
-  </section>
-  {{ end }}
+    </section>
 
-  <!-- Donation Call to Action -->
-  <section style="margin: 4rem 0; text-align: center; padding: 3rem; background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-blue) 100%); border-radius: 15px; color: white;">
-    <h2 style="color: var(--golden); margin-bottom: 1rem; font-size: 2rem;">{{ if eq .Language.Lang "en" }}Support Our Causes{{ else }}ನಮ್ಮ ಉದ್ದೇಶಗಳನ್ನು ಬೆಂಬಲಿಸಿ{{ end }}</h2>
-    <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.95;">
-      {{ if eq .Language.Lang "en" }}
-        Your generous donation helps us continue serving the Roopanagara community. Every contribution makes a difference!
-      {{ else }}
-        ನಿಮ್ಮ ಉದಾರ ದಾನವು ರೂಪನಗರ ಸಮುದಾಯವನ್ನು ಸೇವೆ ಮಾಡುವುದನ್ನು ಮುಂದುವರಿಸಲು ನಮಗೆ ಸಹಾಯ ಮಾಡುತ್ತದೆ. ಪ್ರತಿಯೊಂದು ಕೊಡುಗೆಯೂ ವ್ಯತ್ಯಾಸವನ್ನು ಮಾಡುತ್ತದೆ!
-      {{ end }}
-    </p>
-    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
-      <a href="/{{ .Language.Lang }}/contact/" style="display: inline-block; padding: 15px 40px; background-color: var(--golden); color: var(--dark-gray); text-decoration: none; border-radius: 5px; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease;">
-        {{ if eq .Language.Lang "en" }}Donate Now{{ else }}ಈಗ ದಾನ ಮಾಡಿ{{ end }}
-      </a>
-    </div>
-  </section>
-
-  <!-- Note Section -->
-  <section style="margin: 3rem 0; padding: 2rem; background: var(--light-gray); border-radius: 10px; border-left: 5px solid var(--primary-green);">
-    <p style="color: var(--text-color); font-size: 1rem; margin: 0; line-height: 1.6;">
-      <strong>{{ if eq .Language.Lang "en" }}Note:{{ else }}ಸೂಚನೆ:{{ end }}</strong>
-      {{ if eq .Language.Lang "en" }}
-        All donations are tax-deductible under Section 80G. We maintain complete transparency in our financial operations. For donation receipts and queries, please contact us at nammaroopanagara@gmail.com
-      {{ else }}
-        ಎಲ್ಲಾ ದಾನಗಳು ವಿಭಾಗ 80G ಅಡಿಯಲ್ಲಿ ತೆರಿಗೆ ವಿನಾಯಿತಿ ಹೊಂದಿವೆ. ನಾವು ನಮ್ಮ ಹಣಕಾಸು ಕಾರ್ಯಾಚರಣೆಗಳಲ್ಲಿ ಸಂಪೂರ್ಣ ಪಾರದರ್ಶಕತೆಯನ್ನು ಕಾಪಾಡಿಕೊಳ್ಳುತ್ತೇವೆ. ದಾನ ರಸೀದಿಗಳು ಮತ್ತು ಪ್ರಶ್ನೆಗಳಿಗಾಗಿ, ದಯವಿಟ್ಟು ನಮ್ಮನ್ನು nammaroopanagara@gmail.com ನಲ್ಲಿ ಸಂಪರ್ಕಿಸಿ
-      {{ end }}
-    </p>
-  </section>
+    <!-- Note Section -->
+    <section
+        style="margin: 3rem 0; padding: 2rem; background: var(--light-gray); border-radius: 10px; border-left: 5px solid var(--primary-green);">
+        <p style="color: var(--text-color); font-size: 1rem; margin: 0; line-height: 1.6;">
+            <strong>{{ if eq .Language.Lang "en" }}Note:{{ else }}ಸೂಚನೆ:{{ end }}</strong>
+            {{ if eq .Language.Lang "en" }}
+            All donations are tax-deductible under Section 80G. We maintain complete transparency in our financial
+            operations. For donation receipts and queries, please contact us at nammaroopanagara@gmail.com
+            {{ else }}
+            ಎಲ್ಲಾ ದಾನಗಳು ವಿಭಾಗ 80G ಅಡಿಯಲ್ಲಿ ತೆರಿಗೆ ವಿನಾಯಿತಿ ಹೊಂದಿವೆ. ನಾವು ನಮ್ಮ ಹಣಕಾಸು ಕಾರ್ಯಾಚರಣೆಗಳಲ್ಲಿ ಸಂಪೂರ್ಣ
+            ಪಾರದರ್ಶಕತೆಯನ್ನು ಕಾಪಾಡಿಕೊಳ್ಳುತ್ತೇವೆ. ದಾನ ರಸೀದಿಗಳು ಮತ್ತು ಪ್ರಶ್ನೆಗಳಿಗಾಗಿ, ದಯವಿಟ್ಟು ನಮ್ಮನ್ನು
+            nammaroopanagara@gmail.com ನಲ್ಲಿ ಸಂಪರ್ಕಿಸಿ
+            {{ end }}
+        </p>
+    </section>
 </div>
 {{ end }}

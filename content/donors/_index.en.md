@@ -4,17 +4,8 @@ title: "Our Donors"
 
 We are grateful to all our donors who have generously supported NRRWA's initiatives and helped us serve the Roopanagara community better.
 
-## Why Donate?
+{{< donor-accordion file="data/donors/amphitheatre.csv" title="Amphitheatre Project Donors" description="Thank you to everyone who contributed to the development of our community amphitheatre" >}}
 
-Your contributions help us:
-- Maintain and improve community infrastructure
-- Organize cultural and social events
-- Support environmental initiatives
-- Provide welfare services to residents
-- Enhance safety and security measures
+{{< donor-accordion file="data/donors/nammavana.csv" title="Nammavana Project Donors" description="We appreciate the generous support for our Nammavana green initiative" >}}
 
-## Ways to Contribute
-
-We accept donations for various community development projects. Your support, no matter the amount, makes a real difference in our community.
-
-For donation information, please contact us at nammaroopanagara@gmail.com
+---
