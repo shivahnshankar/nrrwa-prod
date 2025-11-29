@@ -16,4 +16,8 @@ Both leaders appreciated the initiative to create a community-centric cultural s
 
 The event concluded with enthusiastic participation from residents, heartfelt appreciation for the organizers, and a shared vision of the Amphitheater becoming a vibrant hub for creativity, connection, and community pride.
 
+As always, you can watch the entire event on YouTube thanks to Malati Bhat.
+
+{{< youtube L6ZBKU5Uh5g >}}
+{{< youtube 5eEuhyPzjDE>}}
 {{< gallery path="assets/images/news/amphitheatre" >}}

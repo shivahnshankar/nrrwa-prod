@@ -62,4 +62,10 @@ Smt. Raksha Prabhu compered the event gracefully and kept the audience engaged t
 
 >   This year’s Kannada Rajyotsava was highly attractive, culturally enriching, and truly enjoyable!
 
+You can watch the entire event here, thanks to Malati Bhat.
+
+{{< youtube AUWurhT1ftk >}}
+
+Here are a few pictures from the event.
+
 {{< gallery path="assets/images/news/rajyothsava2025/gallery" >}}
