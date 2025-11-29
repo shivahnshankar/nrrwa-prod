@@ -1,4 +1,9 @@
 en:
+  - image: "/assets/images/hero-bright-example.png"
+    title: "Welcome to NRRWA"
+    description: "Building a vibrant, sustainable community together"
+    buttonText: "Learn More"
+    buttonLink: "/en/about/"
   - image: "/assets/images/slides/nature1.jpg"
     title: "Building a Better Community Together"
     description: "Join us in making Roopanagara a model residential area"
@@ -16,6 +21,11 @@ en:
     buttonLink: "/en/events/"
 
 kn:
+  - image: "/assets/images/hero-bright-example.png"
+    title: "NRRWA ಗೆ ಸ್ವಾಗತ"
+    description: "ಒಟ್ಟಾಗಿ ರೋಮಾಂಚಕ, ಸುಸ್ಥಿರ ಸಮುದಾಯವನ್ನು ನಿರ್ಮಿಸುವುದು"
+    buttonText: "ಇನ್ನಷ್ಟು ತಿಳಿಯಿರಿ"
+    buttonLink: "/kn/about/"
   - image: "/assets/images/slides/nature1.jpg"
     title: "ಒಟ್ಟಿಗೆ ಉತ್ತಮ ಸಮುದಾಯವನ್ನು ನಿರ್ಮಿಸುವುದು"
     description: "ರೂಪನಗರವನ್ನು ಮಾದರಿ ವಸತಿ ಪ್ರದೇಶವನ್ನಾಗಿ ಮಾಡಲು ನಮ್ಮೊಂದಿಗೆ ಸೇರಿ"
@@ -31,3 +41,4 @@ kn:
     description: "ನಮ್ಮನ್ನು ಒಟ್ಟುಗೂಡಿಸುವ ಕಾರ್ಯಕ್ರಮಗಳು ಮತ್ತು ಚಟುವಟಿಕೆಗಳು"
     buttonText: "ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ವೀಕ್ಷಿಸಿ"
     buttonLink: "/kn/events/"
+

@@ -766,18 +766,6 @@ nav ul li.has-submenu .submenu li a.active {
   overflow: hidden;
 }
 
-.hero-swiper::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 200px;
-  background: linear-gradient(to top, var(--color-background), transparent);
-  pointer-events: none;
-  z-index: 1;
-}
-
 .hero-swiper .swiper-slide {
   position: relative;
 }
@@ -786,54 +774,46 @@ nav ul li.has-submenu .submenu li a.active {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.85);
-  transition: filter var(--transition-slow);
 }
 
-.hero-swiper .swiper-slide-active img {
-  filter: brightness(1);
-}
-
-/* Glassmorphism Slide Content */
+/* Slide Content - Clean Transparent with Dark Text */
 .slide-content {
   position: absolute;
   bottom: 50px;
   left: 50px;
   right: 50px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px) saturate(180%);
-  -webkit-backdrop-filter: blur(12px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: var(--color-text-inverse);
+  background: transparent;
+  border: none;
+  color: var(--gray-900);
   padding: 30px;
   border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-2xl);
   z-index: 2;
   transition: all var(--transition-slow);
 }
 
-[data-theme="dark"] .slide-content {
-  background: rgba(0, 0, 0, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
 .slide-content:hover {
-  background: rgba(255, 255, 255, 0.2);
   transform: translateY(-5px);
 }
 
 .slide-content h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  color: var(--color-text-inverse);
+  color: var(--gray-900);
+  text-shadow:
+    0 2px 4px rgba(255, 255, 255, 0.9),
+    0 4px 8px rgba(255, 255, 255, 0.6),
+    0 1px 0 rgba(255, 255, 255, 1);
+  font-weight: 700;
 }
 
 .slide-content p {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
-  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-  color: var(--color-text-inverse);
+  color: var(--gray-800);
+  text-shadow:
+    0 1px 3px rgba(255, 255, 255, 0.9),
+    0 2px 6px rgba(255, 255, 255, 0.5);
+  font-weight: 500;
 }
 
 /* Modern CTA Button */
