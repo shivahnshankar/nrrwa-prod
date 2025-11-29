@@ -1,0 +1,34 @@
+{{- /* csv-to-table shortcode - Converts CSV file to HTML table */ -}}
+{{- $file := .Get 0 -}}
+{{- $title := .Get "title" -}}
+
+{{- with resources.Get $file -}}
+{{- with . | transform.Unmarshal -}}
+{{- if $title -}}
+<h3>{{ $title }}</h3>
+{{- end -}}
+
+<div class="table-responsive">
+    <table>
+        <thead>
+            <tr>
+                {{- range index . 0 -}}
+                <th>{{ . }}</th>
+                {{- end -}}
+            </tr>
+        </thead>
+        <tbody>
+            {{- range after 1 . -}}
+            <tr>
+                {{- range . -}}
+                <td>{{ . }}</td>
+                {{- end -}}
+            </tr>
+            {{- end -}}
+        </tbody>
+    </table>
+</div>
+{{- end -}}
+{{- else -}}
+<p class="error">CSV file not found: {{ $file }}</p>
+{{- end -}}
