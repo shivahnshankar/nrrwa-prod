@@ -24,7 +24,7 @@ NRRWA thanks Mr. R. Balasubramanian for participating in this occassion.
 
 **Date:** December 05, 2025
 <br>
-**Time:** 16:00 - 17:00
+**Time:** 4:00 PM - 5:00 PM
 <br>
 **Venue:** NRRWA Office, Roopanagara
 
