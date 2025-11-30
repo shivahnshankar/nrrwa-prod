@@ -43,7 +43,8 @@
           {{ end }}
         {{ end }}
       {{ end }}
-      {{ range first 3 $futureEvents }}
+      {{ $sortedEvents := sort $futureEvents "Params.eventDate" }}
+      {{ range first 3 $sortedEvents }}
         <div class="card">
           {{ with .Params.featuredImage }}
             {{ $img := resources.Get . }}
