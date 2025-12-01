@@ -9,13 +9,19 @@ Namma Roopanagara Residents Welfare Association (NRRWA) is a community-driven or
 
 ## History
 
-The first assembly of the like minded residents to discuss on the improvements that could be done in Roopanagara for the benefit of the residents took place in December 2A20 in the DRC area. DHBCS representative advised the group to form a resident welfare association and further assured that it will have the support from DHBCS. This meeting was attended by about 30-35 People. During the next gathering in the park on 3&#39;d January 2021, it was unanimously decided to clean the park and paint benches etc. This activity continued for couple of Sundays . Residents participated with enthusiasm.
+The first assembly of the like minded residents to discuss on the improvements that could be done in Roopanagara for the benefit of the residents took place in December 2A20 in the DRC area. DHBCS representative advised the group to form a resident welfare association and further assured that it will have the support from DHBCS. This meeting was attended by about 30-35 People. During the next gathering in the park on 3rd January 2021, it was unanimously decided to clean the park and paint benches etc. This activity continued for couple of Sundays . Residents participated with enthusiasm.
 
-The thoughts on forming a Resident Welfare Association further developed during these sessions. A meeting of residents was called on January 26th, 2021to form a Residents Welfare Association. 
+The thoughts on forming a Resident Welfare Association further developed during these sessions. A meeting of residents was called on January 26th, 2021to form a Residents Welfare Association.
 
-Here it was decided to create a data base of the residents&quot; With this data, a social communication network: WhatsApp group was started on 3Feb2021. To take forward the formation of RWA and other activities, a core Group was formed.
+<figure style="width: 100%; margin: 2rem 0;">
+  <img src="/assets/images/about/first_meeting.jpg" alt="First Meeting" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+</figure>
+
+Here it was decided to create a data base of the residents; With this data, a social communication network: WhatsApp group was started on 3Feb2021. To take forward the formation of RWA and other activities, a core Group was formed.
 
 This core group met regularly to discuss on the various matters pertaining to forming the RWA. The core group started working on preparation of MoA and Bylaws, Amidst corona pandemic, the activities came to stand still and was revived further post pandemic. During this period, the data base was analysed to bring in members to the core group so that a good spread of residents across the layout are in the core group. Core group members took an active part in the association formation.
+
+{{< gallery path="assets/images/about" >}}
 
 Thus by June-July 2021, the need of an executive committee arose to give a further thrust to the formation of the association. Some core group members came forward and committed their time and energy to accelerate the work by being a part of the executive committee. Further from this executive committee, some of the members came forward to shoulder the responsibility as office bearers. This executive committee consisted of the following people (Sri/Smt):
 - President: M.S. Udayashankar 

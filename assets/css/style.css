@@ -2599,6 +2599,21 @@ nav ul li.nav-join-button a:hover {
   color: var(--primary-green);
 }
 
+/* Blockquote Styling */
+.post-content blockquote {
+  margin: 1.5rem 0;
+  padding: 1rem 1.5rem;
+  border-left: 4px solid var(--primary-green);
+  background: var(--color-background-secondary);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--color-text-secondary);
+}
+
+.post-content blockquote p {
+  margin: 0;
+}
+
 .post-translations {
   margin-top: 3rem;
   padding-top: 2rem;
