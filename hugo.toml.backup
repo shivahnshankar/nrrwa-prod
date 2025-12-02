@@ -19,7 +19,7 @@ defaultContentLanguage = 'en'
     title = 'ಎನ್ಆರ್ಆರ್ಡಬ್ಲ್ಯೂಎ'
     [languages.kn.params]
       siteName = 'ಎನ್ಆರ್ಆರ್ಡಬ್ಲ್ಯೂಎ'
-      siteDescription = 'ನಮ್ಮ ರೂಪನಗರ ನಿವಾಸಿಗಳ ಕಲ್ಯಾಣ ಸಂಘ'
+      siteDescription = 'ನಮ್ಮ ರೂಪಾನಗರ ನಿವಾಸಿಗಳ ಕಲ್ಯಾಣ ಸಂಘ'
 
 # Taxonomies (built-in Hugo feature)
 [taxonomies]

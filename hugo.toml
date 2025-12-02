@@ -21,7 +21,7 @@ relativeURLs = true
     title = 'NRRWA'
     [languages.kn.params]
       siteName = 'NRRWA'
-      siteDescription = 'ನಮ್ಮ ರೂಪನಗರ ನಿವಾಸಿಗಳ ಕಲ್ಯಾಣ ಸಂಘ'
+      siteDescription = 'ನಮ್ಮ ರೂಪಾನಗರ ನಿವಾಸಿಗಳ ಕಲ್ಯಾಣ ಸಂಘ'
 
 # Taxonomies (built-in Hugo feature)
 [taxonomies]
@@ -39,7 +39,7 @@ relativeURLs = true
   stats_members = 343
   stats_yearsOfService = 4
   stats_eventsOrganized = 62
-  stats_saplingsDistributed = 1050
+  stats_saplingsDistributed = 1250
 
 # Permalinks
 [permalinks]

@@ -101,14 +101,14 @@ en:
 
 kn:
   title: "ಸಮುದಾಯ ಕೋಶ"
-  subtitle: "ರೂಪನಗರ ನಿವಾಸಿಗಳಿಗೆ ಪ್ರಮುಖ ಸಂಪರ್ಕಗಳು ಮತ್ತು ಸೇವೆಗಳು"
+  subtitle: "ರೂಪಾನಗರ ನಿವಾಸಿಗಳಿಗೆ ಪ್ರಮುಖ ಸಂಪರ್ಕಗಳು ಮತ್ತು ಸೇವೆಗಳು"
 
   official:
     title: "ಅಧಿಕೃತ ಸಂಪರ್ಕಗಳು"
     sections:
       - name: "ಪೊಲೀಸ್"
         contacts:
-          - name: "ರೂಪನಗರ ಪೊಲೀಸ್ ಠಾಣೆ"
+          - name: "ರೂಪಾನಗರ ಪೊಲೀಸ್ ಠಾಣೆ"
             phone: "+91-821-XXXXXXX"
           - name: "ತುರ್ತು"
             phone: "100"
@@ -117,21 +117,21 @@ kn:
         contacts:
           - name: "CESC ಗ್ರಾಹಕ ಸೇವೆ"
             phone: "1912"
-          - name: "ರೂಪನಗರ ಉಪ-ವಿಭಾಗ"
+          - name: "ರೂಪಾನಗರ ಉಪ-ವಿಭಾಗ"
             phone: "+91-821-XXXXXXX"
 
       - name: "ಟೌನ್ ಪಂಚಾಯತ್"
         contacts:
           - name: "ಟೌನ್ ಪಂಚಾಯತ್ ಕಛೇರಿ"
             phone: "+91-821-XXXXXXX"
-          - name: "ರೂಪನಗರ ವಾರ್ಡ್ ಕಛೇರಿ"
+          - name: "ರೂಪಾನಗರ ವಾರ್ಡ್ ಕಛೇರಿ"
             phone: "+91-821-XXXXXXX"
 
       - name: "VVWW (ನೀರು ಸರಬರಾಜು)"
         contacts:
           - name: "VVWW ದೂರುಗಳು"
             phone: "+91-821-XXXXXXX"
-          - name: "ರೂಪನಗರ ನೀರು ಕಾಮಗಾರಿ"
+          - name: "ರೂಪಾನಗರ ನೀರು ಕಾಮಗಾರಿ"
             phone: "+91-821-XXXXXXX"
 
       - name: "ಅಗ್ನಿಶಾಮಕ ಮತ್ತು ತುರ್ತು"
