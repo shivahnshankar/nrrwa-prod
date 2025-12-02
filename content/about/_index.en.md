@@ -55,8 +55,7 @@ Directors:
 - Shankar Subramanian 
 - K S. Praveen
 
-Further, during various meetings, the MOA and Bylaws / Rules & Regulations was finalised. lt was decided to name the association as Namma Roopanagara Residents Welfare Association. A concurrence on the draft MOA and Rules & Regulations was obtained from DHBCS. Application for the registration of the association was submitted to the office of the Sub-Registrar of Co-operative Societies in Mysuru. Association was registered on g S. Praveen the September,2021 with registration no. : **DRMYiSOR|19812021-22**. We received the registration
-certificate on 17 Sept 2021.
+Further, during various meetings, the MOA and Bylaws / Rules & Regulations was finalised. lt was decided to name the association as Namma Roopanagara Residents Welfare Association. A concurrence on the draft MOA and Rules & Regulations was obtained from DHBCS. Application for the registration of the association was submitted to the office of the Sub-Registrar of Co-operative Societies in Mysuru. Association was registered on September,2021 with registration no. : **DRMYiSOR|19812021-22**. We received the registration certificate on 17 Sept 2021.
 
 ### What We Do
 
