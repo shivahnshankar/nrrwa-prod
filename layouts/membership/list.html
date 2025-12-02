@@ -55,6 +55,22 @@
     </div>
   </section>
 
+  <!-- Membership Form Download Section -->
+  <section style="margin: 4rem 0; text-align: center; padding: 3rem; background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-blue) 100%); border-radius: 15px;">
+    <h2 class="section-subtitle" style="color: var(--golden); margin-bottom: 1.5rem;">
+      {{ if eq .Language.Lang "en" }}Download Membership Form{{ else }}ಸದಸ್ಯತ್ವ ಫಾರ್ಮ್ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ{{ end }}
+    </h2>
+    <p style="color: white; font-size: 1.1rem; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto; opacity: 0.95;">
+      {{ $data.form.description }}
+    </p>
+    <a href="{{ $data.form.downloadUrl }}"
+       class="cta-button"
+       download
+       style="background: var(--golden); color: var(--dark-gray); display: inline-flex; align-items: center; gap: 0.5rem; padding: 15px 40px; font-size: 1.1rem;">
+      📄 {{ $data.form.downloadText }}
+    </a>
+  </section>
+
   <!-- Payment Methods Section -->
   <section style="margin: 4rem 0; padding: 3rem; background: var(--light-gray); border-radius: 15px;">
     <h2 class="section-subtitle" style="text-align: center; margin-bottom: 2rem;">
@@ -110,19 +126,6 @@
         </li>
         {{ end }}
       </ol>
-
-      <!-- Required Info -->
-      <div
-        style="margin-top: 2rem; padding: 1.5rem; background: white; border-radius: 10px; border-left: 4px solid var(--primary-blue);">
-        <h4 style="color: var(--primary-blue); margin-bottom: 1rem;">
-          {{ T "required_information" }}
-        </h4>
-        <ul style="color: #666; line-height: 1.8;">
-          {{ range $data.payment.requiredInfo }}
-          <li>{{ . }}</li>
-          {{ end }}
-        </ul>
-      </div>
     </div>
   </section>
 
@@ -156,7 +159,7 @@
   <!-- Contact Section -->
   <section
     style="margin: 4rem 0; text-align: center; padding: 3rem; background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-blue) 100%); border-radius: 15px; color: white;">
-    <h2 style="color: var(--golden); margin-bottom: 1rem;">{{ T "ready_to_join" }}</h2>
+    <h2 style="color: var(--golden); margin-bottom: 1rem;">{{ T "have_questions" }}</h2>
     <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.95;">
       {{ T "join_community_today" }}
     </p>

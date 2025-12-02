@@ -51,20 +51,24 @@ en:
     - icon: "💪"
       title: "Make a Difference"
       description: "Contribute to meaningful community development initiatives"
+  form:
+    downloadUrl: "/assets/documents/membership/NRRWA_Membership_Form.pdf"
+    downloadText: "Download Membership Form"
+    description: "Download the membership form, fill it out completely, sign it, and submit it to NRRWA along with your payment."
   payment:
     methods:
       - type: "Bank Transfer"
         details:
           - label: "Bank Name"
-            value: "State Bank of India"
+            value: "Union Bank of India"
           - label: "Account Number"
-            value: "XXXX-XXXX-XXXX"
+            value: "752702010004720"
           - label: "IFSC Code"
-            value: "SBINXXXXXX"
+            value: "UBIN0575275"
           - label: "Account Name"
             value: "NRRWA"
           - label: "Branch"
-            value: "Mysore Main Branch"
+            value: "Bogadi"
       - type: "UPI Payment"
         details:
           - label: "UPI ID"
@@ -74,15 +78,15 @@ en:
         qrCode: "/assets/images/membership/UPI_QRCode.jpg"
       - type: "Cash Payment"
         details:
-          - label: "Visit"
-            value: "Any Executive Committee member"
-          - label: "Office Hours"
+          - label: "Call"
+            value: "+91-99860-79832"
+          - label: "Hours"
             value: "Mon-Fri: 10 AM - 5 PM"
     steps:
-      - "Choose your membership type"
-      - "Make payment using any method above"
-      - "Send payment proof and details to info@nrrwa.org"
-      - "Receive confirmation within 2-3 working days"
+      - "Download the membership form from the link above"
+      - "Fill out the form completely and sign it"
+      - "Make payment as per your convenience using any method below"
+      - "Contact NRRWA to submit the completed form and payment proof"
     requiredInfo:
       - "Your full name"
       - "Address in Roopanagara"
@@ -104,7 +108,7 @@ kn:
         - "ಹೊಸ ನಿವಾಸಿಗಳಿಗೆ ಸೂಕ್ತ"
       popular: false
     - name: "ದಶಕೀಯ ಸದಸ್ಯತ್ವ"
-      price: "₹10,000"
+      price: "₹7500"
       period: "10 ವರ್ಷಗಳವರೆಗೆ"
       icon: "⭐"
       features:
@@ -144,6 +148,10 @@ kn:
     - icon: "💪"
       title: "ವ್ಯತ್ಯಾಸವನ್ನು ಮಾಡಿ"
       description: "ಅರ್ಥಪೂರ್ಣ ಸಮುದಾಯ ಅಭಿವೃದ್ಧಿ ಉಪಕ್ರಮಗಳಿಗೆ ಕೊಡುಗೆ ನೀಡಿ"
+  form:
+    downloadUrl: "/assets/documents/membership/NRRWA_Membership_Form.pdf"
+    downloadText: "ಸದಸ್ಯತ್ವ ಫಾರ್ಮ್ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ"
+    description: "ಸದಸ್ಯತ್ವ ಫಾರ್ಮ್ ಅನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ, ಅದನ್ನು ಸಂಪೂರ್ಣವಾಗಿ ಭರ್ತಿ ಮಾಡಿ, ಸಹಿ ಮಾಡಿ ಮತ್ತು ನಿಮ್ಮ ಪಾವತಿಯೊಂದಿಗೆ NRRWA ಗೆ ಸಲ್ಲಿಸಿ."
   payment:
     methods:
       - type: "ಬ್ಯಾಂಕ್ ವರ್ಗಾವಣೆ"
@@ -172,10 +180,10 @@ kn:
           - label: "ಕಚೇರಿ ಸಮಯ"
             value: "ಸೋಮ-ಶುಕ್ರ: ಬೆಳಿಗ್ಗೆ 10 - ಸಂಜೆ 5"
     steps:
-      - "ನಿಮ್ಮ ಸದಸ್ಯತ್ವ ಪ್ರಕಾರವನ್ನು ಆರಿಸಿ"
-      - "ಮೇಲಿನ ಯಾವುದೇ ವಿಧಾನವನ್ನು ಬಳಸಿ ಪಾವತಿ ಮಾಡಿ"
-      - "ಪಾವತಿ ಪುರಾವೆ ಮತ್ತು ವಿವರಗಳನ್ನು info@nrrwa.org ಗೆ ಕಳುಹಿಸಿ"
-      - "2-3 ಕೆಲಸದ ದಿನಗಳಲ್ಲಿ ದೃಢೀಕರಣವನ್ನು ಸ್ವೀಕರಿಸಿ"
+      - "ಮೇಲಿನ ಲಿಂಕ್‌ನಿಂದ ಸದಸ್ಯತ್ವ ಫಾರ್ಮ್ ಅನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ"
+      - "ಫಾರ್ಮ್ ಅನ್ನು ಸಂಪೂರ್ಣವಾಗಿ ಭರ್ತಿ ಮಾಡಿ ಮತ್ತು ಸಹಿ ಮಾಡಿ"
+      - "ಕೆಳಗಿನ ಯಾವುದೇ ವಿಧಾನವನ್ನು ಬಳಸಿ ನಿಮ್ಮ ಅನುಕೂಲಕ್ಕೆ ತಕ್ಕಂತೆ ಪಾವತಿ ಮಾಡಿ"
+      - "ಪೂರ್ಣಗೊಳಿಸಿದ ಫಾರ್ಮ್ ಮತ್ತು ಪಾವತಿ ಪುರಾವೆಯನ್ನು ಸಲ್ಲಿಸಲು NRRWA ಅನ್ನು ಸಂಪರ್ಕಿಸಿ"
     requiredInfo:
       - "ನಿಮ್ಮ ಪೂರ್ಣ ಹೆಸರು"
       - "ರೂಪನಗರದಲ್ಲಿ ವಿಳಾಸ"
