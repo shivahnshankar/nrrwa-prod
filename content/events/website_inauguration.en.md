@@ -3,14 +3,14 @@ title: NRRWA Website Inauguration
 eventDate: 2025-12-05
 date: 2025-11-25
 featuredImage: /assets/images/events/rbala.jpg
-summary: We are excited to announce that the brand new NRRWA website will be inaugurated by Mr. R. Balasunramaniam on 05 Dec, 2025!
+summary: We are excited to announce that the brand new NRRWA website will be inaugurated by Dr. R. Balasunramaniam on 05 Dec, 2025!
 tags:
   - Communication
 ---
 
-NRRWA is introducing its brand new website, to ensure better transparency, improve communication and for easier access. The website will be inaugurated by Mr. R. Balasubramaniam on 05th Dec, 2025.
+NRRWA is introducing its brand new website, to ensure better transparency, improve communication and for easier access. The website will be inaugurated by Dr. R. Balasubramaniam on 05th Dec, 2025.
 
-## Mr. R. Balasubramaniam
+## Dr. R. Balasubramaniam
 
 Dr. R. Balasubramaniam is a development scholar, public policy advocate, and leadership educator with over four decades of grassroots experience. He is the founder of the **Swami Vivekananda Youth Movement (SVYM)**, a development organization working at the intersection of health, education, and community empowerment in India. A physician by training and a Harvard-educated public leader and former faculty at Cornell University, Dr. Balu brings a unique blend of experiential knowledge and academic insight. He is also the founder of GRAAM, a public policy think tank. 
 
@@ -18,7 +18,7 @@ His work spans advising governments on governance reforms, strengthening democra
 
 He is currently the Member-HR in the Capacity Building Commission of the Government of India. He is also the Chairperson of the Social Stock Exchange Advisory Committee of SEBI. 
 
-NRRWA thanks Mr. R. Balasubramaniam for participating in this occassion.
+NRRWA thanks Dr. R. Balasubramaniam for participating in this occassion.
 
 ## Event Details
 
