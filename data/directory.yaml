@@ -2,150 +2,200 @@ en:
   title: "Community Directory"
   subtitle: "Important contacts and services for Roopanagara residents"
 
-  emergency:
-    title: "Emergency Services"
-    contacts:
+  official:
+    title: "Official Contacts"
+    sections:
       - name: "Police"
-        icon: "🚓"
-        number: "100"
-        color: "#e74c3c"
-      - name: "Fire"
-        icon: "🚒"
-        number: "101"
-        color: "#f39c12"
-      - name: "Ambulance"
-        icon: "🚑"
-        number: "108"
-        color: "#3498db"
+        contacts:
+          - name: "Roopanagara Police Station"
+            phone: "+91-821-XXXXXXX"
+          - name: "Emergency"
+            phone: "100"
 
-  government:
-    title: "Local Authorities"
-    contacts:
-      - name: "BBMP Ward Office"
-        phone: "+91-821-XXXXXXX"
-        address: "Ward 65, Roopanagara"
-        hours: "Mon-Fri: 10 AM - 5 PM"
-      - name: "Electricity Board (CESC)"
-        phone: "1912"
-        address: "Roopanagara Sub-Division"
-        hours: "24x7 Emergency"
-      - name: "Water Supply (VVWW)"
-        phone: "+91-821-XXXXXXX"
-        address: "Roopanagara Water Works"
-        hours: "Mon-Sat: 9 AM - 5 PM"
+      - name: "CESC (Electricity Board)"
+        contacts:
+          - name: "CESC Customer Care"
+            phone: "1912"
+          - name: "Roopanagara Sub-Division"
+            phone: "+91-821-XXXXXXX"
 
-  healthcare:
-    title: "Healthcare Services"
-    contacts:
-      - name: "Government Hospital"
-        phone: "+91-821-XXXXXXX"
-        address: "K.R. Hospital Road"
-        hours: "24x7"
-      - name: "Primary Health Center"
-        phone: "+91-821-XXXXXXX"
-        address: "Roopanagara Main Road"
-        hours: "9 AM - 5 PM"
-      - name: "Apollo Pharmacy"
-        phone: "+91-821-XXXXXXX"
-        address: "Near Bus Stop"
-        hours: "8 AM - 10 PM"
+      - name: "Town Panchayat"
+        contacts:
+          - name: "Town Panchayat Office"
+            phone: "+91-821-XXXXXXX"
+          - name: "Roopanagara Ward Office"
+            phone: "+91-821-XXXXXXX"
 
-  education:
-    title: "Educational Institutions"
-    contacts:
-      - name: "Government School"
-        phone: "+91-821-XXXXXXX"
-        address: "10th Cross, Roopanagara"
-        hours: "8 AM - 4 PM"
-      - name: "Roopanagara High School"
-        phone: "+91-821-XXXXXXX"
-        address: "Main Road"
-        hours: "8 AM - 4 PM"
+      - name: "VVWW (Water Supply)"
+        contacts:
+          - name: "VVWW Complaints"
+            phone: "+91-821-XXXXXXX"
+          - name: "Roopanagara Water Works"
+            phone: "+91-821-XXXXXXX"
 
-  utilities:
-    title: "Essential Services"
-    contacts:
-      - name: "Gas Agency"
-        phone: "+91-821-XXXXXXX"
-        address: "Roopanagara"
-        hours: "9 AM - 6 PM"
-      - name: "Post Office"
-        phone: "+91-821-XXXXXXX"
-        address: "Roopanagara - 570026"
-        hours: "Mon-Sat: 10 AM - 5 PM"
+      - name: "Fire & Emergency"
+        contacts:
+          - name: "Fire Station"
+            phone: "101"
+          - name: "Ambulance"
+            phone: "108"
+
+  community:
+    title: "Community Contributed Contacts"
+    sections:
+      - name: "Plumbers"
+        contacts:
+          - name: "Contact Name 1"
+            phone: "+91-XXXXXXXXXX"
+          - name: "Contact Name 2"
+            phone: "+91-XXXXXXXXXX"
+
+      - name: "Electricians"
+        contacts:
+          - name: "Contact Name 1"
+            phone: "+91-XXXXXXXXXX"
+          - name: "Contact Name 2"
+            phone: "+91-XXXXXXXXXX"
+
+      - name: "Drivers"
+        contacts:
+          - name: "Contact Name 1"
+            phone: "+91-XXXXXXXXXX"
+          - name: "Contact Name 2"
+            phone: "+91-XXXXXXXXXX"
+
+      - name: "Tailors"
+        contacts:
+          - name: "Contact Name 1"
+            phone: "+91-XXXXXXXXXX"
+          - name: "Contact Name 2"
+            phone: "+91-XXXXXXXXXX"
+
+      - name: "Carpenters"
+        contacts:
+          - name: "Contact Name 1"
+            phone: "+91-XXXXXXXXXX"
+          - name: "Contact Name 2"
+            phone: "+91-XXXXXXXXXX"
+
+      - name: "Painters"
+        contacts:
+          - name: "Contact Name 1"
+            phone: "+91-XXXXXXXXXX"
+          - name: "Contact Name 2"
+            phone: "+91-XXXXXXXXXX"
+
+      - name: "Home Cleaning Services"
+        contacts:
+          - name: "Contact Name 1"
+            phone: "+91-XXXXXXXXXX"
+          - name: "Contact Name 2"
+            phone: "+91-XXXXXXXXXX"
+
+      - name: "Pest Control"
+        contacts:
+          - name: "Contact Name 1"
+            phone: "+91-XXXXXXXXXX"
+          - name: "Contact Name 2"
+            phone: "+91-XXXXXXXXXX"
 
 kn:
   title: "ಸಮುದಾಯ ಕೋಶ"
   subtitle: "ರೂಪನಗರ ನಿವಾಸಿಗಳಿಗೆ ಪ್ರಮುಖ ಸಂಪರ್ಕಗಳು ಮತ್ತು ಸೇವೆಗಳು"
 
-  emergency:
-    title: "ತುರ್ತು ಸೇವೆಗಳು"
-    contacts:
+  official:
+    title: "ಅಧಿಕೃತ ಸಂಪರ್ಕಗಳು"
+    sections:
       - name: "ಪೊಲೀಸ್"
-        icon: "🚓"
-        number: "100"
-        color: "#e74c3c"
-      - name: "ಅಗ್ನಿಶಾಮಕ"
-        icon: "🚒"
-        number: "101"
-        color: "#f39c12"
-      - name: "ಆಂಬುಲೆನ್ಸ್"
-        icon: "🚑"
-        number: "108"
-        color: "#3498db"
+        contacts:
+          - name: "ರೂಪನಗರ ಪೊಲೀಸ್ ಠಾಣೆ"
+            phone: "+91-821-XXXXXXX"
+          - name: "ತುರ್ತು"
+            phone: "100"
 
-  government:
-    title: "ಸ್ಥಳೀಯ ಅಧಿಕಾರಿಗಳು"
-    contacts:
-      - name: "BBMP ವಾರ್ಡ್ ಕಚೇರಿ"
-        phone: "+91-821-XXXXXXX"
-        address: "ವಾರ್ಡ್ 65, ರೂಪನಗರ"
-        hours: "ಸೋಮ-ಶುಕ್ರ: 10 AM - 5 PM"
-      - name: "ವಿದ್ಯುತ್ ಮಂಡಳಿ (CESC)"
-        phone: "1912"
-        address: "ರೂಪನಗರ ಉಪ-ವಿಭಾಗ"
-        hours: "24x7 ತುರ್ತು"
-      - name: "ನೀರು ಸರಬರಾಜು (VVWW)"
-        phone: "+91-821-XXXXXXX"
-        address: "ರೂಪನಗರ ನೀರು ಕಾಮಗಾರಿ"
-        hours: "ಸೋಮ-ಶನಿ: 9 AM - 5 PM"
+      - name: "CESC (ವಿದ್ಯುತ್ ಮಂಡಳಿ)"
+        contacts:
+          - name: "CESC ಗ್ರಾಹಕ ಸೇವೆ"
+            phone: "1912"
+          - name: "ರೂಪನಗರ ಉಪ-ವಿಭಾಗ"
+            phone: "+91-821-XXXXXXX"
 
-  healthcare:
-    title: "ಆರೋಗ್ಯ ಸೇವೆಗಳು"
-    contacts:
-      - name: "ಸರ್ಕಾರಿ ಆಸ್ಪತ್ರೆ"
-        phone: "+91-821-XXXXXXX"
-        address: "ಕೆ.ಆರ್. ಆಸ್ಪತ್ರೆ ರಸ್ತೆ"
-        hours: "24x7"
-      - name: "ಪ್ರಾಥಮಿಕ ಆರೋಗ್ಯ ಕೇಂದ್ರ"
-        phone: "+91-821-XXXXXXX"
-        address: "ರೂಪನಗರ ಮುಖ್ಯ ರಸ್ತೆ"
-        hours: "9 AM - 5 PM"
-      - name: "ಅಪೊಲೊ ಫಾರ್ಮಸಿ"
-        phone: "+91-821-XXXXXXX"
-        address: "ಬಸ್ ನಿಲ್ದಾಣದ ಹತ್ತಿರ"
-        hours: "8 AM - 10 PM"
+      - name: "ಟೌನ್ ಪಂಚಾಯತ್"
+        contacts:
+          - name: "ಟೌನ್ ಪಂಚಾಯತ್ ಕಛೇರಿ"
+            phone: "+91-821-XXXXXXX"
+          - name: "ರೂಪನಗರ ವಾರ್ಡ್ ಕಛೇರಿ"
+            phone: "+91-821-XXXXXXX"
 
-  education:
-    title: "ಶೈಕ್ಷಣಿಕ ಸಂಸ್ಥೆಗಳು"
-    contacts:
-      - name: "ಸರ್ಕಾರಿ ಶಾಲೆ"
-        phone: "+91-821-XXXXXXX"
-        address: "10ನೇ ಅಡ್ಡ, ರೂಪನಗರ"
-        hours: "8 AM - 4 PM"
-      - name: "ರೂಪನಗರ ಪ್ರೌಢಶಾಲೆ"
-        phone: "+91-821-XXXXXXX"
-        address: "ಮುಖ್ಯ ರಸ್ತೆ"
-        hours: "8 AM - 4 PM"
+      - name: "VVWW (ನೀರು ಸರಬರಾಜು)"
+        contacts:
+          - name: "VVWW ದೂರುಗಳು"
+            phone: "+91-821-XXXXXXX"
+          - name: "ರೂಪನಗರ ನೀರು ಕಾಮಗಾರಿ"
+            phone: "+91-821-XXXXXXX"
 
-  utilities:
-    title: "ಅತ್ಯಗತ್ಯ ಸೇವೆಗಳು"
-    contacts:
-      - name: "ಗ್ಯಾಸ್ ಏಜೆನ್ಸಿ"
-        phone: "+91-821-XXXXXXX"
-        address: "ರೂಪನಗರ"
-        hours: "9 AM - 6 PM"
-      - name: "ಅಂಚೆ ಕಛೇರಿ"
-        phone: "+91-821-XXXXXXX"
-        address: "ರೂಪನಗರ - 570026"
-        hours: "ಸೋಮ-ಶನಿ: 10 AM - 5 PM"
+      - name: "ಅಗ್ನಿಶಾಮಕ ಮತ್ತು ತುರ್ತು"
+        contacts:
+          - name: "ಅಗ್ನಿಶಾಮಕ ಠಾಣೆ"
+            phone: "101"
+          - name: "ಆಂಬುಲೆನ್ಸ್"
+            phone: "108"
+
+  community:
+    title: "ಸಮುದಾಯ ಕೊಡುಗೆ ಸಂಪರ್ಕಗಳು"
+    sections:
+      - name: "ಪ್ಲಂಬರ್‌ಗಳು"
+        contacts:
+          - name: "ಸಂಪರ್ಕ ಹೆಸರು 1"
+            phone: "+91-XXXXXXXXXX"
+          - name: "ಸಂಪರ್ಕ ಹೆಸರು 2"
+            phone: "+91-XXXXXXXXXX"
+
+      - name: "ವಿದ್ಯುತ್ ಕಾರ್ಮಿಕರು"
+        contacts:
+          - name: "ಸಂಪರ್ಕ ಹೆಸರು 1"
+            phone: "+91-XXXXXXXXXX"
+          - name: "ಸಂಪರ್ಕ ಹೆಸರು 2"
+            phone: "+91-XXXXXXXXXX"
+
+      - name: "ಚಾಲಕರು"
+        contacts:
+          - name: "ಸಂಪರ್ಕ ಹೆಸರು 1"
+            phone: "+91-XXXXXXXXXX"
+          - name: "ಸಂಪರ್ಕ ಹೆಸರು 2"
+            phone: "+91-XXXXXXXXXX"
+
+      - name: "ಟೈಲರ್‌ಗಳು"
+        contacts:
+          - name: "ಸಂಪರ್ಕ ಹೆಸರು 1"
+            phone: "+91-XXXXXXXXXX"
+          - name: "ಸಂಪರ್ಕ ಹೆಸರು 2"
+            phone: "+91-XXXXXXXXXX"
+
+      - name: "ಬಡಗಿಗಳು"
+        contacts:
+          - name: "ಸಂಪರ್ಕ ಹೆಸರು 1"
+            phone: "+91-XXXXXXXXXX"
+          - name: "ಸಂಪರ್ಕ ಹೆಸರು 2"
+            phone: "+91-XXXXXXXXXX"
+
+      - name: "ಬಣ್ಣಗಾರರು"
+        contacts:
+          - name: "ಸಂಪರ್ಕ ಹೆಸರು 1"
+            phone: "+91-XXXXXXXXXX"
+          - name: "ಸಂಪರ್ಕ ಹೆಸರು 2"
+            phone: "+91-XXXXXXXXXX"
+
+      - name: "ಮನೆ ಶುಚಿಗೊಳಿಸುವ ಸೇವೆಗಳು"
+        contacts:
+          - name: "ಸಂಪರ್ಕ ಹೆಸರು 1"
+            phone: "+91-XXXXXXXXXX"
+          - name: "ಸಂಪರ್ಕ ಹೆಸರು 2"
+            phone: "+91-XXXXXXXXXX"
+
+      - name: "ಕೀಟ ನಿಯಂತ್ರಣ"
+        contacts:
+          - name: "ಸಂಪರ್ಕ ಹೆಸರು 1"
+            phone: "+91-XXXXXXXXXX"
+          - name: "ಸಂಪರ್ಕ ಹೆಸರು 2"
+            phone: "+91-XXXXXXXXXX"

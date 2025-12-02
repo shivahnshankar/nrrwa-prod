@@ -11,115 +11,97 @@
     {{ .Content }}
   </div>
 
-  <!-- Quick Links Section -->
-  <section style="margin: 4rem 0; text-align: center; padding: 3rem; background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-radius: 15px;">
-    <h2 style="color: var(--primary-green); margin-bottom: 2rem; font-size: 1.8rem;">{{ if eq .Language.Lang "en" }}Quick Links{{ else }}ತ್ವರಿತ ಲಿಂಕ್‌ಗಳು{{ end }}</h2>
-    <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
-      <a href="/{{ .Language.Lang }}/about/executive-committee/" class="cta-button" style="background: var(--primary-green);">
-        👥 {{ if eq .Language.Lang "en" }}Executive Committee{{ else }}ಕಾರ್ಯಕಾರಿ ಸಮಿತಿ{{ end }}
-      </a>
-      <a href="/{{ .Language.Lang }}/contact/" class="cta-button" style="background: var(--primary-blue);">
-        📞 {{ if eq .Language.Lang "en" }}Contact NRRWA{{ else }}NRRWA ಸಂಪರ್ಕಿಸಿ{{ end }}
-      </a>
-    </div>
-  </section>
-
-  <!-- Emergency Numbers -->
+  <!-- Official Contacts Section -->
   <section style="margin: 4rem 0;">
-    <h2 style="text-align: center; color: var(--red-accent); margin-bottom: 2rem; font-size: 1.8rem;">🚨 {{ $data.emergency.title }}</h2>
-    <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 900px; margin: 0 auto;">
-      {{ range $data.emergency.contacts }}
-      <div class="card" style="background: linear-gradient(135deg, rgba({{ .color | replace "#" "" }}, 0.1) 0%, rgba({{ .color | replace "#" "" }}, 0.2) 100%); text-align: center; border-left: 4px solid {{ .color }};">
-        <div class="card-icon" style="font-size: 3rem; padding: 1.5rem;">{{ .icon }}</div>
-        <div class="card-content">
-          <h3 style="color: {{ .color }}; margin-bottom: 0.5rem;">{{ .name }}</h3>
-          <p style="font-size: 2rem; font-weight: 700; color: var(--text-color); margin: 0.5rem 0;">
-            <a href="tel:{{ .number }}" style="color: {{ .color }}; text-decoration: none;">{{ .number }}</a>
-          </p>
+    <h2 style="text-align: center; color: var(--primary-green); margin-bottom: 2rem; font-size: 2rem;">
+      🏛️ {{ $data.official.title }}
+    </h2>
+
+    <div style="max-width: 900px; margin: 0 auto;">
+      {{ range $data.official.sections }}
+      <div class="donor-accordion-item">
+        <div class="donor-accordion-header">
+          <h3 style="margin: 0; color: var(--primary-green);">{{ .name }}</h3>
+          <span class="donor-toggle">▼</span>
+        </div>
+        <div class="donor-accordion-content">
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; padding: 1rem 0;">
+            {{ range .contacts }}
+            <div style="padding: 1rem; background: var(--light-gray); border-radius: 8px; border-left: 3px solid var(--primary-green);">
+              <p style="margin: 0 0 0.5rem 0; font-weight: 600; color: var(--text-color);">{{ .name }}</p>
+              <p style="margin: 0;">
+                <a href="tel:{{ .phone }}" style="color: var(--primary-blue); text-decoration: none; font-size: 1.1rem;">
+                  📞 {{ .phone }}
+                </a>
+              </p>
+            </div>
+            {{ end }}
+          </div>
         </div>
       </div>
       {{ end }}
     </div>
   </section>
 
-  <!-- Government Services -->
+  <!-- Community Contributed Contacts Section -->
   <section style="margin: 4rem 0;">
-    <h2 style="text-align: center; color: var(--primary-green); margin-bottom: 2rem; font-size: 1.8rem;">🏛️ {{ $data.government.title }}</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; max-width: 1200px; margin: 0 auto;">
-      {{ range $data.government.contacts }}
-      <div class="card">
-        <div class="card-content">
-          <h3 style="color: var(--primary-green); margin-bottom: 1rem;">{{ .name }}</h3>
-          <p style="margin: 0.5rem 0;"><strong>📞</strong> <a href="tel:{{ .phone }}" style="color: var(--primary-blue); text-decoration: none;">{{ .phone }}</a></p>
-          <p style="margin: 0.5rem 0;"><strong>📍</strong> {{ .address }}</p>
-          <p style="margin: 0.5rem 0; color: #666;"><strong>🕒</strong> {{ .hours }}</p>
+    <h2 style="text-align: center; color: var(--primary-blue); margin-bottom: 1rem; font-size: 2rem;">
+      👥 {{ $data.community.title }}
+    </h2>
+
+    <!-- Disclaimer -->
+    <div style="max-width: 900px; margin: 0 auto 2rem; padding: 1rem 1.5rem; background: #fff3cd; border-left: 4px solid #ffc107; border-radius: 5px;">
+      <p style="margin: 0; color: #856404; font-size: 0.95rem;">
+        <strong>⚠️ {{ if eq .Language.Lang "en" }}Disclaimer:{{ else }}ಹೊಣೆಗಾರಿಕೆ:{{ end }}</strong>
+        {{ if eq .Language.Lang "en" }}
+          These contacts are contributed by community members. NRRWA does not endorse or guarantee the quality of services provided. Please exercise your own judgment when engaging these service providers.
+        {{ else }}
+          ಈ ಸಂಪರ್ಕಗಳನ್ನು ಸಮುದಾಯದ ಸದಸ್ಯರು ಕೊಡುಗೆ ನೀಡಿದ್ದಾರೆ. NRRWA ಒದಗಿಸಿದ ಸೇವೆಗಳ ಗುಣಮಟ್ಟವನ್ನು ಅನುಮೋದಿಸುವುದಿಲ್ಲ ಅಥವಾ ಖಾತರಿಪಡಿಸುವುದಿಲ್ಲ. ಈ ಸೇವಾ ಪೂರೈಕೆದಾರರನ್ನು ತೊಡಗಿಸಿಕೊಳ್ಳುವಾಗ ದಯವಿಟ್ಟು ನಿಮ್ಮ ಸ್ವಂತ ನಿರ್ಣಯವನ್ನು ಬಳಸಿ.
+        {{ end }}
+      </p>
+    </div>
+
+    <div style="max-width: 900px; margin: 0 auto;">
+      {{ range $data.community.sections }}
+      <div class="donor-accordion-item">
+        <div class="donor-accordion-header">
+          <h3 style="margin: 0; color: var(--primary-blue);">{{ .name }}</h3>
+          <span class="donor-toggle">▼</span>
+        </div>
+        <div class="donor-accordion-content">
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; padding: 1rem 0;">
+            {{ range .contacts }}
+            <div style="padding: 1rem; background: var(--light-gray); border-radius: 8px; border-left: 3px solid var(--primary-blue);">
+              <p style="margin: 0 0 0.5rem 0; font-weight: 600; color: var(--text-color);">{{ .name }}</p>
+              <p style="margin: 0;">
+                <a href="tel:{{ .phone }}" style="color: var(--primary-blue); text-decoration: none; font-size: 1.1rem;">
+                  📞 {{ .phone }}
+                </a>
+              </p>
+            </div>
+            {{ end }}
+          </div>
         </div>
       </div>
       {{ end }}
     </div>
   </section>
 
-  <!-- Healthcare -->
-  <section style="margin: 4rem 0;">
-    <h2 style="text-align: center; color: var(--primary-blue); margin-bottom: 2rem; font-size: 1.8rem;">🏥 {{ $data.healthcare.title }}</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; max-width: 1200px; margin: 0 auto;">
-      {{ range $data.healthcare.contacts }}
-      <div class="card">
-        <div class="card-content">
-          <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">{{ .name }}</h3>
-          <p style="margin: 0.5rem 0;"><strong>📞</strong> <a href="tel:{{ .phone }}" style="color: var(--primary-blue); text-decoration: none;">{{ .phone }}</a></p>
-          <p style="margin: 0.5rem 0;"><strong>📍</strong> {{ .address }}</p>
-          <p style="margin: 0.5rem 0; color: #666;"><strong>🕒</strong> {{ .hours }}</p>
-        </div>
-      </div>
-      {{ end }}
-    </div>
-  </section>
-
-  <!-- Education -->
-  <section style="margin: 4rem 0;">
-    <h2 style="text-align: center; color: var(--brown-tree); margin-bottom: 2rem; font-size: 1.8rem;">🎓 {{ $data.education.title }}</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; max-width: 1200px; margin: 0 auto;">
-      {{ range $data.education.contacts }}
-      <div class="card">
-        <div class="card-content">
-          <h3 style="color: var(--brown-tree); margin-bottom: 1rem;">{{ .name }}</h3>
-          <p style="margin: 0.5rem 0;"><strong>📞</strong> <a href="tel:{{ .phone }}" style="color: var(--primary-blue); text-decoration: none;">{{ .phone }}</a></p>
-          <p style="margin: 0.5rem 0;"><strong>📍</strong> {{ .address }}</p>
-          <p style="margin: 0.5rem 0; color: #666;"><strong>🕒</strong> {{ .hours }}</p>
-        </div>
-      </div>
-      {{ end }}
-    </div>
-  </section>
-
-  <!-- Utilities -->
-  <section style="margin: 4rem 0;">
-    <h2 style="text-align: center; color: var(--primary-green); margin-bottom: 2rem; font-size: 1.8rem;">⚙️ {{ $data.utilities.title }}</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; max-width: 1200px; margin: 0 auto;">
-      {{ range $data.utilities.contacts }}
-      <div class="card">
-        <div class="card-content">
-          <h3 style="color: var(--primary-green); margin-bottom: 1rem;">{{ .name }}</h3>
-          <p style="margin: 0.5rem 0;"><strong>📞</strong> <a href="tel:{{ .phone }}" style="color: var(--primary-blue); text-decoration: none;">{{ .phone }}</a></p>
-          <p style="margin: 0.5rem 0;"><strong>📍</strong> {{ .address }}</p>
-          <p style="margin: 0.5rem 0; color: #666;"><strong>🕒</strong> {{ .hours }}</p>
-        </div>
-      </div>
-      {{ end }}
-    </div>
-  </section>
-
-  <!-- Update Notice -->
+  <!-- Contribution Notice -->
   <section style="margin: 4rem 0; padding: 2rem; background: var(--light-gray); border-radius: 10px; border-left: 5px solid var(--primary-blue); text-align: center;">
     <p style="color: var(--text-color); font-size: 1rem; margin: 0;">
       <strong>📝 {{ if eq .Language.Lang "en" }}Note:{{ else }}ಸೂಚನೆ:{{ end }}</strong>
       {{ if eq .Language.Lang "en" }}
-        This directory is being updated with detailed contact information. For immediate assistance or to suggest additions, please contact NRRWA.
+        Know a reliable service provider? Help your community by sharing their contact details with us.
       {{ else }}
-        ಈ ಕೋಶವನ್ನು ವಿವರವಾದ ಸಂಪರ್ಕ ಮಾಹಿತಿಯೊಂದಿಗೆ ನವೀಕರಿಸಲಾಗುತ್ತಿದೆ. ತಕ್ಷಣದ ಸಹಾಯಕ್ಕಾಗಿ ಅಥವಾ ಸೇರ್ಪಡೆಗಳನ್ನು ಸೂಚಿಸಲು, ದಯವಿಟ್ಟು NRRWA ಅನ್ನು ಸಂಪರ್ಕಿಸಿ.
+        ವಿಶ್ವಾಸಾರ್ಹ ಸೇವಾ ಪೂರೈಕೆದಾರರನ್ನು ತಿಳಿದಿದ್ದೀರಾ? ಅವರ ಸಂಪರ್ಕ ವಿವರಗಳನ್ನು ನಮ್ಮೊಂದಿಗೆ ಹಂಚಿಕೊಳ್ಳುವ ಮೂಲಕ ನಿಮ್ಮ ಸಮುದಾಯಕ್ಕೆ ಸಹಾಯ ಮಾಡಿ.
       {{ end }}
     </p>
+    <div style="margin-top: 1.5rem;">
+      <a href="/{{ .Language.Lang }}/contact/" class="cta-button" style="background: var(--primary-blue);">
+        {{ if eq .Language.Lang "en" }}Contact Us{{ else }}ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ{{ end }}
+      </a>
+    </div>
   </section>
 
 </div>
