@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="{{ .Language.Lang }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ .Title }}</title>
+  <style>
+    :root {
+      --primary-green: #2d5016;
+      --primary-blue: #1e3a8a;
+      --text-color: #333;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+
+<div style="min-height: 100vh; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem;">
+
+  <div style="max-width: 800px; margin: 0 auto;">
+    <h1 style="font-size: 3rem; color: var(--primary-green); margin-bottom: 1rem; font-weight: 700;">
+      {{ .Title }}
+    </h1>
+
+    <div style="font-size: 1.3rem; color: var(--text-color); margin-bottom: 3rem; line-height: 1.8;">
+      {{ .Content }}
+    </div>
+
+    <!-- Countdown Display -->
+    <div id="countdown-display" style="display: none; margin-bottom: 2rem;">
+      <div style="font-size: 6rem; font-weight: 700; color: var(--primary-blue); font-family: monospace; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">
+        <span id="countdown-number">10</span>
+      </div>
+      <div style="font-size: 1.5rem; color: var(--text-color); margin-top: 1rem;">
+        {{ if eq .Language.Lang "en" }}
+          Launching website...
+        {{ else }}
+          ವೆಬ್‌ಸೈಟ್ ಪ್ರಾರಂಭಿಸಲಾಗುತ್ತಿದೆ...
+        {{ end }}
+      </div>
+    </div>
+
+    <!-- Launch Button -->
+    <button id="launch-button"
+            style="background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-blue) 100%);
+                   color: white;
+                   font-size: 2rem;
+                   padding: 2rem 4rem;
+                   border: none;
+                   border-radius: 15px;
+                   cursor: pointer;
+                   font-weight: 700;
+                   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+                   transition: all 0.3s ease;
+                   text-transform: uppercase;
+                   letter-spacing: 2px;">
+      {{ if eq .Language.Lang "en" }}
+        🚀 Launch Website
+      {{ else }}
+        🚀 ವೆಬ್‌ಸೈಟ್ ಪ್ರಾರಂಭಿಸಿ
+      {{ end }}
+    </button>
+
+    <div style="margin-top: 3rem; color: #666; font-size: 1rem;">
+      {{ if eq .Language.Lang "en" }}
+        Click the button above to officially launch the NRRWA website
+      {{ else }}
+        NRRWA ವೆಬ್‌ಸೈಟ್ ಅನ್ನು ಅಧಿಕೃತವಾಗಿ ಪ್ರಾರಂಭಿಸಲು ಮೇಲಿನ ಬಟನ್ ಕ್ಲಿಕ್ ಮಾಡಿ
+      {{ end }}
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function() {
+  const launchButton = document.getElementById('launch-button');
+  const countdownDisplay = document.getElementById('countdown-display');
+  const countdownNumber = document.getElementById('countdown-number');
+  const homeUrl = '/{{ .Language.Lang }}/';
+
+  let countdownInterval;
+  let timeLeft = 10;
+
+  // Button hover effects
+  launchButton.addEventListener('mouseenter', function() {
+    this.style.transform = 'scale(1.05) translateY(-5px)';
+    this.style.boxShadow = '0 15px 40px rgba(0,0,0,0.4)';
+  });
+
+  launchButton.addEventListener('mouseleave', function() {
+    this.style.transform = 'scale(1) translateY(0)';
+    this.style.boxShadow = '0 10px 30px rgba(0,0,0,0.3)';
+  });
+
+  // Launch button click
+  launchButton.addEventListener('click', function() {
+    // Hide button, show countdown
+    launchButton.style.display = 'none';
+    countdownDisplay.style.display = 'block';
+
+    // Add animation to countdown
+    countdownNumber.style.animation = 'pulse 1s ease-in-out infinite';
+
+    // Start countdown
+    countdownInterval = setInterval(function() {
+      timeLeft--;
+      countdownNumber.textContent = timeLeft;
+
+      // Add scale animation on each count
+      countdownNumber.style.transform = 'scale(1.2)';
+      setTimeout(function() {
+        countdownNumber.style.transform = 'scale(1)';
+      }, 100);
+
+      if (timeLeft <= 0) {
+        clearInterval(countdownInterval);
+        window.location.href = homeUrl;
+      }
+    }, 1000);
+  });
+
+  // Add CSS animation for pulse effect
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.7;
+      }
+    }
+
+    #countdown-number {
+      transition: transform 0.1s ease;
+    }
+  `;
+  document.head.appendChild(style);
+})();
+</script>
+
+<style>
+  #launch-button:active {
+    transform: scale(0.95) translateY(0) !important;
+  }
+</style>
+
+</body>
+</html>
