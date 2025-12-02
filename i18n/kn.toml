@@ -196,6 +196,9 @@ other = "ಹೆಸರು"
 [phone_number]
 other = "ದೂರವಾಣಿ ಸಂಖ್ಯೆ"
 
+[door_number]
+other = "ಮನೆ ಸಂಖ್ಯೆ"
+
 [subject]
 other = "ವಿಷಯ"
 

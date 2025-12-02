@@ -40,9 +40,16 @@
           <input type="email" id="email" name="email" required>
         </div>
 
-        <div class="form-group">
-          <label for="phone">{{ T "phone_number" }}</label>
-          <input type="tel" id="phone" name="phone">
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1rem;">
+          <div class="form-group" style="margin-bottom: 0;">
+            <label for="phone">{{ T "phone_number" }}</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+
+          <div class="form-group" style="margin-bottom: 0;">
+            <label for="door_number">{{ T "door_number" }} *</label>
+            <input type="text" id="door_number" name="door_number" maxlength="4" pattern="[0-9]{1,4}" inputmode="numeric" required>
+          </div>
         </div>
 
         <div class="form-group">
@@ -52,7 +59,7 @@
 
         <div class="form-group">
           <label for="message">{{ T "message" }} *</label>
-          <textarea id="message" name="message" required></textarea>
+          <textarea id="message" name="message" required rows="4"></textarea>
         </div>
 
         <button type="submit" class="submit-button">{{ T "send_message" }}</button>
