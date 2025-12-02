@@ -26,7 +26,7 @@
         style="margin: 3rem 0; padding: 2rem; background: var(--light-gray); border-radius: 10px; border-left: 5px solid var(--primary-green);">
         <p style="color: var(--text-color); font-size: 1rem; margin: 0; line-height: 1.6;">
             <strong>{{ T "note" }}</strong>
-            {{ T "donation_note" }}
+            {{ T "donation_note" | safeHTML }}
         </p>
     </section>
 </div>

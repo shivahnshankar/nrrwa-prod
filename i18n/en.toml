@@ -251,7 +251,7 @@ other = "Your generous donation helps us continue serving the Roopanagara commun
 other = "Donate Now"
 
 [donation_note]
-other = "All donations are tax-deductible under Section 80G. We maintain complete transparency in our financial operations. For donation receipts and queries, please contact us at nammaroopanagara@gmail.com"
+other = "All donations are tax-deductible under <strong>Section 80G</strong>. We maintain complete transparency in our financial operations. For donation receipts and queries, please contact us at nammaroopanagara@gmail.com"
 
 # Reports Page
 [year]
