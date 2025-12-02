@@ -1,13 +1,13 @@
 {{ define "main" }}
 <div class="container">
-  <h1 class="section-title">{{ if eq .Language.Lang "en" }}Get in Touch{{ else }}ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ{{ end }}</h1>
+  <h1 class="section-title">{{ T "get_in_touch" }}</h1>
 
   <div class="contact-grid">
     <div>
-      <h2 class="contact-section-title">{{ if eq .Language.Lang "en" }}Contact Information{{ else }}ಸಂಪರ್ಕ ಮಾಹಿತಿ{{ end }}</h2>
+      <h2 class="contact-section-title">{{ T "contact_information" }}</h2>
 
       <div class="contact-item">
-        <h3 class="contact-label"><span class="contact-icon">📍</span> {{ if eq .Language.Lang "en" }}Office Address{{ else }}ವಿಳಾಸ{{ end }}</h3>
+        <h3 class="contact-label"><span class="contact-icon">📍</span> {{ T "office_address" }}</h3>
         <p>{{ if eq .Language.Lang "en" }}1st Floor, Samudaya Bhavana, 10th Cross,<br>
         Roopanagara, Mysore<br>
         Karnataka - 570026{{ else }}ಮೊದಲ ಮಹಡಿ, ಸಮುದಾಯ ಭವನ, 10ನೇ ಅಡ್ಡ,<br>
@@ -16,61 +16,52 @@
       </div>
 
       <div class="contact-item">
-        <h3 class="contact-label"><span class="contact-icon">📧</span> {{ if eq .Language.Lang "en" }}Email{{ else }}ಇಮೇಲ್{{ end }}</h3>
+        <h3 class="contact-label"><span class="contact-icon">📧</span> {{ T "email" }}</h3>
         <p><a href="mailto:nammaroopanagara@gmail.com">nammaroopanagara@gmail.com</a></p>
       </div>
 
       <div class="contact-item">
-        <h3 class="contact-label"><span class="contact-icon">📞</span> {{ if eq .Language.Lang "en" }}Phone{{ else }}ದೂರವಾಣಿ{{ end }}</h3>
+        <h3 class="contact-label"><span class="contact-icon">📞</span> {{ T "phone" }}</h3>
         <p><a href="tel:+919986079832">+91-99860-79832</a></p>
-      </div>
-
-      <div class="contact-item">
-        <h3 class="contact-label"><span class="contact-icon">🕐</span> {{ if eq .Language.Lang "en" }}Office Hours{{ else }}ಕಚೇರಿ ಸಮಯ{{ end }}</h3>
-        <p>{{ if eq .Language.Lang "en" }}Monday - Friday: 10:00 AM - 5:00 PM<br>
-        Saturday: 10:00 AM - 2:00 PM<br>
-        Sunday: Closed{{ else }}ಸೋಮವಾರ - ಶುಕ್ರವಾರ: ಬೆಳಿಗ್ಗೆ 10:00 - ಸಂಜೆ 5:00<br>
-        ಶನಿವಾರ: ಬೆಳಿಗ್ಗೆ 10:00 - ಮಧ್ಯಾಹ್ನ 2:00<br>
-        ಭಾನುವಾರ: ಮುಚ್ಚಲಾಗಿದೆ{{ end }}</p>
       </div>
     </div>
 
     <div>
-      <h2 class="contact-section-title">{{ if eq .Language.Lang "en" }}Send Us a Message{{ else }}ನಮಗೆ ಸಂದೇಶ ಕಳುಹಿಸಿ{{ end }}</h2>
+      <h2 class="contact-section-title">{{ T "send_us_message" }}</h2>
 
       <form action="https://formspree.io/f/xldakpza" method="POST" class="contact-form">
         <div class="form-group">
-          <label for="name">{{ if eq .Language.Lang "en" }}Name *{{ else }}ಹೆಸರು *{{ end }}</label>
+          <label for="name">{{ T "name" }} *</label>
           <input type="text" id="name" name="name" required>
         </div>
 
         <div class="form-group">
-          <label for="email">{{ if eq .Language.Lang "en" }}Email *{{ else }}ಇಮೇಲ್ *{{ end }}</label>
+          <label for="email">{{ T "email" }} *</label>
           <input type="email" id="email" name="email" required>
         </div>
 
         <div class="form-group">
-          <label for="phone">{{ if eq .Language.Lang "en" }}Phone Number{{ else }}ದೂರವಾಣಿ ಸಂಖ್ಯೆ{{ end }}</label>
+          <label for="phone">{{ T "phone_number" }}</label>
           <input type="tel" id="phone" name="phone">
         </div>
 
         <div class="form-group">
-          <label for="subject">{{ if eq .Language.Lang "en" }}Subject *{{ else }}ವಿಷಯ *{{ end }}</label>
+          <label for="subject">{{ T "subject" }} *</label>
           <input type="text" id="subject" name="subject" required>
         </div>
 
         <div class="form-group">
-          <label for="message">{{ if eq .Language.Lang "en" }}Message *{{ else }}ಸಂದೇಶ *{{ end }}</label>
+          <label for="message">{{ T "message" }} *</label>
           <textarea id="message" name="message" required></textarea>
         </div>
 
-        <button type="submit" class="submit-button">{{ if eq .Language.Lang "en" }}Send Message{{ else }}ಸಂದೇಶ ಕಳುಹಿಸಿ{{ end }}</button>
+        <button type="submit" class="submit-button">{{ T "send_message" }}</button>
       </form>
     </div>
   </div>
 
   <div class="map-section">
-    <h2 class="contact-section-title" style="text-align: center;">{{ if eq .Language.Lang "en" }}Find Us on the Map{{ else }}ನಮ್ಮ ವಿಳಾಸ{{ end }}</h2>
+    <h2 class="contact-section-title" style="text-align: center;">{{ T "find_us_on_map" }}</h2>
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1949.1311881230822!2d76.58176574297258!3d12.298109425155458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baf7b30898131c9%3A0x26fa52ede007cd04!2s7HXJ%2B35J%20Samudaya%20Bhawan%2C%2010th%20Cross%20St%2C%20Roopa%20Nagar%2C%20Mysuru%2C%20Karnataka%20570026!5e0!3m2!1sen!2sin!4v1763202931567!5m2!1sen!2sin"
       width="100%"

@@ -1,13 +1,9 @@
 {{ define "main" }}
 <div class="container">
-  <h1 class="section-title">{{ if eq .Language.Lang "en" }}Other Organizations{{ else }}ಇತರ ಸಂಸ್ಥೆಗಳು{{ end }}</h1>
-  
+  <h1 class="section-title">{{ T "other_organizations" }}</h1>
+
   <div class="intro-text" style="max-width: 800px; margin: 0 auto 3rem; text-align: center; font-size: 1.1rem; color: #666;">
-    {{ if eq .Language.Lang "en" }}
-      <p>We collaborate with several volunteer groups working in Roopanagara who share our vision of community development. While these organizations are not affiliated with NRRWA, we recognize and support their valuable contributions to our neighborhood.</p>
-    {{ else }}
-      <p>ರೂಪನಗರದಲ್ಲಿ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತಿರುವ ಮತ್ತು ನಮ್ಮ ಸಮುದಾಯ ಅಭಿವೃದ್ಧಿಯ ದೃಷ್ಟಿಯನ್ನು ಹಂಚಿಕೊಳ್ಳುವ ಹಲವಾರು ಸ್ವಯಂಸೇವಕ ಗುಂಪುಗಳೊಂದಿಗೆ ನಾವು ಸಹಕರಿಸುತ್ತೇವೆ.</p>
-    {{ end }}
+    <p>{{ T "other_orgs_intro" }}</p>
   </div>
 
   <div class="cards-grid" style="max-width: 900px; margin: 0 auto;">
@@ -29,7 +25,7 @@
           {{ else }}
             <p>{{ .Summary | truncate 150 }}</p>
           {{ end }}
-          <a href="{{ .Permalink }}" class="card-link">{{ if eq $.Language.Lang "en" }}Learn More{{ else }}ಇನ್ನಷ್ಟು ತಿಳಿಯಿರಿ{{ end }} →</a>
+          <a href="{{ .Permalink }}" class="card-link">{{ T "learn_more" }} →</a>
         </div>
       </div>
       {{ end }}
@@ -40,26 +36,18 @@
   <!-- Disclaimer -->
   <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: #fff3cd; border-radius: 10px; border-left: 4px solid #ffc107;">
     <p style="margin: 0; color: #856404; font-size: 0.95rem;">
-      <strong>{{ if eq .Language.Lang "en" }}Note:{{ else }}ಗಮನಿಸಿ:{{ end }}</strong>
-      {{ if eq .Language.Lang "en" }}
-        These are independent volunteer groups and are not officially affiliated with NRRWA.
-      {{ else }}
-        ಇವು ಸ್ವತಂತ್ರ ಸ್ವಯಂಸೇವಕ ಗುಂಪುಗಳಾಗಿದ್ದು NRRWA ಯೊಂದಿಗೆ ಅಧಿಕೃತವಾಗಿ ಸಂಬಂಧ ಹೊಂದಿಲ್ಲ.
-      {{ end }}
+      <strong>{{ T "note" }}</strong>
+      {{ T "other_orgs_note" }}
     </p>
   </div>
 
   <!-- Partner with Us -->
   <div style="text-align: center; margin-top: 3rem; padding: 3rem; background: var(--light-gray); border-radius: 10px;">
-    <h2 style="color: var(--primary-green); margin-bottom: 1rem;">{{ if eq .Language.Lang "en" }}Collaborate With Us{{ else }}ನಮ್ಮೊಂದಿಗೆ ಸಹಕರಿಸಿ{{ end }}</h2>
+    <h2 style="color: var(--primary-green); margin-bottom: 1rem;">{{ T "collaborate_with_us" }}</h2>
     <p style="font-size: 1.1rem; margin-bottom: 2rem;">
-      {{ if eq .Language.Lang "en" }}
-        Are you working on community initiatives in Roopanagara? We'd love to collaborate!
-      {{ else }}
-        ನೀವು ರೂಪನಗರದಲ್ಲಿ ಸಮುದಾಯ ಉಪಕ್ರಮಗಳಲ್ಲಿ ಕೆಲಸ ಮಾಡುತ್ತಿದ್ದೀರಾ? ನಾವು ಸಹಕರಿಸಲು ಇಷ್ಟಪಡುತ್ತೇವೆ!
-      {{ end }}
+      {{ T "collaborate_intro" }}
     </p>
-    <a href="/{{ .Language.Lang }}/contact/" class="cta-button">{{ if eq .Language.Lang "en" }}Contact Us{{ else }}ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ{{ end }}</a>
+    <a href="/{{ .Language.Lang }}/contact/" class="cta-button">{{ T "contact_us" }}</a>
   </div>
 </div>
 {{ end }}

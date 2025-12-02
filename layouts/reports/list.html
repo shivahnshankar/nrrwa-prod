@@ -13,7 +13,7 @@
   <section style="margin: 4rem 0;">
     <h2
       style="color: var(--primary-blue); margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 3px solid var(--primary-blue);">
-      📅 {{ if eq $.Language.Lang "en" }}Year{{ else }}ವರ್ಷ{{ end }}: {{ .year }}
+      📅 {{ T "year" }}: {{ .year }}
     </h2>
 
     <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
@@ -39,7 +39,7 @@
             <div style="display: flex; align-items: center;">
               <a href="{{ .fileUrl }}" target="_blank"
                 style="display: inline-block; padding: 10px 25px; background: var(--primary-green); color: white; text-decoration: none; border-radius: 5px; font-weight: 600; transition: all 0.3s ease;">
-                {{ if eq $.Language.Lang "en" }}Download{{ else }}ಡೌನ್‌ಲೋಡ್{{ end }} ⬇️
+                {{ T "download" }} ⬇️
               </a>
             </div>
           </div>

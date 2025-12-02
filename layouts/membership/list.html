@@ -36,7 +36,7 @@
       {{ range $data.types }}
       <div class="membership-card{{ if .popular }} popular{{ end }}">
         {{ if .popular }}
-        <div class="popular-badge">{{ if eq $.Language.Lang "en" }}Most Popular{{ else }}ಅತ್ಯಂತ ಜನಪ್ರಿಯ{{ end }}</div>
+        <div class="popular-badge">{{ T "most_popular" }}</div>
         {{ end }}
         <div class="membership-icon">{{ .icon }}</div>
         <h3 class="membership-name">{{ .name }}</h3>
@@ -49,8 +49,7 @@
           <li>✓ {{ . }}</li>
           {{ end }}
         </ul>
-        <a href="/{{ $.Language.Lang }}/contact/" class="membership-button">{{ if eq $.Language.Lang "en" }}Join Now{{
-          else }}ಈಗ ಸೇರಿ{{ end }}</a>
+        <a href="/{{ $.Language.Lang }}/contact/" class="membership-button">{{ T "join_now" }}</a>
       </div>
       {{ end }}
     </div>

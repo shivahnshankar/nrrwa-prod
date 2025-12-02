@@ -167,3 +167,89 @@ other = "Contact Us"
 # Reports
 [note]
 other = "Note:"
+
+# Contact Page
+[get_in_touch]
+other = "Get in Touch"
+
+[contact_information]
+other = "Contact Information"
+
+[office_address]
+other = "Office Address"
+
+[email]
+other = "Email"
+
+[phone]
+other = "Phone"
+
+[office_hours]
+other = "Office Hours"
+
+[send_us_message]
+other = "Send Us a Message"
+
+[name]
+other = "Name"
+
+[phone_number]
+other = "Phone Number"
+
+[subject]
+other = "Subject"
+
+[message]
+other = "Message"
+
+[send_message]
+other = "Send Message"
+
+[find_us_on_map]
+other = "Find Us on the Map"
+
+# Other Organizations Page
+[other_organizations]
+other = "Other Organizations"
+
+[other_orgs_intro]
+other = "We collaborate with several volunteer groups working in Roopanagara who share our vision of community development. While these organizations are not affiliated with NRRWA, we recognize and support their valuable contributions to our neighborhood."
+
+[learn_more]
+other = "Learn More"
+
+[other_orgs_note]
+other = "These are independent volunteer groups and are not officially affiliated with NRRWA."
+
+[collaborate_with_us]
+other = "Collaborate With Us"
+
+[collaborate_intro]
+other = "Are you working on community initiatives in Roopanagara? We'd love to collaborate!"
+
+# Membership Page
+[most_popular]
+other = "Most Popular"
+
+[join_now]
+other = "Join Now"
+
+# Donors Page
+[support_our_causes]
+other = "Support Our Causes"
+
+[donation_intro]
+other = "Your generous donation helps us continue serving the Roopanagara community. Every contribution makes a difference!"
+
+[donate_now]
+other = "Donate Now"
+
+[donation_note]
+other = "All donations are tax-deductible under Section 80G. We maintain complete transparency in our financial operations. For donation receipts and queries, please contact us at nammaroopanagara@gmail.com"
+
+# Reports Page
+[year]
+other = "Year"
+
+[download]
+other = "Download"

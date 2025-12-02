@@ -9,21 +9,14 @@
     <!-- Donation Call to Action -->
     <section
         style="margin: 4rem 0; text-align: center; padding: 3rem; background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-blue) 100%); border-radius: 15px; color: white;">
-        <h2 style="color: var(--golden); margin-bottom: 1rem; font-size: 2rem;">{{ if eq .Language.Lang "en" }}Support
-            Our Causes{{ else }}ನಮ್ಮ ಉದ್ದೇಶಗಳನ್ನು ಬೆಂಬಲಿಸಿ{{ end }}</h2>
+        <h2 style="color: var(--golden); margin-bottom: 1rem; font-size: 2rem;">{{ T "support_our_causes" }}</h2>
         <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.95;">
-            {{ if eq .Language.Lang "en" }}
-            Your generous donation helps us continue serving the Roopanagara community. Every contribution makes a
-            difference!
-            {{ else }}
-            ನಿಮ್ಮ ಉದಾರ ದಾನವು ರೂಪನಗರ ಸಮುದಾಯವನ್ನು ಸೇವೆ ಮಾಡುವುದನ್ನು ಮುಂದುವರಿಸಲು ನಮಗೆ ಸಹಾಯ ಮಾಡುತ್ತದೆ. ಪ್ರತಿಯೊಂದು ಕೊಡುಗೆಯೂ
-            ವ್ಯತ್ಯಾಸವನ್ನು ಮಾಡುತ್ತದೆ!
-            {{ end }}
+            {{ T "donation_intro" }}
         </p>
         <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
             <a href="/{{ .Language.Lang }}/contact/"
                 style="display: inline-block; padding: 15px 40px; background-color: var(--golden); color: var(--dark-gray); text-decoration: none; border-radius: 5px; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease;">
-                {{ if eq .Language.Lang "en" }}Donate Now{{ else }}ಈಗ ದಾನ ಮಾಡಿ{{ end }}
+                {{ T "donate_now" }}
             </a>
         </div>
     </section>
@@ -32,15 +25,8 @@
     <section
         style="margin: 3rem 0; padding: 2rem; background: var(--light-gray); border-radius: 10px; border-left: 5px solid var(--primary-green);">
         <p style="color: var(--text-color); font-size: 1rem; margin: 0; line-height: 1.6;">
-            <strong>{{ if eq .Language.Lang "en" }}Note:{{ else }}ಸೂಚನೆ:{{ end }}</strong>
-            {{ if eq .Language.Lang "en" }}
-            All donations are tax-deductible under Section 80G. We maintain complete transparency in our financial
-            operations. For donation receipts and queries, please contact us at nammaroopanagara@gmail.com
-            {{ else }}
-            ಎಲ್ಲಾ ದಾನಗಳು ವಿಭಾಗ 80G ಅಡಿಯಲ್ಲಿ ತೆರಿಗೆ ವಿನಾಯಿತಿ ಹೊಂದಿವೆ. ನಾವು ನಮ್ಮ ಹಣಕಾಸು ಕಾರ್ಯಾಚರಣೆಗಳಲ್ಲಿ ಸಂಪೂರ್ಣ
-            ಪಾರದರ್ಶಕತೆಯನ್ನು ಕಾಪಾಡಿಕೊಳ್ಳುತ್ತೇವೆ. ದಾನ ರಸೀದಿಗಳು ಮತ್ತು ಪ್ರಶ್ನೆಗಳಿಗಾಗಿ, ದಯವಿಟ್ಟು ನಮ್ಮನ್ನು
-            nammaroopanagara@gmail.com ನಲ್ಲಿ ಸಂಪರ್ಕಿಸಿ
-            {{ end }}
+            <strong>{{ T "note" }}</strong>
+            {{ T "donation_note" }}
         </p>
     </section>
 </div>
