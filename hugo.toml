@@ -63,8 +63,8 @@ relativeURLs = true
   weight = 3
 
 [[languages.en.menu.main]]
-  name = 'Partners'
-  url = '/partners/'
+  name = 'Other Orgs'
+  url = '/other-orgs/'
   weight = 4
 
 [[languages.en.menu.main]]
@@ -109,8 +109,8 @@ relativeURLs = true
   weight = 3
 
 [[languages.kn.menu.main]]
-  name = 'ಪಾಲುದಾರರು'
-  url = '/partners/'
+  name = 'ಇತರ ಸಂಸ್ಥೆಗಳು'
+  url = '/other-orgs/'
   weight = 4
 
 [[languages.kn.menu.main]]

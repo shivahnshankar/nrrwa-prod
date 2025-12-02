@@ -6,4 +6,4 @@ draft: false
 
 {{< youtube jcHc6j8jYHM >}}
 
-[← Back to Community Partners](/en/partners/)
+[← Back to Other Organizations](/en/other-orgs/)

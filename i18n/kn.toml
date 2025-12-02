@@ -83,8 +83,23 @@ other = "ಸಂಸ್ಕೃತಿ ಮತ್ತು ಪರಂಪರೆ"
 [safety_security]
 other = "ಸುರಕ್ಷತೆ ಮತ್ತು ಭದ್ರತೆ"
 
-[partners]
-other = "ಪಾಲುದಾರರು"
+[other_orgs]
+other = "ಇತರ ಸಂಸ್ಥೆಗಳು"
+
+[deepa_recreation_club]
+other = "ದೀಪಾ ರಿಕ್ರಿಯೇಷನ್ ಕ್ಲಬ್"
+
+[documents]
+other = "ದಸ್ತಾವೇಜುಗಳು"
+
+[donors]
+other = "ದಾನಿಗಳು"
+
+[directory]
+other = "ಕೋಶ"
+
+[join_us]
+other = "ನಮ್ಮೊಂದಿಗೆ ಸೇರಿ"
 
 [events]
 other = "ಕಾರ್ಯಕ್ರಮಗಳು"

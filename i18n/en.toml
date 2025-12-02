@@ -83,8 +83,23 @@ other = "Culture & Heritage"
 [safety_security]
 other = "Safety & Security"
 
-[partners]
-other = "Partners"
+[other_orgs]
+other = "Other Orgs"
+
+[deepa_recreation_club]
+other = "Deepa Recreation Club"
+
+[documents]
+other = "Documents"
+
+[donors]
+other = "Donors"
+
+[directory]
+other = "Directory"
+
+[join_us]
+other = "Join Us"
 
 [events]
 other = "Events"

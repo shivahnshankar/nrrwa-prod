@@ -1,7 +1,7 @@
 ---
 title: ನಮ್ಮ ವನದ ಹೊಸ ಬಯಲು ರಂಗಮಂದಿರ ಉದ್ಘಾಟನೆ
 date: 2025-10-26
-featuredImage: /assets/images/news/amphitheatre/amphitheatre.jpg
+featuredImage: /assets/images/news/amphitheatre/2.jpg
 summary: NRRWA ಸಮುದಾಯದ ಹೊಸ ಆಂಫಿಥಿಯೇಟರ್ ಅನ್ನು ಯಶಸ್ವಿಯಾಗಿ ಉದ್ಘಾಟಿಸಿತು, ಇದು ಸಾಂಸ್ಕೃತಿಕ ಕಾರ್ಯಕ್ರಮಗಳು ಮತ್ತು ಸಮುದಾಯ ಸಂಗಮಕ್ಕಾಗಿ ಒಂದು ಹೊಸ ಸ್ಥಳವಾಗಿದೆ.
 tags:
   - Infrastructure

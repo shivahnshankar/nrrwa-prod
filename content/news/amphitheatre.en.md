@@ -1,7 +1,7 @@
 ---
 title: Namma Vana's new amphitheatre inaugurated
 date: 2025-10-26
-featuredImage: /assets/images/news/amphitheatre/amphitheatre.jpg
+featuredImage: /assets/images/news/amphitheatre/2.jpg
 summary: NRRWA successfully coordinates installation of 25 new LED street lights in Phase 2 area, improving safety and visibility.
 tags:
   - Infrastructure
