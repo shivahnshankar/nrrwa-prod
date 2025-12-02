@@ -126,8 +126,8 @@
         <p>{{ T "events_organized" }}</p>
       </div>
       <div class="stat-item">
-        <h3 class="stat-number" data-target="{{ .Site.Params.stats_treesPlanted }}">0</h3>
-        <p>{{ T "trees_planted" }}</p>
+        <h3 class="stat-number" data-target="{{ .Site.Params.stats_saplingsDistributed }}">0</h3>
+        <p>{{ T "saplings_distributed" }}</p>
       </div>
     </div>
   </div>
@@ -166,7 +166,7 @@
 
     <div class="text-center mt-4">
       <p style="font-size: 1.1rem; color: var(--text-color);">
-        {{ T "join_community" (dict "Count" (len $members)) }}
+        {{ T "join_community" (dict "Count" .Site.Params.stats_members) }}
       </p>
       <a href="/{{ .Language.Lang }}/membership/" class="cta-button" style="margin-top: 1rem;">{{ T "become_member" }}</a>
     </div>
