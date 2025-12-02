@@ -67,7 +67,7 @@ Custom section list templates have been created for better presentation of conte
   - Active Members
   - Years of Service
   - Events Organized
-  - Trees Planted
+  - Saplings Distributed
 - Green CTA to join NRRWA
 - Pulls stats from `hugo.toml` config
 

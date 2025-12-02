@@ -36,10 +36,10 @@ relativeURLs = true
 [params]
   description = 'Namma Roopanagara Residents Welfare Association'
   author = 'NRRWA'
-  stats_members = 400
-  stats_yearsOfService = 25
-  stats_eventsOrganized = 100
-  stats_treesPlanted = 500
+  stats_members = 343
+  stats_yearsOfService = 4
+  stats_eventsOrganized = 62
+  stats_saplingsDistributed = 1050
 
 # Permalinks
 [permalinks]
