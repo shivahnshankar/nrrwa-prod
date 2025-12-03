@@ -9,10 +9,10 @@
       <div class="footer-section">
         <h3>{{ if eq .Language.Lang "en" }}Quick Links{{ else }}ತ್ವರಿತ ಲಿಂಕ್‌ಗಳು{{ end }}</h3>
         <ul>
-          <li><a href="/about/">{{ if eq .Language.Lang "en" }}About Us{{ else }}ನಮ್ಮ ಬಗ್ಗೆ{{ end }}</a></li>
-          <li><a href="/focus/">{{ if eq .Language.Lang "en" }}Focus Areas{{ else }}ಗಮನ ಕ್ಷೇತ್ರಗಳು{{ end }}</a></li>
-          <li><a href="/membership/">{{ if eq .Language.Lang "en" }}Join Us{{ else }}ನಮ್ಮೊಂದಿಗೆ ಸೇರಿ{{ end }}</a></li>
-          <li><a href="/contact/">{{ if eq .Language.Lang "en" }}Contact{{ else }}ಸಂಪರ್ಕ{{ end }}</a></li>
+          <li><a href="/{{ .Language.Lang }}/about/">{{ if eq .Language.Lang "en" }}About Us{{ else }}ನಮ್ಮ ಬಗ್ಗೆ{{ end }}</a></li>
+          <li><a href="/{{ .Language.Lang }}/focus/">{{ if eq .Language.Lang "en" }}Focus Areas{{ else }}ಗಮನ ಕ್ಷೇತ್ರಗಳು{{ end }}</a></li>
+          <li><a href="/{{ .Language.Lang }}/membership/">{{ if eq .Language.Lang "en" }}Join Us{{ else }}ನಮ್ಮೊಂದಿಗೆ ಸೇರಿ{{ end }}</a></li>
+          <li><a href="/{{ .Language.Lang }}/contact/">{{ if eq .Language.Lang "en" }}Contact{{ else }}ಸಂಪರ್ಕ{{ end }}</a></li>
         </ul>
       </div>
       
@@ -21,11 +21,6 @@
         <p>{{ if eq .Language.Lang "en" }}1st Floor, Samudaya Bhavana, 10th Cross, Roopanagara, Mysore, Karnataka - 570026{{ else }}ರೂಪಾನಗರ, ಮೈಸೂರು{{ end }}</p>
         <p>Email: nammaroopanagara@gmail.com</p>
         <p>Phone: +91-99860-79832</p>
-        <div class="social-links">
-          <a href="#" aria-label="Facebook">📘</a>
-          <a href="#" aria-label="Twitter">🐦</a>
-          <a href="#" aria-label="Instagram">📷</a>
-          <a href="#" aria-label="WhatsApp">💬</a>
         </div>
       </div>
     </div>
