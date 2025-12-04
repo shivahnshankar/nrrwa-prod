@@ -1,7 +1,7 @@
 ---
 date: 2025-01-01
 title: Public Amenities
-featuredImage: 
+featuredImage:
 ---
 
 We work to improve and maintain essential infrastructure that makes Roopanagara a comfortable and well-functioning community for all residents.
