@@ -8,4 +8,6 @@ We are grateful to all our donors who have generously supported NRRWA's initiati
 
 {{< donor-accordion file="data/donors/nammavana.csv" title="Nammavana Project Donors" description="We appreciate the generous support for our Nammavana green initiative" >}}
 
+{{< donor-accordion file="data/donors/dog_neuter_donors.csv" title="Dog neutering/spaying" description="Thanks to the donors who made a contribution to humanely control the dog population" >}}
+
 ---
