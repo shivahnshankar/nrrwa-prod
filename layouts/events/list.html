@@ -1,5 +1,6 @@
 {{ define "main" }}
 {{ $now := now }}
+{{ $today := $now.Format "2006-01-02" }}
 {{ $allEvents := where .Site.RegularPages "Section" "events" }}
 {{ $langPages := where $allEvents ".Language.Lang" .Language.Lang }}
 
@@ -7,7 +8,8 @@
 {{ $pastEvents := slice }}
 {{ range $langPages }}
 {{ $eventDate := time .Params.eventDate }}
-{{ if $eventDate.After $now }}
+{{ $eventDay := $eventDate.Format "2006-01-02" }}
+{{ if ge $eventDay $today }}
 {{ $upcomingEvents = $upcomingEvents | append . }}
 {{ else }}
 {{ $pastEvents = $pastEvents | append . }}
@@ -31,7 +33,8 @@
   {{ $pastOnPage := slice }}
   {{ range $paginator.Pages }}
   {{ $eventDate := time .Params.eventDate }}
-  {{ if $eventDate.After $now }}
+  {{ $eventDay := $eventDate.Format "2006-01-02" }}
+  {{ if ge $eventDay $today }}
   {{ $upcomingOnPage = $upcomingOnPage | append . }}
   {{ else }}
   {{ $pastOnPage = $pastOnPage | append . }}

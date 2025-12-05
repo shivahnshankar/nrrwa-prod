@@ -31,6 +31,7 @@
     <h2 class="section-title">{{ T "upcoming_events" }}</h2>
     <div class="cards-grid">
       {{ $now := now }}
+      {{ $today := $now.Format "2006-01-02" }}
       {{ $events := where .Site.RegularPages "Section" "events" }}
       {{ $events = where $events ".Language.Lang" .Language.Lang }}
       {{ $futureEvents := slice }}
@@ -38,7 +39,8 @@
         {{ $eventDate := .Params.eventDate }}
         {{ if $eventDate }}
           {{ $eventTime := time $eventDate }}
-          {{ if gt $eventTime $now }}
+          {{ $eventDay := $eventTime.Format "2006-01-02" }}
+          {{ if ge $eventDay $today }}
             {{ $futureEvents = $futureEvents | append . }}
           {{ end }}
         {{ end }}
