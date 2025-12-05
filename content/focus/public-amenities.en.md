@@ -1,10 +1,10 @@
 ---
 date: 2025-01-01
 title: Public Amenities
-featuredImage:
+featuredImage: /assets/images/focus/public_amenities.png
 ---
 
-We work to improve and maintain essential infrastructure that makes Roopanagara a comfortable and well-functioning community for all residents.
+We work to improve and maintain essential infrastructure that makes Roopanagara a comfortable and well-functioning community for all residents. This includes parks and greenspaces, streetlights, roads and other such infrastructure.
 
 ## Key Initiatives
 

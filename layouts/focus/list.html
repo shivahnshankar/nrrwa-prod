@@ -17,13 +17,13 @@
     {{ if ne .File.LogicalName "_index.en.md" }}
     {{ if ne .File.LogicalName "_index.kn.md" }}
     <div class="card">
-      {{ with .Params.featuredImage }}
-      {{ $img := resources.Get . }}
+      {{ if .Params.featuredImage }}
+      {{ $img := resources.Get .Params.featuredImage }}
       {{ if $img }}
       {{ $resized := $img.Fill "600x400 webp q85" }}
       <img src="{{ $resized.RelPermalink }}" alt="{{ $.Title }}">
       {{ else }}
-      <img src="{{ . }}" alt="{{ $.Title }}">
+      <img src="{{ .Params.featuredImage }}" alt="{{ $.Title }}">
       {{ end }}
       {{ else }}
       <div class="card-icon"

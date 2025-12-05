@@ -1,7 +1,7 @@
 ---
 date: 2025-01-01
 title: ಆರೋಗ್ಯ ಮತ್ತು ಯೋಗಕ್ಷೇಮ
-featuredImage: /assets/images/focus/health.jpg
+featuredImage: /assets/images/focus/health-hero.svg
 ---
 
 ಜಾಗೃತಿ ಕಾರ್ಯಕ್ರಮಗಳು, ಆರೋಗ್ಯ ಶಿಬಿರಗಳು, ಫಿಟ್ನೆಸ್ ಚಟುವಟಿಕೆಗಳು ಮತ್ತು ತಡೆಗಟ್ಟುವ ಆರೋಗ್ಯ ಉಪಕ್ರಮಗಳ ಮೂಲಕ ಎಲ್ಲಾ ನಿವಾಸಿಗಳಿಗೆ ಆರೋಗ್ಯಕರ ಜೀವನ ಮತ್ತು ಯೋಗಕ್ಷೇಮವನ್ನು ಉತ್ತೇಜಿಸುವುದು.

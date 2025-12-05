@@ -1,6 +1,7 @@
 ---
 date: 2025-01-01
 title: ಸುರಕ್ಷತೆ ಮತ್ತು ಭದ್ರತೆ
+featuredImage: /assets/images/focus/safety-hero.svg
 ---
 
 ## ಸುರಕ್ಷತೆ ಮತ್ತು ಭದ್ರತೆ

@@ -1,9 +1,8 @@
 ---
 date: 2025-01-01
 title: Safety & Security
+featuredImage: /assets/images/focus/safety.png
 ---
-
-## Safety & Security
 
 Ensuring the safety and security of our community is one of our top priorities. We work closely with local authorities and implement various measures to create a secure environment for all residents.
 

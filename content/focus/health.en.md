@@ -1,7 +1,7 @@
 ---
 date: 2025-01-01
 title: Health & Wellbeing
-featuredImage:
+featuredImage: /assets/images/focus/health.png
 ---
 
 Promoting healthy living and wellbeing for all residents through awareness programs, health camps, fitness activities, and preventive healthcare initiatives.
