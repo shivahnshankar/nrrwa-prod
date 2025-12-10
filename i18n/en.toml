@@ -20,7 +20,7 @@ other = "Saplings Distributed"
 other = "Welcome New Members"
 
 [join_community]
-other = "Join our growing community of {{ .Count }} members!"
+other = "Photos are sent on the private NRRWA Members WhatsApp group to respect privacy"
 
 [become_member]
 other = "Become a Member"

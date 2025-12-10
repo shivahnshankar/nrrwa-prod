@@ -2956,3 +2956,34 @@ nav ul li.nav-join-button a:hover {
     grid-template-columns: 1fr;
   }
 }
+/* ============================================
+   MEMBER AVATARS (INITIALS)
+   ============================================ */
+
+.member-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin: 0 auto 1.5rem;
+  box-shadow: var(--shadow-md);
+  text-transform: uppercase;
+}
+
+.avatar-gradient-0 {
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%); /* Green-Teal */
+}
+
+.avatar-gradient-1 {
+  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%); /* Blue-Indigo */
+}
+
+.avatar-gradient-2 {
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); /* Orange-Red */
+}
