@@ -5,12 +5,13 @@
   <div class="swiper-wrapper">
     {{ range $slides }}
     <div class="swiper-slide">
-      {{ $img := resources.Get .image }}
+      {{ $imgPath := strings.TrimPrefix "/assets/" .image }}
+      {{ $img := resources.Get $imgPath }}
       {{ if $img }}
-        {{ $resized := $img.Resize "1920x webp q85" }}
-        <img src="{{ $resized.RelPermalink }}" alt="{{ .title }}">
+      {{ $resized := $img.Resize "1920x webp q85" }}
+      <img src="{{ $resized.RelPermalink }}" alt="{{ .title }}">
       {{ else }}
-        <img src="{{ .image }}" alt="{{ .title }}">
+      <img src="{{ .image }}" alt="{{ .title }}">
       {{ end }}
       <div class="slide-content">
         <h2>{{ .title }}</h2>
@@ -36,40 +37,40 @@
       {{ $events = where $events ".Language.Lang" .Language.Lang }}
       {{ $futureEvents := slice }}
       {{ range $events }}
-        {{ $eventDate := .Params.eventDate }}
-        {{ if $eventDate }}
-          {{ $eventTime := time $eventDate }}
-          {{ $eventDay := $eventTime.Format "2006-01-02" }}
-          {{ if ge $eventDay $today }}
-            {{ $futureEvents = $futureEvents | append . }}
-          {{ end }}
-        {{ end }}
+      {{ $eventDate := .Params.eventDate }}
+      {{ if $eventDate }}
+      {{ $eventTime := time $eventDate }}
+      {{ $eventDay := $eventTime.Format "2006-01-02" }}
+      {{ if ge $eventDay $today }}
+      {{ $futureEvents = $futureEvents | append . }}
+      {{ end }}
+      {{ end }}
       {{ end }}
       {{ $sortedEvents := sort $futureEvents "Params.eventDate" }}
       {{ range first 3 $sortedEvents }}
-        <div class="card">
-          {{ with .Params.featuredImage }}
-            {{ $img := resources.Get . }}
-            {{ if $img }}
-              {{ $resized := $img.Fill "600x400 webp q85" }}
-              <img src="{{ $resized.RelPermalink }}" alt="{{ $.Title }}">
-            {{ else }}
-              <img src="{{ . }}" alt="{{ $.Title }}">
-            {{ end }}
-          {{ end }}
-          <div class="card-content">
-            <div class="blog-meta">
-              <span>📅 {{ time .Params.eventDate | dateFormat "02 Jan 2006" }}</span>
-            </div>
-            <h3>{{ .Title }}</h3>
-            <p>{{ .Params.summary }}</p>
-            <a href="{{ .Permalink }}" class="card-link">{{ T "read_more" }} →</a>
+      <div class="card">
+        {{ with .Params.featuredImage }}
+        {{ $img := resources.Get . }}
+        {{ if $img }}
+        {{ $resized := $img.Fill "600x400 webp q85" }}
+        <img src="{{ $resized.RelPermalink }}" alt="{{ $.Title }}">
+        {{ else }}
+        <img src="{{ . }}" alt="{{ $.Title }}">
+        {{ end }}
+        {{ end }}
+        <div class="card-content">
+          <div class="blog-meta">
+            <span>📅 {{ time .Params.eventDate | dateFormat "02 Jan 2006" }}</span>
           </div>
+          <h3>{{ .Title }}</h3>
+          <p>{{ .Params.summary }}</p>
+          <a href="{{ .Permalink }}" class="card-link">{{ T "read_more" }} →</a>
         </div>
+      </div>
       {{ end }}
     </div>
     <div class="text-center mt-4">
-      <a href="{{ "/events/" | relLangURL }}" class="cta-button">{{ T "view_all_events" }}</a>
+      <a href="{{ " /events/" | relLangURL }}" class="cta-button">{{ T "view_all_events" }}</a>
     </div>
   </div>
 </section>
@@ -84,29 +85,29 @@
       {{ $news = where $news "Params.layout" "!=" "archive" }}
       {{ $news := first 3 $news }}
       {{ range $news }}
-        <div class="blog-card">
-          {{ with .Params.featuredImage }}
-            {{ $img := resources.Get . }}
-            {{ if $img }}
-              {{ $resized := $img.Fill "600x400 webp q85" }}
-              <img src="{{ $resized.RelPermalink }}" alt="{{ $.Title }}">
-            {{ else }}
-              <img src="{{ . }}" alt="{{ $.Title }}">
-            {{ end }}
-          {{ end }}
-          <div class="blog-card-content">
-            <div class="blog-meta">
-              <span>📅 {{ .Date.Format "02 Jan 2006" }}</span>
-            </div>
-            <h3>{{ .Title }}</h3>
-            <p>{{ .Params.summary }}</p>
-            <a href="{{ .Permalink }}" class="card-link">{{ T "read_more" }} →</a>
+      <div class="blog-card">
+        {{ with .Params.featuredImage }}
+        {{ $img := resources.Get . }}
+        {{ if $img }}
+        {{ $resized := $img.Fill "600x400 webp q85" }}
+        <img src="{{ $resized.RelPermalink }}" alt="{{ $.Title }}">
+        {{ else }}
+        <img src="{{ . }}" alt="{{ $.Title }}">
+        {{ end }}
+        {{ end }}
+        <div class="blog-card-content">
+          <div class="blog-meta">
+            <span>📅 {{ .Date.Format "02 Jan 2006" }}</span>
           </div>
+          <h3>{{ .Title }}</h3>
+          <p>{{ .Params.summary }}</p>
+          <a href="{{ .Permalink }}" class="card-link">{{ T "read_more" }} →</a>
         </div>
+      </div>
       {{ end }}
     </div>
     <div class="text-center mt-4">
-      <a href="{{ "/news/" | relLangURL }}" class="cta-button">{{ T "view_all_news" }}</a>
+      <a href="{{ " /news/" | relLangURL }}" class="cta-button">{{ T "view_all_news" }}</a>
     </div>
   </div>
 </section>
@@ -148,10 +149,10 @@
           {{ if .photo }}
           {{ $img := resources.Get .photo }}
           {{ if $img }}
-            {{ $resized := $img.Fill "200x200 webp q85" }}
-            <img src="{{ $resized.RelPermalink }}" alt="{{ .name }}">
+          {{ $resized := $img.Fill "200x200 webp q85" }}
+          <img src="{{ $resized.RelPermalink }}" alt="{{ .name }}">
           {{ else }}
-            <img src="{{ .photo }}" alt="{{ .name }}">
+          <img src="{{ .photo }}" alt="{{ .name }}">
           {{ end }}
           {{ else }}
           <div class="photo-placeholder">👤</div>
@@ -170,7 +171,8 @@
       <p style="font-size: 1.1rem; color: var(--text-color);">
         {{ T "join_community" (dict "Count" .Site.Params.stats_members) }}
       </p>
-      <a href="/{{ .Language.Lang }}/membership/" class="cta-button" style="margin-top: 1rem;">{{ T "become_member" }}</a>
+      <a href="/{{ .Language.Lang }}/membership/" class="cta-button" style="margin-top: 1rem;">{{ T "become_member"
+        }}</a>
     </div>
   </div>
 </section>

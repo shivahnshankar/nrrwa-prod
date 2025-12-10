@@ -26,7 +26,12 @@
       <div class="container">
         <div class="header-content">
           <div class="logo-section">
+            {{ $logo := resources.Get "images/logo.png" }}
+            {{ if $logo }}
+            <img src="{{ $logo.RelPermalink }}" alt="NRRWA Logo">
+            {{ else }}
             <img src="/assets/images/logo.png" alt="NRRWA Logo">
+            {{ end }}
             <div class="site-title">
               <h1>{{ .Site.Language.Params.siteName }}</h1>
               <p>{{ .Site.Language.Params.siteDescription }}</p>

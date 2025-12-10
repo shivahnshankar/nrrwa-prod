@@ -48,7 +48,8 @@
       {{ range $upcomingOnPage }}
       <div class="card">
         {{ with .Params.featuredImage }}
-        {{ $img := resources.Get . }}
+        {{ $imgPath := strings.TrimPrefix "/assets/" . }}
+        {{ $img := resources.Get $imgPath }}
         {{ if $img }}
         {{ $resized := $img.Fill "600x400 webp q85" }}
         <img src="{{ $resized.RelPermalink }}" alt="{{ $.Title }}">
@@ -99,7 +100,8 @@
       {{ range $pastOnPage }}
       <div class="card">
         {{ with .Params.featuredImage }}
-        {{ $img := resources.Get . }}
+        {{ $imgPath := strings.TrimPrefix "/assets/" . }}
+        {{ $img := resources.Get $imgPath }}
         {{ if $img }}
         {{ $resized := $img.Fill "600x400 webp q85" }}
         <img src="{{ $resized.RelPermalink }}" alt="{{ $.Title }}" style="opacity: 0.8;">

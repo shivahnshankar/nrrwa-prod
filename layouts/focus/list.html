@@ -18,7 +18,8 @@
     {{ if ne .File.LogicalName "_index.kn.md" }}
     <div class="card">
       {{ if .Params.featuredImage }}
-      {{ $img := resources.Get .Params.featuredImage }}
+      {{ $imgPath := strings.TrimPrefix "/assets/" .Params.featuredImage }}
+      {{ $img := resources.Get $imgPath }}
       {{ if $img }}
       {{ $resized := $img.Fill "600x400 webp q85" }}
       <img src="{{ $resized.RelPermalink }}" alt="{{ $.Title }}">

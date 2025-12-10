@@ -1,15 +1,23 @@
 {{ $path := .Get "path" }}
 
 <div class="image-gallery">
-  {{ $files := readDir (printf "static/%s" $path) }}
+  {{ $files := readDir $path }}
   {{ range $files }}
-    {{ $ext := path.Ext .Name }}
-    {{ if or (eq $ext ".jpg") (eq $ext ".jpeg") (eq $ext ".png") (eq $ext ".webp") (eq $ext ".JPG") (eq $ext ".JPEG") (eq $ext ".PNG") }}
-      <figure class="gallery-item" onclick="openLightbox('/{{ $path }}/{{ .Name }}')">
-        <img src="/{{ $path }}/{{ .Name }}" alt="{{ replace .Name $ext "" }}" loading="lazy">
-        <figcaption>{{ replace (replace (replace .Name $ext "") "-" " ") "_" " " | title }}</figcaption>
-      </figure>
-    {{ end }}
+  {{ $ext := path.Ext .Name }}
+  {{ if or (eq $ext ".jpg") (eq $ext ".jpeg") (eq $ext ".png") (eq $ext ".webp") (eq $ext ".JPG") (eq $ext ".JPEG") (eq
+  $ext ".PNG") }}
+  {{ $relParamsPath := strings.TrimPrefix "assets/" ($.Get "path") }}
+  {{ $imagePath := printf "%s/%s" $relParamsPath .Name }}
+  {{ $img := resources.Get $imagePath }}
+  {{ if $img }}
+  {{ $thumb := $img.Fill "600x400 webp q85" }}
+  {{ $large := $img.Resize "1600x webp q85" }}
+  <figure class="gallery-item" onclick="openLightbox('{{ $large.RelPermalink }}')">
+    <img src="{{ $thumb.RelPermalink }}" alt="{{ replace .Name $ext "" }}" loading="lazy">
+    <figcaption>{{ replace (replace (replace .Name $ext "") "-" " ") "_" " " | title }}</figcaption>
+  </figure>
+  {{ end }}
+  {{ end }}
   {{ end }}
 </div>
 
