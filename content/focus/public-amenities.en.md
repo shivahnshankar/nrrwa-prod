@@ -34,6 +34,6 @@ TODO
 
 ---
 
-Your feedback helps us improve. Report infrastructure issues at infrastructure@nrrwa.org
+Your feedback helps us improve. Report infrastructure issues at nammaroopanagara@gmail.com
 
 [Report an Issue →](/en/contact/)
