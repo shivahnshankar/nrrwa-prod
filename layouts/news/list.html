@@ -36,7 +36,7 @@
               {{ with $page.Params.tags }}
               <span>🏷️
                 {{ range $index, $tag := . }}
-                {{ if $index }}, {{ end }}<a href="{{ " /tags/" | relLangURL }}{{ $tag | urlize }}/"
+                {{ if $index }}, {{ end }}<a href="{{ "/tags/" | relLangURL }}{{ $tag | urlize }}/"
                   style="color: var(--primary-blue); text-decoration: none;">{{ $tag }}</a>
                 {{ end }}
               </span>
@@ -67,7 +67,7 @@
         {{ end }}
         {{ range $tag, $count := $newsTags }}
         <li>
-          <a href="{{ " /tags/" | relLangURL }}{{ $tag | urlize }}/">
+          <a href="{{ "/tags/" | relLangURL }}{{ $tag | urlize }}/">
             {{ $tag }}
             <span style="color: #999; font-size: 0.9em;">({{ $count }})</span>
           </a>
@@ -87,7 +87,7 @@
         {{ end }}
         {{ range sort $years "value" "desc" }}
         <li>
-          <a href="{{ " /news/news-archive/" | relLangURL }}#{{ . }}">
+          <a href="{{ "/news/news-archive/" | relLangURL }}#{{ . }}">
             {{ . }}
             <span style="color: #999; font-size: 0.9em;">({{ len (where $newsPages "Date.Year" (int .)) }})</span>
           </a>
