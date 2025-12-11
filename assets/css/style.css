@@ -2987,3 +2987,72 @@ nav ul li.nav-join-button a:hover {
 .avatar-gradient-2 {
   background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); /* Orange-Red */
 }
+
+/* ============================================
+   PAGINATION STYLES
+   ============================================ */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 3rem 0;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.pagination li {
+  display: inline-block;
+  margin: 0;
+}
+
+.pagination li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 12px;
+  background-color: var(--white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: all var(--transition-base);
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.pagination li a:hover {
+  background-color: var(--primary-green-lighter);
+  color: var(--primary-green-dark);
+  border-color: var(--primary-green);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.pagination li.active a {
+  background-color: var(--primary-green);
+  color: var(--white);
+  border-color: var(--primary-green);
+  pointer-events: none;
+}
+
+.pagination li.disabled a {
+  opacity: 0.5;
+  pointer-events: none;
+  background-color: var(--color-background-secondary);
+  color: var(--color-text-tertiary);
+  border-color: var(--color-border);
+}
+
+/* Dark mode adjustments for pagination */
+[data-theme="dark"] .pagination li a {
+  background-color: var(--color-surface);
+}
+
+[data-theme="dark"] .pagination li a:hover {
+  background-color: var(--primary-green-dark);
+  color: var(--primary-green-lighter);
+}
