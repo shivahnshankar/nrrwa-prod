@@ -25,12 +25,15 @@
           <span class="donor-toggle">▼</span>
         </div>
         <div class="donor-accordion-content">
-          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; padding: 1rem 0;">
+          <div
+            style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; padding: 1rem 0;">
             {{ range .contacts }}
-            <div style="padding: 1rem; background: var(--light-gray); border-radius: 8px; border-left: 3px solid var(--primary-green);">
+            <div
+              style="padding: 1rem; background: var(--light-gray); border-radius: 8px; border-left: 3px solid var(--primary-green);">
               <p style="margin: 0 0 0.5rem 0; font-weight: 600; color: var(--text-color);">{{ .name }}</p>
               <p style="margin: 0;">
-                <a href="tel:{{ .phone }}" style="color: var(--primary-blue); text-decoration: none; font-size: 1.1rem;">
+                <a href="tel:{{ .phone }}"
+                  style="color: var(--primary-blue); text-decoration: none; font-size: 1.1rem;">
                   📞 {{ .phone }}
                 </a>
               </p>
@@ -50,18 +53,22 @@
     </h2>
 
     <!-- Disclaimer -->
-    <div style="max-width: 900px; margin: 0 auto 2rem; padding: 1rem 1.5rem; background: #fff3cd; border-left: 4px solid #ffc107; border-radius: 5px;">
+    <div
+      style="max-width: 900px; margin: 0 auto 2rem; padding: 1rem 1.5rem; background: #fff3cd; border-left: 4px solid #ffc107; border-radius: 5px;">
       <p style="margin: 0; color: #856404; font-size: 0.95rem;">
         <strong>⚠️ {{ if eq .Language.Lang "en" }}Disclaimer:{{ else }}ಹೊಣೆಗಾರಿಕೆ:{{ end }}</strong>
         {{ if eq .Language.Lang "en" }}
-          These contacts are contributed by community members. NRRWA does not endorse or guarantee the quality of services provided. Please exercise your own judgment when engaging these service providers.
+        These contacts are contributed by community members. NRRWA does not endorse or guarantee the quality of services
+        provided. Please exercise your own judgment when engaging these service providers.
         {{ else }}
-          ಈ ಸಂಪರ್ಕಗಳನ್ನು ಸಮುದಾಯದ ಸದಸ್ಯರು ಕೊಡುಗೆ ನೀಡಿದ್ದಾರೆ. NRRWA ಒದಗಿಸಿದ ಸೇವೆಗಳ ಗುಣಮಟ್ಟವನ್ನು ಅನುಮೋದಿಸುವುದಿಲ್ಲ ಅಥವಾ ಖಾತರಿಪಡಿಸುವುದಿಲ್ಲ. ಈ ಸೇವಾ ಪೂರೈಕೆದಾರರನ್ನು ತೊಡಗಿಸಿಕೊಳ್ಳುವಾಗ ದಯವಿಟ್ಟು ನಿಮ್ಮ ಸ್ವಂತ ನಿರ್ಣಯವನ್ನು ಬಳಸಿ.
+        ಈ ಸಂಪರ್ಕಗಳನ್ನು ಸಮುದಾಯದ ಸದಸ್ಯರು ಕೊಡುಗೆ ನೀಡಿದ್ದಾರೆ. NRRWA ಒದಗಿಸಿದ ಸೇವೆಗಳ ಗುಣಮಟ್ಟವನ್ನು ಅನುಮೋದಿಸುವುದಿಲ್ಲ ಅಥವಾ
+        ಖಾತರಿಪಡಿಸುವುದಿಲ್ಲ. ಈ ಸೇವಾ ಪೂರೈಕೆದಾರರನ್ನು ತೊಡಗಿಸಿಕೊಳ್ಳುವಾಗ ದಯವಿಟ್ಟು ನಿಮ್ಮ ಸ್ವಂತ ನಿರ್ಣಯವನ್ನು ಬಳಸಿ.
         {{ end }}
       </p>
     </div>
 
-    <div style="max-width: 900px; margin: 0 auto;">
+    <div id="dynamic-com-contacts-container" data-api-url="{{ .Site.Params.directory.json_api_url }}"
+      style="max-width: 900px; margin: 0 auto;">
       {{ range $data.community.sections }}
       <div class="donor-accordion-item">
         <div class="donor-accordion-header">
@@ -69,12 +76,15 @@
           <span class="donor-toggle">▼</span>
         </div>
         <div class="donor-accordion-content">
-          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; padding: 1rem 0;">
+          <div
+            style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; padding: 1rem 0;">
             {{ range .contacts }}
-            <div style="padding: 1rem; background: var(--light-gray); border-radius: 8px; border-left: 3px solid var(--primary-blue);">
+            <div
+              style="padding: 1rem; background: var(--light-gray); border-radius: 8px; border-left: 3px solid var(--primary-blue);">
               <p style="margin: 0 0 0.5rem 0; font-weight: 600; color: var(--text-color);">{{ .name }}</p>
               <p style="margin: 0;">
-                <a href="tel:{{ .phone }}" style="color: var(--primary-blue); text-decoration: none; font-size: 1.1rem;">
+                <a href="tel:{{ .phone }}"
+                  style="color: var(--primary-blue); text-decoration: none; font-size: 1.1rem;">
                   📞 {{ .phone }}
                 </a>
               </p>
@@ -88,21 +98,28 @@
   </section>
 
   <!-- Contribution Notice -->
-  <section style="margin: 4rem 0; padding: 2rem; background: var(--light-gray); border-radius: 10px; border-left: 5px solid var(--primary-blue); text-align: center;">
+  <section
+    style="margin: 4rem 0; padding: 2rem; background: var(--light-gray); border-radius: 10px; border-left: 5px solid var(--primary-blue); text-align: center;">
     <p style="color: var(--text-color); font-size: 1rem; margin: 0;">
       <strong>📝 {{ if eq .Language.Lang "en" }}Note:{{ else }}ಸೂಚನೆ:{{ end }}</strong>
       {{ if eq .Language.Lang "en" }}
-        Know a reliable service provider? Help your community by sharing their contact details with us.
+      Know a reliable service provider? Help your community by sharing their contact details with us.
       {{ else }}
-        ವಿಶ್ವಾಸಾರ್ಹ ಸೇವಾ ಪೂರೈಕೆದಾರರನ್ನು ತಿಳಿದಿದ್ದೀರಾ? ಅವರ ಸಂಪರ್ಕ ವಿವರಗಳನ್ನು ನಮ್ಮೊಂದಿಗೆ ಹಂಚಿಕೊಳ್ಳುವ ಮೂಲಕ ನಿಮ್ಮ ಸಮುದಾಯಕ್ಕೆ ಸಹಾಯ ಮಾಡಿ.
+      ವಿಶ್ವಾಸಾರ್ಹ ಸೇವಾ ಪೂರೈಕೆದಾರರನ್ನು ತಿಳಿದಿದ್ದೀರಾ? ಅವರ ಸಂಪರ್ಕ ವಿವರಗಳನ್ನು ನಮ್ಮೊಂದಿಗೆ ಹಂಚಿಕೊಳ್ಳುವ ಮೂಲಕ ನಿಮ್ಮ ಸಮುದಾಯಕ್ಕೆ
+      ಸಹಾಯ ಮಾಡಿ.
       {{ end }}
     </p>
     <div style="margin-top: 1.5rem;">
-      <a href="/{{ .Language.Lang }}/contact/" class="cta-button" style="background: var(--primary-blue);">
-        {{ if eq .Language.Lang "en" }}Contact Us{{ else }}ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ{{ end }}
+      <a href="{{ .Site.Params.directory.submission_form_url | default (print " /" .Language.Lang "/contact/" ) }}"
+        class="cta-button" target="_blank" style="background: var(--primary-blue);">
+        {{ if eq .Language.Lang "en" }}Add to Directory{{ else }}ಡೈರೆಕ್ಟರಿಗೆ ಸೇರಿಸಿ{{ end }}
       </a>
     </div>
   </section>
 
 </div>
+
+{{ $directoryJS := resources.Get "js/directory.js" | resources.Minify | resources.Fingerprint }}
+<script src="{{ $directoryJS.RelPermalink }}"></script>
+
 {{ end }}

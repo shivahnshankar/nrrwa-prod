@@ -41,6 +41,10 @@ relativeURLs = true
   stats_eventsOrganized = 62
   stats_saplingsDistributed = 1250
 
+  [params.directory]
+    json_api_url = "https://script.google.com/macros/s/AKfycbwro82DP8Nc8fxOvUjtKVHFS7mprstjzzG1VsyoJayZT1QFUWWRWC5vUX_uuiXDlplLmA/exec"
+    submission_form_url = "https://forms.gle/EoVxrmwfYyXrE5T7A"
+
 # Permalinks
 [permalinks]
   news = '/:sections/:slug/'
