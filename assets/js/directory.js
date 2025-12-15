@@ -104,7 +104,6 @@ document.addEventListener('DOMContentLoaded', function () {
             data.forEach(section => {
                 // Check if this category already exists in the static list
                 // We assume static headers have h3 text matching the category name
-                // This is a bit loose but works for exact matches
                 const existingHeaders = Array.from(document.querySelectorAll('.donor-accordion-header h3'));
                 let match = existingHeaders.find(h3 => h3.textContent.trim() === section.name.trim());
 
@@ -118,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         });
                     }
                 } else {
-                    // No match, create new section
+                    // No match, create new section with the (localized) name
                     const newSection = createNewSection(section.name, section.contacts);
                     container.appendChild(newSection);
                 }

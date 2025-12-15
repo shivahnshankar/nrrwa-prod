@@ -17,6 +17,11 @@ Namma Roopanagara Residents Welfare Association (NRRWA) is a community-driven or
 - Total no of residential sites: 2345 (excludes CA sites)
 - No of house built: About 800
 
+### Layout Maps
+
+{{< gallery path="assets/images/about/maps" >}}
+
+
 ## Origins and Growth of NRRWA
 
 The first assembly of the like minded residents to discuss on the improvements that could be done in Roopanagara for the benefit of the residents took place in December 2020 in the DRC area. DHBCS representative advised the group to form a resident welfare association and further assured that it will have the support from DHBCS. This meeting was attended by about 30-35 People. During the next gathering in the park on 3rd January 2021, it was unanimously decided to clean the park and paint benches etc. This activity continued for couple of Sundays . Residents participated with enthusiasm.
