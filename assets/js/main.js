@@ -136,7 +136,26 @@ document.addEventListener('DOMContentLoaded', function () {
       e.stopPropagation();
       menuToggle.classList.toggle('active');
       navMenu.classList.toggle('active');
+        // Prevent background scrolling while menu is open on mobile
+        if (navMenu.classList.contains('active')) {
+          document.body.classList.add('menu-open');
+        } else {
+          document.body.classList.remove('menu-open');
+        }
     });
+    
+    // Adjust menu top/maxHeight to account for header height so menu is fully visible and scrollable
+    function adjustMobileMenuHeight() {
+      const header = document.querySelector('.site-header-wrapper');
+      const headerHeight = header ? header.offsetHeight : 70;
+      // Apply inline styles so CSS still provides sensible defaults but we adapt to actual header size
+      navMenu.style.top = headerHeight + 'px';
+      navMenu.style.maxHeight = (window.innerHeight - headerHeight) + 'px';
+    }
+
+    // Call once to initialize and on resize
+    adjustMobileMenuHeight();
+    window.addEventListener('resize', adjustMobileMenuHeight);
 
     // Handle submenu clicks on mobile
     hasSubmenuItems.forEach(item => {
@@ -178,10 +197,24 @@ document.addEventListener('DOMContentLoaded', function () {
       if (isMobile && !navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
         navMenu.classList.remove('active');
         menuToggle.classList.remove('active');
+        // Re-enable body scrolling
+        document.body.classList.remove('menu-open');
         // Also close all submenus
         hasSubmenuItems.forEach(item => {
           item.classList.remove('active');
         });
+      }
+    });
+
+    // Ensure menu state is consistent on resize (e.g., when returning to desktop)
+    window.addEventListener('resize', function () {
+      const isMobile = window.innerWidth <= 768;
+      if (!isMobile) {
+        // Ensure mobile menu classes are cleared on larger screens
+        navMenu.classList.remove('active');
+        menuToggle.classList.remove('active');
+        document.body.classList.remove('menu-open');
+        hasSubmenuItems.forEach(item => item.classList.remove('active'));
       }
     });
 

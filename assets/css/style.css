@@ -1510,22 +1510,27 @@ footer {
     display: none;
     flex-direction: column;
     width: 100%;
-    position: absolute;
-    top: 100%;
+    /* Make the mobile menu take available viewport space and be independently scrollable */
+    position: fixed;
+    top: 70px; /* leave room for the fixed header (approx height). Adjust if header height changes */
     left: 0;
+    right: 0;
+    bottom: 0;
     background: white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, overflow 0s 0.3s;
+    z-index: 1100;
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    transition: transform 0.25s ease, opacity 0.25s ease;
   }
 
   nav ul.nav-menu.active {
     display: flex;
-    max-height: 2000px;
-    overflow: visible;
-    transition: max-height 0.3s ease, overflow 0s 0s;
+    /* When active, keep it constrained to viewport and scrollable */
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+    transition: transform 0.25s ease, opacity 0.25s ease;
   }
 
   nav ul.nav-menu>li {
@@ -1536,6 +1541,12 @@ footer {
   nav ul.nav-menu>li>a {
     padding: 15px 20px;
     text-align: left;
+  }
+
+  /* When menu is open, lock body scroll but keep the menu itself scrollable */
+  body.menu-open {
+    overflow: hidden;
+    touch-action: none;
   }
 
   /* Mobile Submenu */
