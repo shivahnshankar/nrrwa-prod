@@ -1133,7 +1133,7 @@ nav ul li.has-submenu .submenu li a.active {
   gap: 15px;
   margin-bottom: 10px;
   font-size: 0.9rem;
-  color: #666;
+  color: var(--color-text-secondary);
 }
 
 .blog-card-content h3 {
@@ -1748,7 +1748,7 @@ footer {
 
 .membership-price .period {
   font-size: 1rem;
-  color: #666;
+  color: var(--color-text-secondary);
 }
 
 .membership-features {
@@ -1862,7 +1862,7 @@ footer {
 
 .testimonial-author span {
   display: block;
-  color: #666;
+  color: var(--color-text-secondary);
   font-size: 0.9rem;
   margin-bottom: 0.25rem;
 }
@@ -1911,7 +1911,7 @@ footer {
 
 .member-photo .photo-placeholder {
   font-size: 6rem;
-  color: #999;
+  color: var(--color-text-tertiary);
 }
 
 .member-card .card-content {
@@ -1932,7 +1932,7 @@ footer {
 }
 
 .member-date {
-  color: #666;
+  color: var(--color-text-secondary);
   font-size: 0.9rem;
   margin-top: 0.5rem;
 }
@@ -2103,7 +2103,7 @@ footer {
 
 .committee-photo .photo-placeholder {
   font-size: 6rem;
-  color: #999;
+  color: var(--color-text-tertiary);
 }
 
 .committee-info {
@@ -2539,7 +2539,7 @@ nav ul li.nav-join-button a:hover {
 }
 
 .post-meta {
-  color: #666;
+  color: var(--color-text-secondary);
   font-size: 0.95rem;
   display: flex;
   gap: 1.5rem;
@@ -2644,7 +2644,7 @@ nav ul li.nav-join-button a:hover {
 
 .post-translations p {
   font-size: 1rem;
-  color: #666;
+  color: var(--color-text-secondary);
 }
 
 .post-translations a {
@@ -2705,7 +2705,7 @@ nav ul li.nav-join-button a:hover {
 }
 
 .tag-count {
-  color: #666;
+  color: var(--color-text-secondary);
   font-size: 0.85rem;
   margin-left: 0.25rem;
 }
@@ -2747,7 +2747,7 @@ nav ul li.nav-join-button a:hover {
 }
 
 .archive-date {
-  color: #666;
+  color: var(--color-text-secondary);
   font-size: 0.9rem;
   margin-right: 1rem;
   min-width: 100px;
@@ -2826,7 +2826,7 @@ nav ul li.nav-join-button a:hover {
 }
 
 .news-content-horizontal .news-summary {
-  color: #666;
+  color: var(--color-text-secondary);
   margin-bottom: 1rem;
   line-height: 1.7;
 }

@@ -8,7 +8,7 @@
     :root {
       --primary-green: #2d5016;
       --primary-blue: #1e3a8a;
-      --text-color: #333;
+      --text-color: var(--color-text-primary);
     }
 
     * {
@@ -75,7 +75,7 @@
       {{ end }}
     </button>
 
-    <div style="margin-top: 3rem; color: #666; font-size: 1rem;">
+    <div style="margin-top: 3rem; color: var(--color-text-secondary); font-size: 1rem;">
       {{ if eq .Language.Lang "en" }}
         Click the button above to officially launch the NRRWA website
       {{ else }}
