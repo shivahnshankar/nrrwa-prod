@@ -2182,20 +2182,30 @@ nav ul li.nav-join-button {
 }
 
 nav ul li.nav-join-button a {
+  display: inline-block;
   background: var(--golden);
-  color: var(--dark-gray);
-  padding: 10px 25px;
+  color: var(--color-text-primary);
+  padding: 10px 22px;
   border-radius: 25px;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  font-weight: 700;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
   box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+  border: 2px solid transparent;
+  text-decoration: none;
 }
 
-nav ul li.nav-join-button a:hover {
-  background: var(--golden);
+nav ul li.nav-join-button a:hover,
+nav ul li.nav-join-button a:focus-visible {
+  background: var(--accent-gold);
   transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.5);
-  color: var(--dark-gray);
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.45);
+  color: var(--color-text-primary);
+  outline: none;
+  border-color: rgba(255,255,255,0.08);
+}
+
+nav ul li.nav-join-button a:focus-visible {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.08), 0 6px 18px rgba(212, 175, 55, 0.45);
 }
 
 /* Responsive - Join button on mobile */
