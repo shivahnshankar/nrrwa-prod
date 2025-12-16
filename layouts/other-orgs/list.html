@@ -16,7 +16,7 @@
             <img src="{{ . }}" alt="{{ $.Title }}" style="max-width: 200px; height: auto;">
           </div>
         {{ else }}
-          <div class="card-icon" style="font-size: 5rem; padding: 2rem; background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);">🤝</div>
+          <div class="card-icon" style="font-size: 5rem; padding: 2rem; background: linear-gradient(135deg, var(--primary-blue-light) 0%, var(--primary-blue) 100%);">🤝</div>
         {{ end }}
         <div class="card-content">
           <h3 style="color: var(--primary-blue);">{{ .Title }}</h3>
@@ -34,7 +34,7 @@
   </div>
 
   <!-- Disclaimer -->
-  <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: #fff3cd; border-radius: 10px; border-left: 4px solid #ffc107;">
+  <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: var(--accent-gold-light); border-radius: 10px; border-left: 4px solid var(--accent-gold);">
     <p style="margin: 0; color: var(--accent-gold); font-size: 0.95rem;">
       <strong>{{ T "note" }}</strong>
       {{ T "other_orgs_note" }}
