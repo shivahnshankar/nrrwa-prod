@@ -1760,7 +1760,7 @@ footer {
 
 .membership-features li {
   padding: 10px 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--color-divider);
   color: var(--text-color);
 }
 
@@ -2199,7 +2199,7 @@ nav ul li.nav-join-button a {
 }
 
 nav ul li.nav-join-button a:hover {
-  background: #c49b2d;
+  background: var(--golden);
   transform: scale(1.05);
   box-shadow: 0 4px 12px rgba(212, 175, 55, 0.5);
   color: var(--dark-gray);
@@ -2919,7 +2919,7 @@ nav ul li.nav-join-button a:hover {
 .contact-form textarea {
   width: 100%;
   padding: 12px 15px;
-  border: 2px solid #ddd;
+  border: 2px solid var(--color-divider);
   border-radius: 8px;
   font-size: 1rem;
   font-family: inherit;
