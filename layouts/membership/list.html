@@ -19,7 +19,7 @@
       <div class="card" style="text-align: center; padding: 2rem;">
         <div class="card-icon">{{ .icon }}</div>
         <h3 style="color: var(--primary-green); margin-bottom: 0.75rem; font-style: italic;">{{ .title }}</h3>
-        <p style="color: #666; line-height: 1.6;">{{ .description }}</p>
+        <p style="color: var(--color-text-secondary); line-height: 1.6;">{{ .description }}</p>
       </div>
       {{ end }}
     </div>
@@ -86,7 +86,7 @@
           <table style="width: 100%; font-size: 0.95rem;">
             {{ range .details }}
             <tr>
-              <td style="padding: 0.5rem 0; color: #666; font-weight: 600;">{{ .label }}:</td>
+              <td style="padding: 0.5rem 0; color: var(--color-text-secondary); font-weight: 600;">{{ .label }}:</td>
               <td style="padding: 0.5rem 0; color: var(--text-color);">{{ .value }}</td>
             </tr>
             {{ end }}
