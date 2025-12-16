@@ -776,7 +776,7 @@ nav ul li.has-submenu .submenu li a.active {
   object-fit: cover;
 }
 
-/* Slide Content - Clean Transparent with Dark Text */
+/* Slide Content - theme-aware text color */
 .slide-content {
   position: absolute;
   bottom: 50px;
@@ -784,7 +784,7 @@ nav ul li.has-submenu .submenu li a.active {
   right: 50px;
   background: transparent;
   border: none;
-  color: var(--gray-900);
+  color: var(--color-text-primary);
   padding: 30px;
   border-radius: var(--radius-xl);
   z-index: 2;
@@ -798,23 +798,16 @@ nav ul li.has-submenu .submenu li a.active {
 .slide-content h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: var(--white);
-  text-shadow:
-    0 0 3px rgba(0, 0, 0, 0.9),
-    0 0 6px rgba(0, 0, 0, 0.8),
-    2px 2px 4px rgba(0, 0, 0, 0.7),
-    -1px -1px 2px rgba(0, 0, 0, 0.6);
+  color: var(--color-text-primary);
+  text-shadow: 0 0 4px rgba(0,0,0,0.35);
   font-weight: 700;
 }
 
 .slide-content p {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
-  color: var(--white);
-  text-shadow:
-    0 0 3px rgba(0, 0, 0, 0.9),
-    0 0 5px rgba(0, 0, 0, 0.7),
-    1px 1px 3px rgba(0, 0, 0, 0.6);
+  color: var(--color-text-primary);
+  text-shadow: 0 0 3px rgba(0,0,0,0.25);
   font-weight: 500;
 }
 
