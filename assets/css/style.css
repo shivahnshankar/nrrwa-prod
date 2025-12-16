@@ -685,7 +685,7 @@ nav ul>li>a {
 
 nav ul>li>a:hover {
   color: var(--primary-green);
-  background: var(--light-gray);
+  background: var(--color-background-secondary);
 }
 
 /* Navigation Submenu */
@@ -734,20 +734,20 @@ nav ul li.has-submenu .submenu li a {
 }
 
 nav ul li.has-submenu .submenu li a:hover {
-  background: var(--light-gray);
+  background: var(--color-background-secondary);
   color: var(--primary-green);
 }
 
 /* Active Navigation States */
 nav ul>li>a.active {
   color: var(--primary-green);
-  background: var(--light-gray);
+  background: var(--color-background-secondary);
   border-bottom: 3px solid var(--primary-green);
 }
 
 nav ul li.has-submenu.active-section>a {
   color: var(--primary-green);
-  background: var(--light-gray);
+  background: var(--color-background-secondary);
   border-bottom: 3px solid var(--primary-green);
 }
 
