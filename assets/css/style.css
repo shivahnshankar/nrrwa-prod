@@ -807,7 +807,8 @@ nav ul li.has-submenu .submenu li a.active {
   position: absolute;
   bottom: 50px;
   left: 50px;
-  right: 50px;
+  right: auto;
+  max-width: 600px;
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(8px);
   border: none;
@@ -1670,6 +1671,7 @@ footer {
     right: 20px;
     bottom: 20px;
     padding: 15px 20px;
+    max-width: calc(100% - 40px);
   }
 
   .slide-content h2 {
