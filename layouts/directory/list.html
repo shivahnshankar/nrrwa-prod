@@ -3,7 +3,7 @@
 
 <div class="container">
   <h1 class="section-title">{{ $data.title }}</h1>
-  <p style="text-align: center; font-size: 1.2rem; color: var(--text-color); margin-bottom: 3rem;">
+  <p style="text-align: center; font-size: 1.2rem; color: var(--color-text-secondary); margin-bottom: 3rem;">
     {{ $data.subtitle }}
   </p>
 
@@ -29,8 +29,8 @@
             style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; padding: 1rem 0;">
             {{ range .contacts }}
             <div
-              style="padding: 1rem; background: var(--light-gray); border-radius: 8px; border-left: 3px solid var(--primary-green);">
-              <p style="margin: 0 0 0.5rem 0; font-weight: 600; color: var(--text-color);">{{ .name }}</p>
+              style="padding: 1rem; background: var(--color-background-tertiary); border-radius: 8px; border-left: 3px solid var(--primary-green);">
+              <p style="margin: 0 0 0.5rem 0; font-weight: 600; color: var(--color-text-primary);">{{ .name }}</p>
               <p style="margin: 0;">
                 <a href="tel:{{ .phone }}"
                   style="color: var(--primary-blue); text-decoration: none; font-size: 1.1rem;">
@@ -54,8 +54,8 @@
 
     <!-- Disclaimer -->
     <div
-      style="max-width: 900px; margin: 0 auto 2rem; padding: 1rem 1.5rem; background: #fff3cd; border-left: 4px solid #ffc107; border-radius: 5px;">
-      <p style="margin: 0; color: #856404; font-size: 0.95rem;">
+      style="max-width: 900px; margin: 0 auto 2rem; padding: 1rem 1.5rem; background: var(--color-warning-bg); border-left: 4px solid var(--color-warning-border); border-radius: 5px;">
+      <p style="margin: 0; color: var(--color-warning-text); font-size: 0.95rem;">
         <strong>⚠️ {{ if eq .Language.Lang "en" }}Disclaimer:{{ else }}ಹೊಣೆಗಾರಿಕೆ:{{ end }}</strong>
         {{ if eq .Language.Lang "en" }}
         These contacts are contributed by community members. NRRWA does not endorse or guarantee the quality of services
@@ -80,8 +80,8 @@
             style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; padding: 1rem 0;">
             {{ range .contacts }}
             <div
-              style="padding: 1rem; background: var(--light-gray); border-radius: 8px; border-left: 3px solid var(--primary-blue);">
-              <p style="margin: 0 0 0.5rem 0; font-weight: 600; color: var(--text-color);">{{ .name }}</p>
+              style="padding: 1rem; background: var(--color-background-tertiary); border-radius: 8px; border-left: 3px solid var(--primary-blue);">
+              <p style="margin: 0 0 0.5rem 0; font-weight: 600; color: var(--color-text-primary);">{{ .name }}</p>
               <p style="margin: 0;">
                 <a href="tel:{{ .phone }}"
                   style="color: var(--primary-blue); text-decoration: none; font-size: 1.1rem;">
@@ -99,8 +99,8 @@
 
   <!-- Contribution Notice -->
   <section
-    style="margin: 4rem 0; padding: 2rem; background: var(--light-gray); border-radius: 10px; border-left: 5px solid var(--primary-blue); text-align: center;">
-    <p style="color: var(--text-color); font-size: 1rem; margin: 0;">
+    style="margin: 4rem 0; padding: 2rem; background: var(--color-background-tertiary); border-radius: 10px; border-left: 5px solid var(--primary-blue); text-align: center;">
+    <p style="color: var(--color-text-primary); font-size: 1rem; margin: 0;">
       <strong>📝 {{ if eq .Language.Lang "en" }}Note:{{ else }}ಸೂಚನೆ:{{ end }}</strong>
       {{ if eq .Language.Lang "en" }}
       Know a reliable service provider? Help your community by sharing their contact details with us.

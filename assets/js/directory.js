@@ -12,14 +12,14 @@ document.addEventListener('DOMContentLoaded', function () {
     function createContactCard(contact) {
         const card = document.createElement('div');
         card.style.padding = '1rem';
-        card.style.background = 'var(--light-gray)';
+        card.style.background = 'var(--color-background-tertiary)';
         card.style.borderRadius = '8px';
         card.style.borderLeft = '3px solid var(--primary-blue)';
 
         const nameP = document.createElement('p');
         nameP.style.margin = '0 0 0.5rem 0';
         nameP.style.fontWeight = '600';
-        nameP.style.color = 'var(--text-color)';
+        nameP.style.color = 'var(--color-text-primary)';
         nameP.textContent = contact.name;
 
         const phoneP = document.createElement('p');
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const descP = document.createElement('p');
             descP.style.margin = '0.5rem 0 0 0';
             descP.style.fontSize = '0.9rem';
-            descP.style.color = '#666';
+            descP.style.color = 'var(--color-text-muted)';
             descP.textContent = contact.description;
             phoneP.appendChild(descP);
         }
