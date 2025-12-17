@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const descP = document.createElement('p');
             descP.style.margin = '0.5rem 0 0 0';
             descP.style.fontSize = '0.9rem';
-            descP.style.color = 'var(--color-text-secondary)';
+            descP.style.color = '#666';
             descP.textContent = contact.description;
             phoneP.appendChild(descP);
         }
