@@ -1,4 +1,7 @@
 en:
+  - name: "Sri Ravichandra B S and family"
+    joinedDate: "2025-12-24"
+    membershipType: "Lifetime"
   - name: "Mrs. Sumana Ramanath"
     photo: "/assets/images/new_members/sumana_ramanath.jpg"
     joinedDate: "2025-11-27"
@@ -13,6 +16,9 @@ en:
     membershipType: "Annual"
 
 kn:
+  - name: "ಶ್ರೀ ರವಿಚಂದ್ರ ಬಿ ಎಸ್ ಮತ್ತು ಕುಟುಂಬ"
+    joinedDate: "2025-12-24"
+    membershipType: "ಆಜೀವ"
   - name: "ಶ್ರೀಮತಿ ಸುಮನಾ ರಾಮನಾಥ್"
     photo: "/assets/images/new_members/sumana_ramanath.jpg"
     joinedDate: "2025-11-27"
