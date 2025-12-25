@@ -3141,6 +3141,222 @@ nav ul li.nav-join-button a:hover {
   border-color: var(--color-border);
 }
 
+/* ============================================
+   CALLOUT / ADMONITION STYLES
+   ============================================ */
+
+.callout {
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: var(--radius-lg);
+  border-left: 4px solid;
+  background-color: var(--color-background-secondary);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
+
+.callout:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateX(2px);
+}
+
+.callout-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.callout-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.callout-title {
+  color: var(--color-text-primary);
+  font-size: 1.05rem;
+}
+
+.callout-content {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.callout-content > *:first-child {
+  margin-top: 0;
+}
+
+.callout-content > *:last-child {
+  margin-bottom: 0;
+}
+
+.callout-content p {
+  margin: 0.5rem 0;
+}
+
+.callout-content ul,
+.callout-content ol {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+/* Callout Types with Design System Colors */
+
+/* Info - Blue */
+.callout-info {
+  background-color: hsl(var(--primary-blue-h), 65%, 95%);
+  border-left-color: var(--primary-blue);
+}
+
+.callout-info .callout-title {
+  color: var(--primary-blue-dark);
+}
+
+.callout-info .callout-content {
+  color: var(--primary-blue-dark);
+}
+
+/* Warning - Yellow */
+.callout-warning {
+  background-color: var(--color-warning-bg);
+  border-left-color: var(--color-warning-border);
+}
+
+.callout-warning .callout-title {
+  color: var(--color-warning-text);
+}
+
+.callout-warning .callout-content {
+  color: var(--color-warning-text);
+}
+
+/* Tip - Green */
+.callout-tip {
+  background-color: hsl(var(--primary-green-h), 40%, 95%);
+  border-left-color: var(--primary-green);
+}
+
+.callout-tip .callout-title {
+  color: var(--primary-green-dark);
+}
+
+.callout-tip .callout-content {
+  color: var(--primary-green-dark);
+}
+
+/* Success - Green (lighter) */
+.callout-success {
+  background-color: hsl(145, 45%, 95%);
+  border-left-color: hsl(145, 60%, 45%);
+}
+
+.callout-success .callout-title {
+  color: hsl(145, 65%, 30%);
+}
+
+.callout-success .callout-content {
+  color: hsl(145, 65%, 25%);
+}
+
+/* Danger - Red */
+.callout-danger {
+  background-color: hsl(var(--accent-red-h), 85%, 95%);
+  border-left-color: var(--accent-red);
+}
+
+.callout-danger .callout-title {
+  color: hsl(var(--accent-red-h), 75%, 40%);
+}
+
+.callout-danger .callout-content {
+  color: hsl(var(--accent-red-h), 75%, 35%);
+}
+
+/* Note - Gray */
+.callout-note {
+  background-color: var(--gray-100);
+  border-left-color: var(--gray-500);
+}
+
+.callout-note .callout-title {
+  color: var(--gray-800);
+}
+
+.callout-note .callout-content {
+  color: var(--gray-700);
+}
+
+/* Dark Mode Support for Callouts */
+[data-theme="dark"] .callout {
+  background-color: var(--color-surface-elevated);
+}
+
+[data-theme="dark"] .callout-info {
+  background-color: hsl(var(--primary-blue-h), 40%, 15%);
+  border-left-color: var(--primary-blue-light);
+}
+
+[data-theme="dark"] .callout-info .callout-title,
+[data-theme="dark"] .callout-info .callout-content {
+  color: var(--primary-blue-lighter);
+}
+
+[data-theme="dark"] .callout-warning {
+  background-color: hsl(var(--accent-yellow-h), 45%, 15%);
+  border-left-color: var(--accent-yellow);
+}
+
+[data-theme="dark"] .callout-warning .callout-title,
+[data-theme="dark"] .callout-warning .callout-content {
+  color: var(--accent-yellow);
+}
+
+[data-theme="dark"] .callout-tip {
+  background-color: hsl(var(--primary-green-h), 35%, 15%);
+  border-left-color: var(--primary-green-light);
+}
+
+[data-theme="dark"] .callout-tip .callout-title,
+[data-theme="dark"] .callout-tip .callout-content {
+  color: var(--primary-green-lighter);
+}
+
+[data-theme="dark"] .callout-success {
+  background-color: hsl(145, 40%, 15%);
+  border-left-color: hsl(145, 55%, 50%);
+}
+
+[data-theme="dark"] .callout-success .callout-title,
+[data-theme="dark"] .callout-success .callout-content {
+  color: hsl(145, 55%, 70%);
+}
+
+[data-theme="dark"] .callout-danger {
+  background-color: hsl(var(--accent-red-h), 50%, 15%);
+  border-left-color: var(--accent-red);
+}
+
+[data-theme="dark"] .callout-danger .callout-title,
+[data-theme="dark"] .callout-danger .callout-content {
+  color: hsl(var(--accent-red-h), 75%, 70%);
+}
+
+[data-theme="dark"] .callout-note {
+  background-color: var(--gray-800);
+  border-left-color: var(--gray-500);
+}
+
+[data-theme="dark"] .callout-note .callout-title {
+  color: var(--gray-200);
+}
+
+[data-theme="dark"] .callout-note .callout-content {
+  color: var(--gray-300);
+}
+
 /* Dark mode adjustments for pagination */
 [data-theme="dark"] .pagination li a {
   background-color: var(--color-surface);

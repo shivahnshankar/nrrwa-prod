@@ -1,0 +1,33 @@
+{{ $type := .Get "type" | default "info" }}
+{{ $title := .Get "title" }}
+{{ $icon := .Get "icon" }}
+
+{{/* Default icons based on type */}}
+{{ $defaultIcons := dict
+  "info" "ℹ️"
+  "warning" "⚠️"
+  "tip" "💡"
+  "success" "✅"
+  "danger" "🚨"
+  "note" "📝"
+}}
+
+{{/* Use custom icon if provided, otherwise use default */}}
+{{ $displayIcon := $icon }}
+{{ if not $displayIcon }}
+  {{ $displayIcon = index $defaultIcons $type }}
+{{ end }}
+
+<div class="callout callout-{{ $type }}">
+  <div class="callout-header">
+    {{ if $displayIcon }}
+    <span class="callout-icon">{{ $displayIcon }}</span>
+    {{ end }}
+    {{ if $title }}
+    <span class="callout-title">{{ $title }}</span>
+    {{ end }}
+  </div>
+  <div class="callout-content">
+    {{ .Inner | markdownify }}
+  </div>
+</div>
