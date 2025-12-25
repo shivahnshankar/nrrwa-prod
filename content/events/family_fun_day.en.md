@@ -60,7 +60,6 @@ Get active with games that build teamwork and physical skills!
 - **Soge Gari Aata** - Coconut shell chariot races
 - **Cycle Tyre Racing** - Roll and race with bicycle tyres
 - **Threading Needle** - Test your eyesight and your dexterity
-- **Hat game** - ??
 - **Tug - of- War** - Everyone's favourite game to test teamwork and strength
 - **Memory game** - Test your memory. See something and try to remembers as many details as you can
 - **Skipping** - Balance and skill game
