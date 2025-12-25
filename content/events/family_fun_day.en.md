@@ -1,5 +1,5 @@
 ---
-title: Family Fun Day 2025
+title: Family Fun Day 
 eventDate: 2026-01-04
 date: 2025-12-25
 featuredImage: /assets/images/events/2026/funday.png
@@ -10,7 +10,7 @@ tags:
 
 ## Step Back in Time, Create New Memories!
 
-We are thrilled to announce our **Annual Family Fun Day 2025** - a celebration of traditional games, family bonding, and community spirit! Join us for a nostalgic journey through the games we all loved as children, now shared with the next generation.
+We are thrilled to announce our **Annual Family Fun Day 2026** - a celebration of traditional games, family bonding, and community spirit! Join us for a nostalgic journey through the games we all loved as children, now shared with the next generation.
 
 Whether you're reliving your childhood or introducing your kids to the joy of traditional play, this day promises laughter, friendly competition, and unforgettable memories.
 
