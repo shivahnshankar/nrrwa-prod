@@ -15,23 +15,23 @@ We are thrilled to announce our **Annual Family Fun Day 2026** - a celebration o
 Whether you're reliving your childhood or introducing your kids to the joy of traditional play, this day promises laughter, friendly competition, and unforgettable memories.
 
 ## Event Details
-- 📅 **Date:** 04 January 2026
+- 📅 **Date:** 04 January 2026 (Sunday)
 - ⏰ **Time:** 09:00 AM - 01:00 PM
 - 📍 **Venue:** Namma Vana
-- 👨‍👩‍👧‍👦 **Who:** All NRRWA members welcome!
+- 👨‍👩‍👧‍👦 **Who:** All NRRWA members and their families welcome!
 
 {{< callout type="info" title="Members only" >}}
-The Familu Fun Day is open to all NRRWA members. If you havent taken membership yet, please join asap and participate in all the fun events with your family! More details [here](/en/membership)
+The Family Fun Day is open to all NRRWA members. If you havent taken membership yet, please join as soon as possible and participate in all the fun events with your family! More details [here](/en/membership)
 {{< /callout >}}
 
 ## Why You Should Attend
 
-- ✨ **Nostalgia & Fun** - Rediscover the games you played as a child
+- ✨ **Nostalgia & Fun** - Rediscover the games you played as a child along with youngsters
 - 👨‍👩‍👧 **Family Bonding** - Quality time away from screens
 - 🏆 **Friendly Competition** - Compete in traditional games
-- 🤝 **Community Building** - Meet and connect with neighbors
+- 🤝 **Community Building** - Meet and connect with neighbors and residents
 - 📚 **Cultural Heritage** - Pass on traditional games to the next generation
-- 🎉 **All Ages Welcome** - Games for everyone from 5 to 75!
+- 🎉 **All Ages Welcome** - Games for everyone of all ages!
 
 ## Traditional Games Line-up
 
@@ -43,7 +43,7 @@ Perfect for strategic thinkers and those who love board games!
 - **Chowka Baarah** - The classic four-in-a-row strategy game
 - **Alaguli Mane** - Test your counting and stone-moving skills
 - **Haavu Eni (Snakes and Ladders)** - A timeless family favorite
-- **Huli Kuri Oota** - The tiger and goat hunting game
+- **Huli Kuri Aata** - The tiger and sheep hunting game
 - **Kallu Eseyo Aata** - Stone tossing game requiring precision
 
 ### 🌳 Outdoor Games
@@ -54,10 +54,10 @@ Get active with games that build teamwork and physical skills!
 - **Gilli Dandu** - Test your hand-eye coordination
 - **Goli (Marbles)** - Show off your marble shooting skills
 - **Lagori** - The ultimate team game with seven stones
-- **Toor Chendu** - Catch and throw with handmade balls
+- **Thoor Chendu** - Catch and throw with handmade balls
 - **Kannu Katti Dabba Hodeyodu** - Blindfolded pot breaking fun
 - **Kunte Bille** - Archery with traditional bow and arrows
-- **Soge Gari Aata** - Coconut shell chariot races
+- **Soge Gari Aata** - Coconut tree branch chariot race
 - **Cycle Tyre Racing** - Roll and race with bicycle tyres
 - **Threading Needle** - Test your eyesight and your dexterity
 - **Tug - of- War** - Everyone's favourite game to test teamwork and strength
