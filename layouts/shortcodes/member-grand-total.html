@@ -1,0 +1,20 @@
+{{- /* member-grand-total shortcode - Dynamically counts total members across all CSV files */ -}}
+{{- $total := 0 -}}
+{{- $files := slice
+    "data/current_members/lm_members.csv"
+    "data/current_members/dm_members.csv"
+    "data/current_members/am_members.csv"
+    "data/current_members/tm_members.csv"
+-}}
+{{- range $files -}}
+    {{- with resources.Get . -}}
+        {{- with . | transform.Unmarshal -}}
+            {{- range after 1 . -}}
+                {{- if ne (index . 0) "Total" -}}
+                    {{- $total = add $total 1 -}}
+                {{- end -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+<div class="member-grand-total">{{ T "current_members" }}: {{ $total }}</div>

@@ -1293,6 +1293,28 @@ tr:hover {
   background-color: var(--light-gray);
 }
 
+tr.total-row td {
+  font-weight: 700;
+  background-color: var(--primary-green-lighter);
+  color: var(--primary-green-dark);
+  border-top: 2px solid var(--primary-green);
+}
+
+tr.total-row:hover td {
+  background-color: var(--primary-green-lighter);
+}
+
+.member-grand-total {
+  margin-top: 2rem;
+  padding: 1rem 1.5rem;
+  background-color: var(--primary-green);
+  color: var(--white);
+  font-size: 1.25rem;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  text-align: right;
+}
+
 /* Forms */
 .form-group {
   margin-bottom: 20px;
@@ -1394,6 +1416,12 @@ tr:hover {
 
 .donor-accordion-header:hover {
   background: var(--light-gray);
+}
+
+.accordion-count {
+  font-size: 0.85em;
+  font-weight: 400;
+  opacity: 0.8;
 }
 
 .donor-accordion-header h3 {

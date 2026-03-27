@@ -47,8 +47,8 @@ relativeURLs = true
 
 # Permalinks
 [permalinks]
-  news = '/:sections/:slug/'
-  events = '/:sections/:slug/'
+  news = '/news/:year/:slug/'
+  events = '/events/:year/:slug/'
 
 # Menu configuration (can be overridden per language)
 [[languages.en.menu.main]]

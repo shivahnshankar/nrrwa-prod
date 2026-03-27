@@ -237,6 +237,9 @@ other = "Collaborate With Us"
 other = "Are you working on community initiatives in Roopanagara? We'd love to collaborate!"
 
 # Membership Page
+[current_members]
+other = "Current Members"
+
 [most_popular]
 other = "Most Popular"
 

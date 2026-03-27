@@ -3,9 +3,14 @@
 {{- $title := .Get "title" -}}
 {{- $description := .Get "description" -}}
 
+{{- $count := 0 -}}
+{{- with resources.Get $file -}}
+{{- with . | transform.Unmarshal -}}
+{{- range after 1 . -}}{{- if ne (index . 0) "Total" -}}{{- $count = add $count 1 -}}{{- end -}}{{- end -}}
+{{- end -}}{{- end -}}
 <div class="donor-accordion-item">
     <div class="donor-accordion-header">
-        <h3>{{ $title }}</h3>
+        <h3>{{ $title }}{{- if $count }} <span class="accordion-count">({{ $count }})</span>{{- end }}</h3>
         {{- if $description -}}
         <p class="donor-description">{{ $description }}</p>
         {{- end -}}
@@ -25,7 +30,11 @@
                 </thead>
                 <tbody>
                     {{- range after 1 . -}}
+                    {{- if eq (index . 0) "Total" -}}
+                    <tr class="total-row">
+                    {{- else -}}
                     <tr>
+                    {{- end -}}
                         {{- range . -}}
                         <td>{{ . }}</td>
                         {{- end -}}

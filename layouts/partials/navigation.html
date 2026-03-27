@@ -39,8 +39,15 @@
         class="active" {{ end }}>{{ T "events" }}</a></li>
     <li><a href="/{{ .Language.Lang }}/news/" {{ if hasPrefix .RelPermalink (printf "/%s/news/" .Language.Lang) }}
         class="active" {{ end }}>{{ T "news" }}</a></li>
-    <li><a href="/{{ .Language.Lang }}/membership/" {{ if hasPrefix .RelPermalink (printf "/%s/membership/"
-        .Language.Lang) }} class="active" {{ end }}>{{ T "membership" }}</a></li>
+    <!-- Membership with submenu -->
+    <li class="has-submenu {{ if hasPrefix .RelPermalink (printf "/%s/membership/" .Language.Lang) }}active-section{{ end
+      }}">
+      <a href="/{{ .Language.Lang }}/membership/">{{ T "membership" }}</a>
+      <ul class="submenu">
+        <li><a href="/{{ .Language.Lang }}/membership/">{{ T "membership" }}</a></li>
+        <li><a href="/{{ .Language.Lang }}/membership/current-members/">{{ T "current_members" }}</a></li>
+      </ul>
+    </li>
 
     <!-- Reports with submenu -->
     <li class="has-submenu {{ if or (hasPrefix .RelPermalink (printf "/%s/reports/" .Language.Lang)) (hasPrefix
