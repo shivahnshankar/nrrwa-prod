@@ -1,5 +1,6 @@
 ---
 title: "ಪ್ರಸ್ತುತ ಸದಸ್ಯರು"
+date: 2026-03-27
 summary: "ಸದಸ್ಯತ್ವ ಪ್ರಕಾರದ ಪ್ರಕಾರ ವರ್ಗೀಕರಿಸಲಾದ NRRWA ಪ್ರಸ್ತುತ ಸದಸ್ಯರ ಪಟ್ಟಿ"
 ---
 
@@ -11,6 +12,6 @@ NRRWA ತನ್ನ ಬೆಳೆಯುತ್ತಿರುವ ಸಮರ್ಪಿತ
 
 {{< donor-accordion file="data/current_members/am_members.csv" title="ವಾರ್ಷಿಕ ಸದಸ್ಯರು" description="NRRWA ಯೊಂದಿಗೆ ವಾರ್ಷಿಕ ಆಧಾರದ ಮೇಲೆ ತಮ್ಮ ಬದ್ಧತೆಯನ್ನು ನವೀಕರಿಸುವ ಸದಸ್ಯರು" >}}
 
-{{< donor-accordion file="data/current_members/tm_members.csv" title="ಪ್ರಾಯೋಗಿಕ ಸದಸ್ಯರು" description="ಪ್ರಸ್ತುತ NRRWA ಯೊಂದಿಗೆ ಪ್ರಾಯೋಗಿಕ ಸದಸ್ಯತ್ವದಲ್ಲಿರುವ ಸದಸ್ಯರು" >}}
+{{< donor-accordion file="data/current_members/tm_members.csv" title="ಬಾಡಿಗೆದಾರ ಸದಸ್ಯರು" description="NRRWA ಸದಸ್ಯರಾಗಿರುವ ಬಾಡಿಗೆದಾರರು" >}}
 
 {{< member-grand-total >}}
