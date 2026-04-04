@@ -2,7 +2,7 @@
 title: Namma Vana's new amphitheatre inaugurated
 date: 2025-10-26
 featuredImage: /assets/images/news/amphitheatre/2.jpg
-summary: NRRWA successfully coordinates installation of 25 new LED street lights in Phase 2 area, improving safety and visibility.
+summary: NRRWA inaugurates a community amphitheatre with Hon'ble MP Sri Yaduveer Krishnadatta Wadiyar and MLA Sri G.T. Devegowda in attendance, marking a proud milestone for cultural and civic engagement.
 tags:
   - Infrastructure
   - Public Amenities
