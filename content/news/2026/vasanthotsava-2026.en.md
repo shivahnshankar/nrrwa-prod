@@ -23,4 +23,5 @@ Here are a few snapshots from the evening, along with a link to the YouTube high
 
 Until next time—here’s to many more celebrations together!
 
-{{< gallery path="assets/images/news/2026/vasanthotsave" >}}
+{{< youtube huYiZSZc4Vw >}}
+{{< gallery path="assets/images/news/2026/vasanthotsava" >}}
