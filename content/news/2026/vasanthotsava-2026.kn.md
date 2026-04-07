@@ -22,5 +22,19 @@ tags:
 ಆ ಸಂಜೆಯ ಕೆಲವು ಚಿತ್ರಗಳನ್ನು ಮತ್ತು YouTube ಹೈಲೈಟ್ಸ್ ವಿಡಿಯೋ ಲಿಂಕ್ ಅನ್ನು ಇಲ್ಲಿ ಹಂಚಿಕೊಳ್ಳುತ್ತಿದ್ದೇವೆ — ಆ ಕ್ಷಣಗಳನ್ನು ಮತ್ತೆ ಅನುಭವಿಸಲು ಇಷ್ಟಪಡುವವರಿಗಾಗಿ.
 
 ಮುಂದಿನ ಬಾರಿಯ ತನಕ — ಇನ್ನಷ್ಟು ಆಚರಣೆಗಳು ಒಟ್ಟಿಗೆ ಬರಲಿ!
-{{< youtube huYiZSZc4Vw>}}
+
+{{< youtube huYiZSZc4Vw >}}
+{{< youtube wYZKVtpVkQc >}}
+{{< youtube mGAy5M9lYBI >}}
+{{< youtube i5TpgYm8URM >}}
+{{< youtube i-L3G4v30j0 >}}
+{{< youtube eyuvwx7rGIg >}}
+{{< youtube tnM2FWPMYKc >}}
+{{< youtube eksUcWAxvIY >}}
+{{< youtube RE8u6wWDwY8 >}}
+{{< youtube Nmu2ALm6gaA >}}
+{{< youtube inNDJzuPpMY >}}
+{{< youtube _WjKkA8YIe0 >}}
+{{< youtube ew-j-qgnOXc >}}
+{{< youtube uH6xP2k_-Uw >}}
 {{< gallery path="assets/images/news/2026/vasanthotsava" >}}
