@@ -24,4 +24,17 @@ Here are a few snapshots from the evening, along with a link to the YouTube high
 Until next time—here’s to many more celebrations together!
 
 {{< youtube huYiZSZc4Vw >}}
+{{< youtube wYZKVtpVkQc >}}
+{{< youtube mGAy5M9lYBI >}}
+{{< youtube i5TpgYm8URM >}}
+{{< youtube i-L3G4v30j0 >}}
+{{< youtube eyuvwx7rGIg >}}
+{{< youtube tnM2FWPMYKc >}}
+{{< youtube eksUcWAxvIY >}}
+{{< youtube RE8u6wWDwY8 >}}
+{{< youtube Nmu2ALm6gaA >}}
+{{< youtube inNDJzuPpMY >}}
+{{< youtube _WjKkA8YIe0 >}}
+{{< youtube ew-j-qgnOXc >}}
+{{< youtube uH6xP2k_-Uw >}}
 {{< gallery path="assets/images/news/2026/vasanthotsava" >}}
