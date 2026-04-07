@@ -1,7 +1,7 @@
 ---
 title: "Vasanthotsava 2026 - An evening to remember"
 date: 2026-04-04
-featuredImage: /assets/images/events/2026/vasanthotsava2026.png
+featuredImage: /assets/images/news/2026/vasanthotsava/11_featured.jpg  
 summary: "NRRWA's annual Vasanthotsava brought residents together for an evening of food, music, and community spirit at Namma Vana — capped by a lively karaoke session that saw singers of all experience levels take the stage."
 author: "Shiva HN Shankar"
 tags:

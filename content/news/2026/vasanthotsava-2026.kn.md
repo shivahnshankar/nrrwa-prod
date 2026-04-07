@@ -1,7 +1,7 @@
 ---
 title: "ವಸಂತೋತ್ಸವ 2026 - ಮರೆಯಲಾಗದ ಒಂದು ಸಂಜೆ"
 date: 2026-03-29
-featuredImage: /assets/images/events/2026/vasanthotsava2026.png
+featuredImage: /assets/images/news/2026/vasanthotsava/11_featured.jpg
 summary: "NRRWA ಯ ವಾರ್ಷಿಕ ವಸಂತೋತ್ಸವ ನಮ್ಮ ವನದಲ್ಲಿ ಆಹಾರ, ಸಂಗೀತ ಮತ್ತು ಸಮುದಾಯ ಸ್ಫೂರ್ತಿಯ ಸಂಜೆಗಾಗಿ ನಿವಾಸಿಗಳನ್ನು ಒಟ್ಟುಗೂಡಿಸಿತು — ಎಲ್ಲ ಹಂತದ ಗಾಯಕರು ವೇದಿಕೆಯನ್ನೇರಿದ ಉತ್ಸಾಹಭರಿತ ಕರಾಓಕೆ ಸೆಷನ್ ನಿಂದ ಕಳೆಗಟ್ಟಿತು."
 author: "ಶಿವ ಶಂಕರ್"
 tags:
