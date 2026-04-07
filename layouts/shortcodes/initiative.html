@@ -1,10 +1,16 @@
-{{ $image := .Get "image" }}
+{{ $imageParam := .Get "image" }}
 {{ $title := .Get "title" }}
 {{ $align := .Get "align" | default "left" }}
 
+{{- $imgSrc := $imageParam -}}
+{{- $imgPath := strings.TrimPrefix "/assets/" $imageParam -}}
+{{- with resources.Get $imgPath -}}
+  {{- $imgSrc = .RelPermalink -}}
+{{- end -}}
+
 <div class="initiative-card {{ if eq $align "right" }}reverse{{ end }}">
   <div class="initiative-image">
-    <img src="{{ $image }}" alt="{{ $title }}">
+    <img src="{{ $imgSrc }}" alt="{{ $title }}">
   </div>
   <div class="initiative-content">
     {{ if $title }}
