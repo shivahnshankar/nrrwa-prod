@@ -36,9 +36,9 @@ relativeURLs = true
 [params]
   description = 'Namma Roopanagara Residents Welfare Association'
   author = 'NRRWA'
-  stats_members = 343
+  stats_members = 410
   stats_yearsOfService = 4
-  stats_eventsOrganized = 62
+  stats_eventsOrganized = 65
   stats_saplingsDistributed = 1250
 
   [params.directory]
