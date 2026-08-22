@@ -4,322 +4,108 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is the **NRRWA (Namma Roopanagara Residents Welfare Association) website**, a Hugo-based static site generator project with built-in multilingual support for English and Kannada. The site migrated from Eleventy to Hugo for significantly improved build performance (137ms vs 2400ms - 17x faster).
+The **NRRWA (Namma Roopanagara Residents Welfare Association) website** — a Hugo static site in English (`en`) and Kannada (`kn`). Migrated from Eleventy (see `MIGRATION_SUMMARY.md`). Built with Hugo v0.165 extended; full production build is ~200ms producing ~90 EN / ~95 KN pages.
 
-## Development Commands
+There is no test suite, no linter, and no CI. Verification = the site builds clean and the affected page renders.
 
-### Quick Start
+## Commands
+
 ```bash
-# Development workflow (build + search indexing + live server)
-./dev-server.sh
-
-# Manual development server with live reload
-hugo server -D
-
-# Build for production (minified)
-hugo --minify
-
-# Add search indexing after build
-npx pagefind --site public
-
-# Build including drafts
-hugo --buildDrafts
+./dev-server.sh                  # build + pagefind index + `hugo server -D` (the normal loop)
+hugo server -D                   # live-reload only; search will be stale/broken
+hugo --minify                    # production build into public/
+npx pagefind --site public       # search index; MUST run after every production build
 ```
 
-### Testing Changes
-- Hugo provides live reload during development
-- Search requires Pagefind indexing: run `npx pagefind --site public` after builds
-- Test multilingual features by navigating to `/en/` and `/kn/` routes
+`public/` and `resources/` are gitignored build output — never edit them.
+
+### Known-benign build warnings
+
+- `deprecated: languageCode / languageName / .Language.LanguageName / .Site.Data` — the codebase deliberately still uses the pre-0.158 forms. Match the surrounding code; don't opportunistically migrate one call site and leave the rest inconsistent.
+- `found no layout file for "html" for kind "section"` — from the stray empty `content/posts/news/` section.
 
 ## Architecture
 
-### Core Technology Stack
-- **Static Site Generator**: Hugo (Go-based)
-- **Template Language**: Go templates (`.html` files in `layouts/`)
-- **Content Format**: Markdown with YAML frontmatter
-- **Data Storage**: YAML files in `data/` directory
-- **Styling**: Vanilla CSS with CSS custom properties (no preprocessor)
-- **JavaScript**: Vanilla JS with Swiper library for carousels
-- **Search**: Pagefind for client-side full-text search
-- **Deployment**: Static HTML output to `public/` directory
+### Multilingual model
 
-### Multilingual Architecture (Critical)
+Every page is a `<slug>.en.md` / `<slug>.kn.md` pair in the same directory; Hugo pairs them by **translation base name** and routes to `/en/...` and `/kn/...` (`defaultContentLanguageInSubdir = true`). Missing a `.kn.md` doesn't break the build — the language switcher silently falls back to the KN homepage — so always author both files.
 
-The site uses Hugo's built-in multilingual mode with language-specific file suffixes:
+UI strings come from `i18n/en.toml` / `i18n/kn.toml` (~267 lines each, kept in lockstep) via `{{ T "key" }}`. Some older templates instead inline `{{ if eq .Language.Lang "en" }}...{{ else }}...{{ end }}`; prefer `T` in new code.
 
-**Content Files**:
-- English: `content/news/article.en.md`
-- Kannada: `content/news/article.kn.md`
-- URLs automatically route: `/en/news/article/` and `/kn/news/article/`
+### Two different data-file shapes (this is the main gotcha)
 
-**Data Files** (pattern used throughout):
+Most of `data/*.yaml` is **language-first**:
+
 ```yaml
-# data/focus.yaml structure
-public-amenities:
-  en:
-    title: "Public Amenities"
-    initiatives: [...]
-  kn:
-    title: "ಸಾರ್ವಜನಿಕ ಸೌಕರ್ಯಗಳು"
-    initiatives: [...]
+en: { ... }
+kn: { ... }
 ```
-
-**Accessing Data in Templates**:
 ```go
-{{ $data := index .Site.Data.focus .Language.Lang }}
-{{ $focusData := index $data .File.TranslationBaseName }}
+{{ $data := index .Site.Data.faqs .Language.Lang }}
 ```
 
-**Language Switching**:
-- Use `{{ .Translations }}` to link between language versions
-- Use `{{ T "key" }}` for UI string translations from `i18n/en.toml` and `i18n/kn.toml`
-
-### Directory Structure
-
-```
-/
-├── hugo.toml                    # Main configuration (languages, menus, params)
-├── content/                     # All content with .en.md/.kn.md suffixes
-│   ├── _index.en.md            # Homepage
-│   ├── news/                    # News articles (~32 files)
-│   ├── events/                  # Events
-│   ├── focus/                   # 6 focus area categories
-│   ├── about/                   # About section
-│   ├── membership/              # Membership info
-│   ├── directory/               # Community directory
-│   └── reports/                 # Reports & documents
-├── layouts/                     # Go HTML templates
-│   ├── _default/
-│   │   ├── baseof.html         # Base template (header, nav, footer)
-│   │   ├── single.html         # Single page/article template
-│   │   ├── list.html           # List/archive pages
-│   │   └── taxonomy.html       # Tag/category pages
-│   ├── index.html              # Homepage template
-│   ├── partials/               # Reusable components
-│   │   ├── navigation.html     # Main nav with submenus
-│   │   └── footer.html         # Site footer
-│   └── shortcodes/             # Custom content blocks
-│       ├── gallery.html        # Image gallery with lightbox
-│       ├── csv-to-table.html   # Data table rendering
-│       └── donor-accordion.html # Expandable sections
-├── data/                       # YAML data files (language-keyed)
-│   ├── heroSlides.yaml         # Homepage carousel
-│   ├── visionMission.yaml      # Organization info
-│   ├── executiveCommittee.yaml # Committee members
-│   ├── membership.yaml         # Membership tiers
-│   ├── directory.yaml          # Official contacts
-│   ├── faqs.yaml              # FAQ content
-│   └── focus/                  # Focus area descriptions
-├── assets/                     # Pipeline-processed assets
-│   ├── css/style.css           # Main stylesheet (62KB)
-│   ├── js/
-│   │   ├── main.js            # Theme toggle, carousel, animations
-│   │   └── directory.js       # Google Sheets API integration
-│   └── images/                 # Image assets
-├── static/                     # Direct-copy static files
-│   └── assets/                 # External/large assets
-├── i18n/                       # UI translations
-│   ├── en.toml                # English strings (120+ translations)
-│   └── kn.toml                # Kannada strings
-└── public/                     # Generated output (DO NOT EDIT)
-```
-
-### Template Hierarchy
-
-1. **baseof.html** - Base wrapper for all pages (header, navigation, footer, theme toggle)
-2. **index.html** - Homepage with hero carousel, events, news, member spotlight
-3. **single.html** - Individual article/page template
-4. **list.html** - Collection/archive pages with pagination
-5. **Section-specific templates** - Located in `layouts/<section>/` for custom layouts
-
-### Data-Driven Pages Pattern
-
-Many pages read structured data from `data/*.yaml` files:
+`data/focus/` is the exception: **one file per focus area, language nested inside**, and the lookup is by page slug first:
 
 ```go
-// Example from focus area pages (layouts/focus/single.html)
-{{ $focusAreas := index .Site.Data.focus .Language.Lang }}
-{{ $focusData := index $focusAreas .File.TranslationBaseName }}
-
-// Example from homepage (layouts/index.html)
-{{ $heroSlides := index .Site.Data.heroSlides .Language.Lang }}
+{{ $data := index .Site.Data.focus .File.TranslationBaseName }}   {{/* e.g. "environment" */}}
+{{ $langData := index $data .Language.Lang }}
 ```
 
-All data files use top-level language keys (`en:` and `kn:`). Access them with:
-```go
-{{ $data := index .Site.Data.<filename> .Language.Lang }}
-```
+The data filename must match the content slug **exactly**. When it doesn't match, `layouts/focus/single.html` falls back to rendering the page's markdown `.Content` — so a mismatch is silent, not a blank page. Two areas run on that fallback today, deliberately or not:
 
-### Asset Processing Pipeline
+- `safety` — no `data/focus/safety.yaml`; the page is authored entirely in markdown.
+- `public-amenities` — the page is authored in markdown (including a `gallery` shortcode the data layout can't express), while `data/focus/public_amenities.yaml` is dead: the underscore means it never loads, and its contents are a stale copy of the environment initiatives. **Renaming it to `public-amenities.yaml` would regress the page**, replacing real content with wrong data. Delete or rewrite it rather than renaming.
 
-Hugo processes assets through its asset pipeline:
+### Image path convention
+
+Images live in `assets/images/...` and are referenced everywhere (frontmatter, YAML data, shortcode params) with a leading `/assets/`. Templates strip that prefix before handing the path to the asset pipeline, with a raw-`src` fallback if the resource isn't found:
 
 ```go
-// CSS with minification and fingerprinting
-{{ $css := resources.Get "css/style.css" | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
-
-// Image processing with WebP conversion
-{{ $img := resources.Get "images/photo.jpg" }}
-{{ $resized := $img.Resize "1600x webp q85" }}
+{{ $imgPath := strings.TrimPrefix "/assets/" .Params.featuredImage }}
+{{ $img := resources.Get $imgPath }}
+{{ if $img }}{{ $r := $img.Fill "400x300 webp q85" }}<img src="{{ $r.RelPermalink }}">
+{{ else }}<img src="{{ .Params.featuredImage }}">{{ end }}
 ```
 
-Images should be placed in `assets/images/` and referenced in frontmatter as `/assets/images/...`
+Copy this pattern (including the fallback) in new templates. Everything converts to WebP at q85. `static/assets/` holds large or externally-linked files (documents, some images) that bypass processing.
 
-### Shortcodes (Reusable Content Blocks)
+### CSV-backed member and donor tables
 
-Custom shortcodes in `layouts/shortcodes/`:
+Membership and donor lists are CSVs under `assets/data/` (`current_members/`, `donors/`), read as Hugo resources and unmarshalled at build time:
 
-```markdown
-{{< gallery path="assets/images/gallery" >}}
-{{< csv-to-table >}}...{{< /csv-to-table >}}
-{{< initiative title="..." image="..." >}}...{{< /initiative >}}
-{{< donor-accordion >}}
+```go
+{{ with resources.Get "data/current_members/lm_members.csv" }}
+  {{ with . | transform.Unmarshal }}{{ range after 1 . }}...{{ end }}{{ end }}
+{{ end }}
 ```
 
-Use these for rich, reusable UI components in markdown content.
+Convention: row 0 is the header (skipped with `after 1`) and any row whose first cell is `"Total"` is excluded from counts. `member-grand-total` hardcodes the four membership-tier CSV paths — adding a tier means editing that shortcode too. Note these counts are computed independently of `params.stats_members` in `hugo.toml`, which drives the homepage counter and is maintained by hand.
 
-## Key Configuration
+### News structure
 
-### hugo.toml Critical Settings
-- `defaultContentLanguageInSubdir: true` - Routes languages to `/en/` and `/kn/`
-- `relativeURLs: true` - Enables deployment to subdirectories
-- `params.stats_*` - Homepage statistics counters
-- `params.directory.json_api_url` - Google Sheets API endpoint for dynamic directory
-- Menu configuration per language: `[[languages.en.menu.main]]` and `[[languages.kn.menu.main]]`
+News lives in year subdirectories (`content/news/2026/...`) with permalinks flattened to `/news/:year/:slug/` by `hugo.toml`. Pages carrying `layout: archive` (e.g. `content/news/2025/archive.*.md`) get `layouts/news/archive.html` and are filtered out of the paginated news list.
 
-### Common Frontmatter Fields
-```yaml
----
-title: "Page Title"
-date: 2025-01-15
-featuredImage: "/assets/images/featured.jpg"
-summary: "Brief description"
-tags: ["Infrastructure", "Community"]
-author: "NRRWA"
-draft: false
----
-```
+### Templates
 
-## External Integrations
+`layouts/_default/baseof.html` wraps everything: header, language switcher, theme toggle, Pagefind search box, `<main data-pagefind-body>` (which is what bounds the search index), footer, and the fingerprinted CSS/JS pipeline. Section list pages are one-off custom templates under `layouts/<section>/list.html` — `directory`, `donors`, `membership`, `reports`, `contact`, `other-orgs`, `focus`, `events`, `news` each have their own, so changing "how a section page looks" means editing that section's file, not a shared one.
 
-### Search (Pagefind)
-- Must run `npx pagefind --site public` after Hugo builds
-- Search UI embedded in `layouts/_default/baseof.html`
-- Indexes content within `<main data-pagefind-body>` tags
-- Creates `/public/pagefind/` directory with search index
+### Shortcodes
 
-### Dynamic Directory (Google Sheets API)
-- API URL configured in `hugo.toml`: `params.directory.json_api_url`
-- JavaScript in `assets/js/directory.js` fetches community-contributed contacts
-- Expected JSON format: `{ name: "Section", contacts: [{name, phone, email}] }`
-- Static official contacts stored in `data/directory.yaml`
-- Submission form: `params.directory.submission_form_url`
+| Shortcode | Params |
+|---|---|
+| `gallery` | `path` — repo-root-relative, starts with `assets/` (not `/assets/`); auto-lists images, adds lightbox |
+| `donor-accordion` | `file` (resource path, e.g. `data/donors/nammavana.csv`), `title`, `description` |
+| `member-grand-total` | none |
+| `callout` | `type` (info/warning/tip/success/danger/note), `title`, `icon` |
+| `initiative` | `title`, `image` (`/assets/...`), `align` (left/right); body is markdown |
+| `csv-to-table` | renders a CSV as a table |
 
-### Theme Toggle (Dark Mode)
-- Implemented in `assets/js/main.js`
-- Persisted to localStorage
-- Falls back to system preference detection
-- CSS variables in `assets/css/style.css` control theming
-- Attribute: `[data-theme="dark"]` on `<html>` element
+### Dynamic directory
 
-## Common Development Patterns
+`layouts/directory/list.html` renders static official contacts from `data/directory.yaml`, then `assets/js/directory.js` fetches resident-submitted contacts at runtime from the Google Apps Script endpoint in `params.directory.json_api_url`, expecting `[{ name, contacts: [{name, phone, email}] }]`. Failures here are runtime-only and invisible at build time — check the browser console.
 
-### Adding New Content
+## Adding content
 
-**News Article**:
-1. Create `content/news/article-slug.en.md` and `article-slug.kn.md`
-2. Include frontmatter: `title`, `date`, `featuredImage`, `summary`, `tags`
-3. Content will auto-appear in news list and homepage
-
-**Focus Area**:
-1. Create `content/focus/area-slug.en.md` and `.kn.md`
-2. Add entry to `data/focus.yaml`:
-   ```yaml
-   area-slug:
-     en:
-       intro: "..."
-       initiatives: [...]
-       impact: [...]
-     kn:
-       intro: "..."
-       initiatives: [...]
-       impact: [...]
-   ```
-3. Add images to `assets/images/focus/`
-
-**Events**:
-1. Create `content/events/event-slug.en.md` and `.kn.md`
-2. Include `date` and `eventDate` in frontmatter
-3. Future events auto-filter on homepage
-
-### Modifying Navigation
-
-Edit `hugo.toml` menu sections:
-- English menus: `[[languages.en.menu.main]]`
-- Kannada menus: `[[languages.kn.menu.main]]`
-- Set `name`, `url`, and `weight` (for ordering)
-
-### Updating Homepage Statistics
-
-Edit `hugo.toml` params:
-```toml
-[params]
-  stats_members = 343
-  stats_yearsOfService = 4
-  stats_eventsOrganized = 62
-  stats_saplingsDistributed = 1250
-```
-
-### Creating Custom Layouts
-
-1. Create section-specific template: `layouts/<section>/single.html` or `list.html`
-2. Extend base template: `{{ define "main" }}...{{ end }}`
-3. Access page data: `.Title`, `.Content`, `.Params`, `.Date`
-4. Access site data: `.Site.Data`, `.Site.Params`, `.Site.Menus`
-
-## Troubleshooting
-
-### Search Not Working
-1. Verify `public/pagefind/` directory exists
-2. Run `npx pagefind --site public` after building
-3. Check browser console for pagefind errors
-4. Ensure `<main data-pagefind-body>` wraps content in `baseof.html`
-
-### Focus Pages Empty
-1. Check `data/focus.yaml` has entry matching page's `.File.TranslationBaseName`
-2. Verify language keys (`en:` and `kn:`) exist in data
-3. Confirm template uses: `{{ index .Site.Data.focus .Language.Lang }}`
-
-### Dynamic Directory Empty
-1. Test `params.directory.json_api_url` in browser
-2. Check console for CORS errors
-3. Verify JSON format matches expected structure
-4. Confirm `data-api-url` attribute is set in directory template
-
-### CSS/JS Changes Not Appearing
-1. Check asset pipeline: `resources.Get` in `baseof.html`
-2. Fingerprinting changes hash in URLs - hard refresh browser
-3. Rebuild with `hugo --minify` to regenerate fingerprints
-
-### Language Switching Broken
-1. Verify both `.en.md` and `.kn.md` files exist with same base name
-2. Check translation links use: `{{ range .Translations }}`
-3. Confirm `defaultContentLanguageInSubdir: true` in config
-
-## Important Constraints
-
-- **Never edit `public/` directory** - it's generated output
-- **Always create bilingual content** - both `.en.md` and `.kn.md` files
-- **Data files must have language keys** - use `en:` and `kn:` structure
-- **Run Pagefind after builds** - search won't work without indexing
-- **Assets go in `assets/`** - not `static/` - for pipeline processing
-- **Use Hugo image processing** - don't commit large unprocessed images
-
-## Site Statistics
-
-- Build time: ~137ms (17x faster than previous Eleventy implementation)
-- Content pages: ~100+ bilingual pages
-- Members: 343 (as of latest stats)
-- Languages: 2 (English, Kannada)
-- Deployment: Static HTML to any host (Netlify, Vercel, GitHub Pages, etc.)
+- **News/event**: `hugo new news/2026/slug.en.md` (archetypes in `archetypes/` supply the frontmatter), then create the `.kn.md`. Frontmatter: `title`, `date`, `featuredImage`, `summary`, `author`, `tags`; events also take `eventDate`.
+- **Focus area**: `content/focus/<slug>.{en,kn}.md` **plus** `data/focus/<slug>.yaml` with `en:`/`kn:` each holding `intro`, `initiatives[] {title, image, description}`, `impact`, `cta`; images in `assets/images/focus/`.
+- **Nav item**: add to both `[[languages.en.menu.main]]` and `[[languages.kn.menu.main]]` in `hugo.toml`.
